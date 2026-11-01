@@ -272,6 +272,20 @@ h4.blk small { font-weight: 400; }
 .check { background: var(--warn-soft); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
 .check b { color: var(--warn); margin-right: 6px; }
 
+/* back to top */
+.totop {
+  position: fixed; z-index: 8;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px; border-radius: 999px;
+  background: var(--accent); color: var(--on-accent);
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+}
+.totop:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.totop svg { width: 16px; height: 16px; }
+
 /* footer */
 .foot { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 16px; font-size: 13.5px; color: var(--muted); }
 .foot h2 { font-size: 15px; color: var(--ink); }
@@ -281,7 +295,7 @@ h4.blk small { font-weight: 400; }
 </style>
 
 <div class="page">
-  <header class="top">
+  <header class="top" id="top">
     <p class="eyebrow">2027.01.06 수 – 01.10 일 · 가족 3명</p>
     <h1>1월 가족여행 후보지 7곳</h1>
     <p class="lede">아래 조건으로 직항이 있는 따뜻한 곳과 가까운 곳을 비교했습니다. 운전은 하지 않고 택시, 그랩, 셔틀, 투어 차량으로 다니는 기준입니다. 금액은 모두 3인 기준 추정치이며, 쇼핑비는 빠져 있습니다.</p>
@@ -332,12 +346,12 @@ h4.blk small { font-weight: 400; }
       <tr>
         <td class="c-name" data-label="여행지"><a href="#okinawa"><span class="rank">3</span><span class="nm">오키나와</span><span class="code">OKA</span></a></td>
         <td data-label="1월 기온"><div class="v"><span class="pill warn">14~20°C</span></div></td>
-        <td class="c-fly" data-label="비행"><div class="v"><span class="num">2시간 30분</span></div></td>
-        <td data-label="도착"><div class="v"><span class="pill good">낮 15시대</span></div></td>
-        <td data-label="귀국"><div class="v"><span class="pill good">낮</span></div></td>
-        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">4일</b></div></td>
-        <td data-label="3인 총액"><div class="v"><b class="num">250만~380만원</b><span class="pill good">예산 안</span></div></td>
-        <td class="c-note" data-label="한 줄 평"><div class="v">시간과 돈은 가장 여유롭지만 선선함</div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">2시간 25분</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill good">낮 12:35</span><small>진에어 10:10 출발</small></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill good">오후 16:50</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">4일 반</b><small>첫날 오후 + 마지막 날 오후</small></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">317만~397만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">왕복 낮 비행으로 시간은 넉넉하지만 선선하고, 항공권이 예상보다 비쌈</div></td>
       </tr>
 
       <tr>
@@ -414,8 +428,8 @@ h4.blk small { font-weight: 400; }
 
       <div class="rb-row">
         <div class="rb-name"><span class="code">OKA</span>오키나와</div>
-        <div class="rb-track"><span class="rb-bar good" style="left:27.03%;width:35.13%"></span></div>
-        <div class="rb-val num">250~380만</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:45.14%;width:21.62%"></span></div>
+        <div class="rb-val num">317~397만</div>
       </div>
 
       <div class="rb-row">
@@ -512,7 +526,7 @@ h4.blk small { font-weight: 400; }
       <li>
         <span class="q">선선해도 편하고 알뜰하면</span>
         <span class="a"><a href="#kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#okinawa"><span class="rank sm">3</span>오키나와</a></span>
-        <span class="why">둘 다 낮에 오가고 비행이 짧습니다. 가오슝은 김포 왕복 낮편이 실제로 조회됐고, 오키나와보다 따뜻하고 쌉니다.</span>
+        <span class="why">둘 다 왕복 낮 비행이 실제로 조회됐습니다. 가오슝이 오키나와보다 따뜻하고 3인 기준 70만원쯤 쌉니다.</span>
       </li>
       <li>
         <span class="q">멀리 가보는 경험이 가장 중요하다면</span>
@@ -668,15 +682,15 @@ h4.blk small { font-weight: 400; }
       <span class="rank big">3</span>
       <div class="dest-t">
         <h3>오키나와 <span class="code">OKA</span></h3>
-        <p class="sub">일본 · 시간과 돈은 가장 여유롭지만 선선함</p>
+        <p class="sub">일본 · 왕복 낮 비행으로 시간은 넉넉하지만 선선하고, 항공권이 예상보다 비쌈</p>
       </div>
     </header>
     <ul class="facts">
       <li><span>1월 기온</span><span class="pill warn">14~20°C</span></li>
-      <li><span>비행</span><b class="num">약 2시간 30분</b></li>
-      <li><span>도착</span><span class="pill good">낮 (예: 13:15 출발 → 15:40 도착)</span></li>
-      <li><span>귀국</span><span class="pill good">낮</span></li>
-      <li><span>3인 총액</span><b class="num">250만~380만원</b> <span class="pill good">예산 안</span></li>
+      <li><span>비행</span><b class="num">약 2시간 25분</b></li>
+      <li><span>도착</span><span class="pill good">낮 12:35 (진에어 10:10 출발)</span></li>
+      <li><span>귀국</span><span class="pill good">오후 16:50 출발 → 19:15 도착</span></li>
+      <li><span>3인 총액</span><b class="num">317만~397만원</b> <span class="pill warn">예산 경계</span></li>
     </ul>
     <p class="stay"><span>숙소</span>나하 시내 호텔 4박 (유이레일역 근처, 실내 수영장이나 대욕장이 있으면 좋음)</p>
     <div class="pc">
@@ -689,7 +703,7 @@ h4.blk small { font-weight: 400; }
           <div class="day-d"><b class="num">1/6</b><span>수</span></div>
           <div class="day-b">
             <h4>낮 도착, 나하</h4>
-            <p>오후에 도착해 나하 국제거리에서 저녁을 먹습니다.</p>
+            <p>인천 10:10 출발, 나하 12:35 도착(한국과 시차 없음). 호텔에 짐을 두고 국제거리와 마키시 시장을 구경합니다.</p>
             <ul class="legs"><li><span class="lg-route">공항 → 국제거리 호텔</span><span class="lg-how">약 5km · 15분 · 유이레일(모노레일)</span><span class="lg-cost num">3인 약 1만원</span></li></ul>
           </div>
         </li>
@@ -721,16 +735,16 @@ h4.blk small { font-weight: 400; }
           <div class="day-d"><b class="num">1/10</b><span>일</span></div>
           <div class="day-b">
             <h4>남부 바다 보고 귀국</h4>
-            <p>공항 옆 세나가지마 우미카지 테라스에서 바다를 보고 낮편으로 귀국합니다.</p>
+            <p>오전에 공항 옆 세나가지마 우미카지 테라스에서 바다를 보고, 16:50 출발 편으로 귀국합니다. 인천 도착 19:15.</p>
             <ul class="legs"><li><span class="lg-route">호텔 → 우미카지 테라스</span><span class="lg-how">약 10km · 택시 20분</span><span class="lg-cost num">약 2만원</span></li><li><span class="lg-route">우미카지 테라스 → 공항</span><span class="lg-how">약 6km · 택시 15분</span><span class="lg-cost num">약 1.5만원</span></li></ul>
           </div>
         </li>
     </ol>
     <h4 class="blk">예산 내역</h4>
-    <ul class="bud"><li><span>항공</span><b class="num">90만~135만원</b><small>인당 30만~45만</small></li><li><span>숙소 4박</span><b class="num">60만~90만원</b><small>나하 시내</small></li><li><span>식비</span><b class="num">60만~80만원</b></li><li><span>유이레일·버스·택시</span><b class="num">10만~15만원</b></li><li><span>버스 투어·수족관·고래</span><b class="num">25만~50만원</b></li><li><span>보험·eSIM</span><b class="num">5만~10만원</b></li>
-      <li class="tot"><span>합계</span><b class="num">250만~380만원</b></li>
+    <ul class="bud"><li><span>항공</span><b class="num">약 162만원</b><small>인당 약 54만 · 조회 가격</small></li><li><span>숙소 4박</span><b class="num">60만~90만원</b><small>나하 시내</small></li><li><span>식비</span><b class="num">60만~80만원</b></li><li><span>유이레일·버스·택시</span><b class="num">10만~15만원</b></li><li><span>버스 투어·수족관·고래</span><b class="num">20만~40만원</b><small>고래 관찰은 선택</small></li><li><span>보험·eSIM</span><b class="num">5만~10만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">317만~397만원</b></li>
     </ul>
-    <p class="check"><b>확인할 것</b> 숙소는 유이레일역에서 가까운 곳으로 고르세요. 입국 전 Visit Japan Web을 등록하세요.</p>
+    <p class="check"><b>확인할 것</b> 진에어 10:10편은 9석 미만 남았습니다. 이 편에 제주항공 16:50 귀국편(또는 트리니티 15:25)을 붙인 가격을 성인 3명으로 확인하세요. 입국 전 Visit Japan Web을 등록하세요.</p>
   </section>
 
   <section class="dest" id="phuquoc">
@@ -1013,6 +1027,11 @@ h4.blk small { font-weight: 400; }
     <p class="check"><b>확인할 것</b> 괌과 같이 전자여행허가(ETA)가 필요합니다. 세 끼 포함 상품은 3인 요금을 따로 확인하세요.</p>
   </section>
 
+  <a class="totop" href="#top" id="totop" hidden aria-label="맨 위로 이동">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    맨 위로
+  </a>
+
   <footer class="foot">
     <div>
       <h2>계산 기준</h2>
@@ -1030,4 +1049,18 @@ h4.blk small { font-weight: 400; }
     </div>
   </footer>
 </div>
+<script>
+(function () {
+  var btn = document.getElementById('totop');
+  if (!btn) return;
+  function update() { btn.hidden = window.scrollY < 600; }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+})();
+</script>
 </body></html>
