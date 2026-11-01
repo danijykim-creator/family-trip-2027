@@ -1,0 +1,1033 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta property="og:title" content="1월 가족여행 후보지 7곳"><meta property="og:description" content="1/6~1/10 가족 3명, 직항 후보지 비교표·지도·일정·예산"><style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>2027 1월 가족여행 후보지</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one reading column — conditions, comparison table, budget ranges, route map, then one sheet per destination; sticky chips jump between sheets */
+:root {
+  --bg: #f2f6f7;
+  --surface: #ffffff;
+  --ink: #13222c;
+  --muted: #566873;
+  --line: #d6e0e4;
+  --accent: #0a6f80;
+  --accent-soft: #dcf0f2;
+  --on-accent: #ffffff;
+  --good: #23744a;
+  --good-soft: #e0f1e6;
+  --warn: #9a560a;
+  --warn-soft: #fbecd8;
+  --bad: #b03a31;
+  --bad-soft: #f8e1de;
+  --neutral: #4f5f68;
+  --neutral-soft: #e6ecef;
+  --sea: #e4eef2;
+  --land: #c9d6dc;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d161b; --surface: #142128; --ink: #e2ebef; --muted: #93a6b0; --line: #24363f;
+    --accent: #5bb8c7; --accent-soft: #15313a; --on-accent: #0d161b;
+    --good: #6cc391; --good-soft: #15301f; --warn: #e9a95e; --warn-soft: #382915;
+    --bad: #ee857b; --bad-soft: #3a1e1b; --neutral: #a9b9c1; --neutral-soft: #1d2b32;
+    --sea: #112028; --land: #2a3d46;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d161b; --surface: #142128; --ink: #e2ebef; --muted: #93a6b0; --line: #24363f;
+  --accent: #5bb8c7; --accent-soft: #15313a; --on-accent: #0d161b;
+  --good: #6cc391; --good-soft: #15301f; --warn: #e9a95e; --warn-soft: #382915;
+  --bad: #ee857b; --bad-soft: #3a1e1b; --neutral: #a9b9c1; --neutral-soft: #1d2b32;
+  --sea: #112028; --land: #2a3d46;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.num, .code { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; line-height: 1.3; }
+p { margin: 0; }
+small { color: var(--muted); font-size: 12.5px; }
+
+/* header */
+.top { display: grid; gap: 10px; padding-bottom: 18px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12.5px; letter-spacing: .06em; color: var(--accent); font-weight: 600; }
+h1 { font-size: clamp(26px, 5.2vw, 36px); font-weight: 700; letter-spacing: -0.01em; }
+.lede { color: var(--muted); max-width: 62ch; }
+.conds { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.conds li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; font-size: 13px; }
+.conds li b { font-weight: 600; }
+
+/* sticky jump nav */
+.jump {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  display: flex; gap: 6px; overflow-x: auto; padding-block: 10px;
+  scrollbar-width: none;
+}
+.jump::-webkit-scrollbar { display: none; }
+.jump a {
+  flex: none; display: inline-flex; align-items: center; gap: 6px;
+  text-decoration: none; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px 4px 5px; font-size: 13.5px; font-weight: 500;
+}
+.jump a:hover { border-color: var(--accent); }
+
+/* section titles */
+.blockh { display: grid; gap: 4px; margin-bottom: 14px; }
+.blockh h2 { font-size: 20px; font-weight: 700; }
+.blockh p { color: var(--muted); font-size: 14px; }
+section.part { padding-block: 30px 6px; scroll-margin-top: 64px; }
+
+/* rank badge */
+.rank {
+  display: inline-grid; place-items: center; flex: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); color: var(--on-accent);
+  font-family: var(--f-mono); font-size: 12px; font-weight: 600;
+}
+.rank.sm { width: 20px; height: 20px; font-size: 11px; }
+.rank.big { width: 38px; height: 38px; font-size: 18px; }
+
+/* pills */
+.pill {
+  display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 12.5px; font-weight: 500;
+  line-height: 1.6; background: var(--neutral-soft); color: var(--neutral);
+}
+.pill.good { background: var(--good-soft); color: var(--good); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+
+/* comparison table */
+.tbl-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table.cmp { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.cmp th {
+  text-align: left; font-weight: 600; font-size: 12px; color: var(--muted); letter-spacing: .04em;
+  padding: 10px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; background: var(--surface);
+}
+.cmp td { padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.cmp tr:last-child td { border-bottom: 0; }
+.cmp td .v { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: baseline; min-width: 0; }
+.cmp td small { flex-basis: 100%; }
+.cmp .pill { white-space: nowrap; }
+.cmp td.c-fly { white-space: nowrap; }
+.facts .pill, .day .pill { justify-self: start; }
+.c-name a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.c-name .nm { font-weight: 700; font-size: 15px; }
+.code { font-size: 11.5px; color: var(--muted); letter-spacing: .04em; }
+.c-note { color: var(--muted); min-width: 150px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 10px; font-size: 12.5px; color: var(--muted); align-items: center; }
+@media (max-width: 860px) {
+  .tbl-wrap { background: none; border: 0; border-radius: 0; overflow: visible; }
+  .cmp thead { display: none; }
+  .cmp, .cmp tbody, .cmp tr, .cmp td { display: block; width: 100%; }
+  .cmp tbody { display: grid; gap: 10px; }
+  .cmp tr { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px 12px; }
+  .cmp td { border: 0; padding: 4px 0; display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+  .cmp td::before { content: attr(data-label); color: var(--muted); font-size: 12.5px; }
+  .cmp td.c-name { display: block; padding-bottom: 8px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+  .cmp td.c-name::before { content: none; }
+  .c-note { min-width: 0; }
+}
+
+/* budget range chart */
+.rb { --cap: 0%; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 16px 10px; display: grid; gap: 12px; }
+.rb-row, .rb-axis { display: grid; grid-template-columns: 92px minmax(0, 1fr) 88px; gap: 10px; align-items: center; }
+.rb-name { font-weight: 600; font-size: 14px; display: flex; gap: 6px; align-items: baseline; }
+.rb-name .code { order: 2; }
+.rb-track { position: relative; height: 12px; background: var(--neutral-soft); border-radius: 999px; }
+.rb-track::after {
+  content: ""; position: absolute; left: var(--cap); top: -6px; bottom: -6px;
+  border-left: 2px dashed var(--bad);
+}
+.rb-bar { position: absolute; top: 0; bottom: 0; border-radius: 999px; background: var(--good); }
+.rb-bar.warn { background: var(--warn); }
+.rb-bar.bad { background: var(--bad); }
+.rb-val { font-size: 13px; text-align: right; color: var(--ink); }
+.rb-axis > div { position: relative; height: 36px; }
+.rb-tick, .rb-cap { position: absolute; top: 0; transform: translateX(-50%); }
+.rb-cap { top: 17px; }
+.rb-tick i, .rb-cap i { font-style: normal; font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.rb-cap i { color: var(--bad); font-weight: 600; }
+@media (max-width: 520px) {
+  .rb-row, .rb-axis { grid-template-columns: 64px minmax(0, 1fr) 70px; gap: 8px; }
+  .rb-name .code { display: none; }
+  .rb-val { font-size: 12px; }
+}
+
+/* map */
+.map-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+.map { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; }
+.map .sea { fill: var(--sea); }
+.map .land { fill: var(--land); stroke: none; }
+.map .equator { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 6; opacity: .7; }
+.map .eq-l { fill: var(--muted); font-size: 15px; font-family: var(--f-body); }
+.map .route { stroke: var(--accent); stroke-width: 1.8; stroke-dasharray: 5 6; opacity: .85; }
+.map .icn { fill: var(--ink); stroke: var(--sea); stroke-width: 3; }
+.map .dot { fill: var(--accent); stroke: var(--sea); stroke-width: 3; }
+.map a:focus-visible .dot { stroke: var(--ink); }
+.map .dot-n { fill: var(--on-accent); font-family: var(--f-mono); font-size: 14px; font-weight: 600; text-anchor: middle; pointer-events: none; }
+.map .lbl { font-family: var(--f-body); font-size: 19px; paint-order: stroke; stroke: var(--sea); stroke-width: 5px; stroke-linejoin: round; }
+.map .lbl-n { fill: var(--ink); font-weight: 700; }
+.map .lbl-t { fill: var(--muted); font-size: 16px; font-weight: 500; }
+.map-note { margin-top: 10px; font-size: 13px; color: var(--muted); text-align: center; }
+
+/* choose guide */
+.choose { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.choose li {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px;
+}
+.choose .q { font-weight: 600; }
+.choose .a { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.choose .a a { text-decoration: none; display: inline-flex; gap: 6px; align-items: center; font-weight: 700; color: var(--ink);
+  background: var(--accent-soft); border-radius: 999px; padding: 3px 12px 3px 4px; }
+.choose .why { grid-column: 1 / -1; color: var(--muted); font-size: 13.5px; }
+@media (max-width: 560px) {
+  .choose li { grid-template-columns: minmax(0, 1fr); }
+  .choose .a { justify-content: flex-start; }
+}
+
+/* destination sheets */
+.dest { padding-block: 34px 10px; border-top: 1px solid var(--line); margin-top: 30px; scroll-margin-top: 58px; display: grid; gap: 16px; }
+.dest-h { display: flex; gap: 12px; align-items: center; }
+.dest-t { min-width: 0; display: grid; gap: 2px; }
+.dest h3 { font-size: 24px; font-weight: 700; }
+.dest h3 .code { font-size: 13px; vertical-align: middle; margin-left: 4px; }
+.dest .sub { color: var(--muted); font-size: 14px; }
+.facts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.facts li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; display: grid; gap: 4px; align-content: start; }
+.facts li > span:first-child { font-size: 12px; color: var(--muted); letter-spacing: .03em; }
+.facts li b { font-weight: 600; }
+@media (max-width: 520px) { .facts li:last-child { grid-column: 1 / -1; } }
+.stay { font-size: 14px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.stay span { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 0 7px; }
+.pc { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+.pc-col { border-radius: 12px; padding: 12px 16px 14px; }
+.pc-col.good { background: var(--good-soft); }
+.pc-col.bad { background: var(--bad-soft); }
+.pc-col h4 { font-size: 14px; margin-bottom: 6px; }
+.pc-col.good h4 { color: var(--good); }
+.pc-col.bad h4 { color: var(--bad); }
+.pc-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 5px; font-size: 14px; }
+.pc-col li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 6px; }
+.pc-col.good li::before { content: "+"; color: var(--good); font-weight: 700; font-family: var(--f-mono); }
+.pc-col.bad li::before { content: "−"; color: var(--bad); font-weight: 700; font-family: var(--f-mono); }
+h4.blk { font-size: 15px; font-weight: 700; display: flex; gap: 8px; align-items: baseline; margin-top: 4px; }
+h4.blk small { font-weight: 400; }
+.days { list-style: none; padding: 0; margin: 0; display: grid; }
+.day { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 14px; padding-block: 12px; border-top: 1px solid var(--line); }
+.day:first-child { border-top: 0; padding-top: 2px; }
+.day-d { display: grid; align-content: start; justify-items: start; }
+.day-d b { font-size: 17px; font-weight: 600; }
+.day-d span { font-size: 12.5px; color: var(--muted); }
+.day-b { display: grid; gap: 6px; min-width: 0; }
+.day-b h4 { font-size: 15px; font-weight: 700; }
+.day-b p { font-size: 14px; }
+.legs { list-style: none; margin: 2px 0 0; padding: 4px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; display: grid; }
+.legs li { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) minmax(88px, auto); gap: 4px 12px; padding-block: 7px; font-size: 13.5px; border-top: 1px dashed var(--line); align-items: baseline; }
+.legs li:first-child { border-top: 0; }
+.lg-route { font-weight: 600; }
+.lg-how { color: var(--muted); }
+.lg-cost { text-align: right; font-size: 12.5px; color: var(--ink); white-space: nowrap; }
+@media (max-width: 640px) {
+  .day { grid-template-columns: 44px minmax(0, 1fr); gap: 10px; }
+  .legs li { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "r c" "h h"; }
+  .lg-route { grid-area: r; }
+  .lg-cost { grid-area: c; white-space: normal; }
+  .lg-how { grid-area: h; font-size: 12.5px; }
+}
+.bud { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.bud li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; display: grid; gap: 2px; align-content: start; }
+.bud li span { font-size: 12px; color: var(--muted); }
+.bud li b { font-size: 14px; font-weight: 600; }
+.bud li small { font-size: 11.5px; }
+.bud li.tot { background: var(--accent-soft); border-color: transparent; }
+.bud li.tot b { color: var(--accent); font-size: 15px; }
+.check { background: var(--warn-soft); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+.check b { color: var(--warn); margin-right: 6px; }
+
+/* footer */
+.foot { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 16px; font-size: 13.5px; color: var(--muted); }
+.foot h2 { font-size: 15px; color: var(--ink); }
+.foot ul { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 4px; }
+.src { columns: 2 260px; column-gap: 28px; }
+.src li { break-inside: avoid; }
+</style>
+
+<div class="page">
+  <header class="top">
+    <p class="eyebrow">2027.01.06 수 – 01.10 일 · 가족 3명</p>
+    <h1>1월 가족여행 후보지 7곳</h1>
+    <p class="lede">아래 조건으로 직항이 있는 따뜻한 곳과 가까운 곳을 비교했습니다. 운전은 하지 않고 택시, 그랩, 셔틀, 투어 차량으로 다니는 기준입니다. 금액은 모두 3인 기준 추정치이며, 쇼핑비는 빠져 있습니다.</p>
+    <ul class="conds">
+      <li><b>예산</b> 3인 400만원</li>
+      <li><b>항공</b> 직항만</li>
+      <li><b>출발</b> 1/6 (1/5 출발 불가)</li>
+      <li><b>이동</b> 운전 없음</li>
+      <li><b>제외</b> 태국 · 캄보디아 (베트남은 푸꾸옥만)</li>
+    </ul>
+  </header>
+
+  <nav class="jump" aria-label="후보지 바로가기"><a href="#guam"><span class="rank sm">1</span>괌</a><a href="#okinawa"><span class="rank sm">2</span>오키나와</a><a href="#kaohsiung"><span class="rank sm">3</span>가오슝</a><a href="#phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#cebu"><span class="rank sm">5</span>세부</a><a href="#bali"><span class="rank sm">6</span>발리</a><a href="#saipan"><span class="rank sm">7</span>사이판</a></nav>
+
+  <section class="part" id="compare">
+    <div class="blockh">
+      <h2>한눈에 비교</h2>
+      <p>순위는 따뜻함, 도착 시간, 예산, 비행 부담을 함께 본 판단입니다. 이름을 누르면 상세 일정으로 갑니다.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>여행지</th><th>1월 기온</th><th>비행</th><th>도착</th><th>귀국</th><th>쓸 수 있는 날</th><th>3인 총액</th><th>한 줄 평</th></tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#guam"><span class="rank">1</span><span class="nm">괌</span><span class="code">GUM</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill good">24~29°C, 건기</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">4시간 30분</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill warn">오후 3~4시</span><small>오전편이 있을 때. 없으면 자정</small></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill bad">새벽 2~4시대</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3.5일</b><small>오전편 기준</small></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">380만~490만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">따뜻함과 시간을 모두 잡지만 예산이 빠듯함</div></td>
+      </tr>
+
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#okinawa"><span class="rank">2</span><span class="nm">오키나와</span><span class="code">OKA</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill warn">14~20°C</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">2시간 30분</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill good">낮 15시대</span></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill good">낮</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">4일</b></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">250만~380만원</b><span class="pill good">예산 안</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">시간과 돈은 가장 여유롭지만 선선함</div></td>
+      </tr>
+
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#kaohsiung"><span class="rank">3</span><span class="nm">가오슝</span><span class="code">KHH</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill warn">16~24°C, 건기</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">약 3시간</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill neutral">확인 필요</span></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill neutral">확인 필요</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">약 4일</b><small>낮편 기준</small></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">180만~290만원</b><span class="pill good">예산 안</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">가장 저렴하고 먹거리가 강점</div></td>
+      </tr>
+
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#phuquoc"><span class="rank">4</span><span class="nm">푸꾸옥</span><span class="code">PQC</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill good">24~31°C, 건기</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">약 6시간</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill warn">밤 9~10시</span></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill bad">밤 10시경</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일</b></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">280만~420만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">건기라 날씨가 가장 확실하고 예산도 맞지만 같은 베트남</div></td>
+      </tr>
+
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#cebu"><span class="rank">5</span><span class="nm">세부</span><span class="code">CEB</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill good">24~30°C, 가끔 비</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">4시간 45분</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill bad">새벽 1시경</span></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill bad">새벽 1~2시대</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일</b></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">290만~420만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">따뜻하고 예산은 맞지만 왕복 모두 심야 비행</div></td>
+      </tr>
+
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#bali"><span class="rank">6</span><span class="nm">발리</span><span class="code">DPS</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill good">27~31°C, 우기</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">약 7시간</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill bad">밤 21:45</span></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill bad">밤 22:45</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일</b></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">340만~460만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">가장 먼 나라 느낌이지만 실제로는 3일</div></td>
+      </tr>
+
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#saipan"><span class="rank">7</span><span class="nm">사이판</span><span class="code">SPN</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill good">24~29°C, 건기</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">4시간 30분</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill bad">새벽 3:40</span></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill bad">새벽 4:50</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일</b></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">380만~450만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">바다는 최고지만 할 거리가 적고 왕복 심야</div></td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span class="pill good">초록</span>유리
+      <span class="pill warn">주황</span>애매
+      <span class="pill bad">빨강</span>불리
+      <span class="pill">회색</span>확인 필요
+    </div>
+  </section>
+
+  <section class="part" id="budget">
+    <div class="blockh">
+      <h2>3인 총액 범위</h2>
+      <p>막대는 항공·숙소·식비·현지 비용을 더한 추정 범위입니다. 빨간 점선이 예산 400만원입니다.</p>
+    </div>
+    <div class="rb" style="--cap: 67.57%">
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">GUM</span>괌</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:62.16%;width:29.73%"></span></div>
+        <div class="rb-val num">380~490만</div>
+      </div>
+
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">OKA</span>오키나와</div>
+        <div class="rb-track"><span class="rb-bar good" style="left:27.03%;width:35.13%"></span></div>
+        <div class="rb-val num">250~380만</div>
+      </div>
+
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">KHH</span>가오슝</div>
+        <div class="rb-track"><span class="rb-bar good" style="left:8.11%;width:29.73%"></span></div>
+        <div class="rb-val num">180~290만</div>
+      </div>
+
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">PQC</span>푸꾸옥</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:35.14%;width:37.83%"></span></div>
+        <div class="rb-val num">280~420만</div>
+      </div>
+
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">CEB</span>세부</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:37.84%;width:35.13%"></span></div>
+        <div class="rb-val num">290~420만</div>
+      </div>
+
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">DPS</span>발리</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:51.35%;width:32.43%"></span></div>
+        <div class="rb-val num">340~460만</div>
+      </div>
+
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">SPN</span>사이판</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:62.16%;width:18.92%"></span></div>
+        <div class="rb-val num">380~450만</div>
+      </div>
+      <div class="rb-axis"><span></span><div><span class="rb-tick" style="left:13.51%"><i>200만</i></span><span class="rb-tick" style="left:40.54%"><i>300만</i></span><span class="rb-tick" style="left:94.59%"><i>500만</i></span><span class="rb-cap" style="left:67.57%"><i>예산 400만</i></span></div><span></span></div>
+    </div>
+  </section>
+
+  <section class="part" id="where">
+    <div class="blockh">
+      <h2>위치와 비행시간</h2>
+      <p>점선은 인천에서 가는 직항 경로이고, 이름 옆 시간은 대략적인 비행시간입니다.</p>
+    </div>
+    <div class="map-wrap">
+<svg class="map" viewBox="0 0 596.0 618.0" role="img" aria-labelledby="mapTitle mapDesc">
+  <title id="mapTitle">인천과 7개 후보지 위치</title>
+  <desc id="mapDesc">인천에서 각 후보지까지의 직항 경로와 대략적인 비행시간을 보여주는 개략 지도입니다.</desc>
+  <rect class="sea" x="0" y="0" width="596.0" height="618.0"/>
+  <path class="land" d="M-21.0,1.0 L243.0,1.0 L270.5,45.0 L232.0,60.4 L246.3,76.9 L281.5,74.7 L259.5,100.0 L273.8,138.5 L273.8,155.0 L254.0,188.0 L226.5,221.0 L182.5,240.8 L149.5,254.0 L122.0,248.5 L105.5,265.0 L97.8,281.5 L131.9,320.0 L136.3,347.5 L111.0,369.5 L86.8,390.4 L86.8,370.6 L67.0,364.0 L43.9,338.7 L34.0,353.0 L25.2,383.8 L38.4,408.0 L69.2,427.8 L80.2,469.6 L71.4,470.7 L48.3,454.2 L37.3,424.5 L15.3,397.0 L18.6,375.0 L8.7,303.5 L-21.0,309.0 Z"/>
+<path class="land" d="M301.3,45.0 L310.1,59.3 L321.1,70.3 L326.6,79.1 L322.2,95.6 L324.4,106.6 L337.6,104.4 L348.6,101.1 L355.2,97.8 L358.5,86.8 L357.4,74.7 L348.6,62.6 L337.6,47.2 L360.7,35.1 L371.7,19.7 L342.0,6.5 L301.3,45.0 Z"/>
+<path class="land" d="M322.2,117.6 L325.5,116.0 L329.9,117.0 L326.6,119.8 Z"/>
+<path class="land" d="M360.7,119.8 L373.9,111.0 L384.9,118.7 L379.4,139.6 L370.6,142.9 L366.2,127.5 Z"/>
+<path class="land" d="M391.5,118.7 L415.7,108.8 L410.2,118.7 L397.0,124.2 Z"/>
+<path class="land" d="M373.9,107.7 L397.0,94.5 L421.2,93.4 L438.8,74.7 L468.5,61.5 L474.0,39.5 L489.4,29.6 L494.9,50.5 L485.0,63.7 L483.9,79.1 L477.3,98.9 L464.1,101.1 L441.0,104.4 L420.1,113.2 L391.5,108.8 Z"/>
+<path class="land" d="M474.0,28.5 L492.7,17.5 L510.3,23.0 L534.5,8.7 L518.0,-1.2 L492.7,-14.4 L474.0,12.0 Z"/>
+<path class="land" d="M338.2,198.1 L340.9,194.6 L345.3,189.6 L344.8,188.6 L339.8,192.4 L338.2,196.8 Z"/>
+<path class="land" d="M270.5,206.7 L276.0,212.2 L270.5,236.4 L262.8,244.1 L256.2,236.4 L255.1,225.4 L265.0,208.9 Z"/>
+<path class="land" d="M76.3,370.0 L78.5,370.6 L78.5,374.5 L77.5,375.0 L76.9,372.8 Z"/>
+<path class="land" d="M128.6,273.8 L150.6,263.9 L155.0,269.4 L148.4,280.4 L138.5,284.8 L129.7,281.5 Z"/>
+<path class="land" d="M260.6,281.5 L278.2,281.5 L280.4,298.0 L271.6,311.2 L276.0,331.0 L298.0,342.0 L299.1,347.5 L287.0,342.0 L274.9,333.2 L260.6,332.1 L257.3,322.2 L251.8,306.8 L257.3,303.5 Z"/>
+<path class="land" d="M257.3,336.5 L270.5,339.8 L267.2,350.8 L259.5,346.4 Z"/>
+<path class="land" d="M274.9,354.1 L288.1,358.5 L282.6,369.5 L274.9,369.5 Z"/>
+<path class="land" d="M285.9,365.1 L292.5,370.6 L290.3,383.8 L281.5,377.2 Z"/>
+<path class="land" d="M291.4,361.8 L299.1,368.4 L294.7,380.5 L290.3,379.4 Z"/>
+<path class="land" d="M300.2,347.5 L316.7,349.7 L313.4,373.9 L306.8,375.0 L301.3,361.8 Z"/>
+<path class="land" d="M295.8,373.9 L304.6,373.9 L303.5,379.4 L295.8,379.4 Z"/>
+<path class="land" d="M276.0,408.0 L295.8,389.3 L314.5,379.4 L325.5,386.0 L324.4,413.5 L314.5,423.4 L298.0,415.7 L280.4,403.6 Z"/>
+<path class="land" d="M223.2,393.7 L249.6,358.5 L251.8,366.2 L229.8,392.6 Z"/>
+<path class="land" d="M138.5,465.2 L158.3,456.4 L177.0,448.7 L197.9,431.1 L211.1,419.0 L226.5,408.0 L245.2,427.8 L232.0,437.7 L228.7,474.0 L216.6,502.6 L210.0,526.8 L193.5,524.6 L160.5,518.0 L144.0,503.7 L133.0,485.0 Z"/>
+<path class="land" d="M-17.7,423.4 L6.5,427.8 L38.4,460.8 L71.4,490.5 L100.0,521.3 L97.8,548.8 L83.5,549.9 L59.3,529.0 L37.3,501.5 L19.7,466.3 L-18.8,452.0 Z"/>
+<path class="land" d="M91.2,559.8 L105.5,551.0 L125.3,554.3 L148.4,560.9 L172.6,560.9 L192.4,569.7 L192.4,579.6 L148.4,574.1 L122.0,570.8 L100.0,566.4 Z"/>
+<path class="land" d="M193.5,574.1 L201.2,573.5 L206.7,577.4 L201.2,582.4 L194.6,577.4 Z"/>
+<path class="land" d="M210.0,576.3 L217.7,576.3 L216.6,582.9 L210.0,581.8 Z"/>
+<path class="land" d="M219.9,577.4 L243.0,574.1 L244.1,580.7 L221.0,584.0 Z"/>
+<path class="land" d="M247.4,545.5 L258.4,546.6 L257.3,515.8 L268.3,537.8 L284.8,536.7 L270.5,505.9 L290.3,494.9 L265.0,499.3 L256.2,480.6 L301.3,480.6 L311.2,467.4 L300.2,475.1 L254.0,474.0 L250.7,486.1 L240.8,515.8 Z"/>
+<path class="land" d="M336.5,464.1 L343.1,460.8 L349.7,479.5 L344.2,493.8 L337.6,485.0 Z"/>
+<path class="land" d="M375.0,498.2 L408.0,494.9 L452.0,502.6 L485.0,513.6 L529.0,529.0 L556.5,551.0 L589.5,600.5 L540.0,584.0 L512.5,584.0 L485.0,585.1 L452.0,576.3 L447.6,540.0 L413.5,529.0 L386.0,515.8 Z"/>
+<path class="land" d="M524.8,339.4 L528.4,335.4 L527.9,334.7 L525.2,337.4 Z"/>
+<path class="land" d="M536.7,318.9 L538.0,317.0 L537.6,316.8 L536.5,318.4 Z"/>
+  <line class="equator" x1="0" y1="485.0" x2="596.0" y2="485.0"/>
+  <text class="eq-l" x="586.0" y="477.0" text-anchor="end">적도</text>
+  <line class="route" x1="324.8" y1="72.9" x2="526.8" y2="336.7"/><line class="route" x1="324.8" y1="72.9" x2="338.5" y2="196.7"/><line class="route" x1="324.8" y1="72.9" x2="257.3" y2="236.1"/><line class="route" x1="324.8" y1="72.9" x2="77.6" y2="372.5"/><line class="route" x1="324.8" y1="72.9" x2="297.8" y2="371.6"/><line class="route" x1="324.8" y1="72.9" x2="200.9" y2="581.2"/><line class="route" x1="324.8" y1="72.9" x2="537.2" y2="318.0"/>
+  <circle class="icn" cx="324.8" cy="72.9" r="9"/>
+  <text class="lbl" x="338.8" y="78.9"><tspan class="lbl-n">인천</tspan></text>
+  <a href="#guam"><circle class="dot" cx="526.8" cy="336.7" r="12"/><text class="dot-n" x="526.8" y="341.7">1</text></a><a href="#okinawa"><circle class="dot" cx="338.5" cy="196.7" r="12"/><text class="dot-n" x="338.5" y="201.7">2</text></a><a href="#kaohsiung"><circle class="dot" cx="257.3" cy="236.1" r="12"/><text class="dot-n" x="257.3" y="241.1">3</text></a><a href="#phuquoc"><circle class="dot" cx="77.6" cy="372.5" r="12"/><text class="dot-n" x="77.6" y="377.5">4</text></a><a href="#cebu"><circle class="dot" cx="297.8" cy="371.6" r="12"/><text class="dot-n" x="297.8" y="376.6">5</text></a><a href="#bali"><circle class="dot" cx="200.9" cy="581.2" r="12"/><text class="dot-n" x="200.9" y="586.2">6</text></a><a href="#saipan"><circle class="dot" cx="537.2" cy="318.0" r="12"/><text class="dot-n" x="537.2" y="323.0">7</text></a>
+  <text class="lbl" x="512.8" y="360.7" text-anchor="end"><tspan class="lbl-n">괌</tspan> <tspan class="lbl-t">4시간 반</tspan></text><text class="lbl" x="352.5" y="202.7" text-anchor="start"><tspan class="lbl-n">오키나와</tspan> <tspan class="lbl-t">2시간 반</tspan></text><text class="lbl" x="243.3" y="242.1" text-anchor="end"><tspan class="lbl-n">가오슝</tspan> <tspan class="lbl-t">3시간</tspan></text><text class="lbl" x="91.6" y="378.5" text-anchor="start"><tspan class="lbl-n">푸꾸옥</tspan> <tspan class="lbl-t">6시간</tspan></text><text class="lbl" x="311.8" y="377.6" text-anchor="start"><tspan class="lbl-n">세부</tspan> <tspan class="lbl-t">4시간 45분</tspan></text><text class="lbl" x="214.9" y="587.2" text-anchor="start"><tspan class="lbl-n">발리</tspan> <tspan class="lbl-t">7시간</tspan></text><text class="lbl" x="523.2" y="308.0" text-anchor="end"><tspan class="lbl-n">사이판</tspan> <tspan class="lbl-t">4시간 반</tspan></text>
+</svg>
+      <p class="map-note">위치를 보여주기 위한 개략 지도입니다. 번호를 누르면 해당 후보지로 갑니다.</p>
+    </div>
+  </section>
+
+  <section class="part" id="choose">
+    <div class="blockh">
+      <h2>고르는 기준</h2>
+      <p>세 사람이 무엇을 가장 중요하게 보는지 정하면 바로 좁혀집니다.</p>
+    </div>
+    <ul class="choose">
+      <li>
+        <span class="q">따뜻함이 가장 중요하다면</span>
+        <span class="a"><a href="#guam"><span class="rank sm">1</span>괌</a><a href="#phuquoc"><span class="rank sm">4</span>푸꾸옥</a></span>
+        <span class="why">괌은 1/6 오전 출발 직항이 있어야 합니다. 푸꾸옥은 날씨와 예산이 확실하지만 같은 베트남이고 밤에 오갑니다.</span>
+      </li>
+      <li>
+        <span class="q">선선해도 편하고 알뜰하면</span>
+        <span class="a"><a href="#okinawa"><span class="rank sm">2</span>오키나와</a><a href="#kaohsiung"><span class="rank sm">3</span>가오슝</a></span>
+        <span class="why">낮에 오가고 비행이 짧습니다. 남는 예산으로 숙소를 한 단계 올릴 수 있습니다.</span>
+      </li>
+      <li>
+        <span class="q">멀리 가보는 경험이 가장 중요하다면</span>
+        <span class="a"><a href="#bali"><span class="rank sm">6</span>발리</a></span>
+        <span class="why">가장 먼 나라 느낌이지만 1/6 출발이면 온전한 날이 3일이고 왕복 비행이 14시간 반입니다.</span>
+      </li>
+    </ul>
+  </section>
+
+
+  <section class="dest" id="guam">
+    <header class="dest-h">
+      <span class="rank big">1</span>
+      <div class="dest-t">
+        <h3>괌 <span class="code">GUM</span></h3>
+        <p class="sub">미국령 · 서태평양 · 따뜻함과 시간을 모두 잡지만 예산이 빠듯함</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill good">24~29°C, 건기</span></li>
+      <li><span>비행</span><b class="num">약 4시간 30분</b></li>
+      <li><span>도착</span><span class="pill warn">오전편이면 오후 3~4시</span></li>
+      <li><span>귀국</span><span class="pill bad">새벽 출발 (02:40~04:40)</span></li>
+      <li><span>3인 총액</span><b class="num">380만~490만원</b> <span class="pill warn">예산 경계</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>투몬 지역 호텔 4박 (닛코·크라운플라자급 1박 19만~25만원)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>1월이 건기라 7곳 중 날씨가 가장 안정적입니다.</li><li>따뜻한 곳 가운데 비행이 가장 짧습니다.</li><li>해변, 호텔, 쇼핑, 식당이 투몬에 모여 있어 걷거나 셔틀로 다닐 수 있습니다.</li><li>미국령이라 치안이 좋고 한국인 직원이 있는 호텔도 있습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>1월 항공권과 식비가 비싸 예산 400만원을 넘기기 쉽습니다.</li><li>1/6 오전 출발편이 없으면 자정에 도착합니다.</li><li>귀국편이 대부분 새벽 출발이라 마지막 밤을 공항 가는 데 씁니다.</li><li>볼거리 자체는 많지 않아 쉬는 여행에 가깝습니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>오전 출발, 오후 도착</h4>
+            <p>오전 9~10시대 인천 출발, 괌 오후 3~4시 도착. 저녁에 투몬 해변 산책.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 투몬 호텔</span><span class="lg-how">약 6km · 15분 · 택시</span><span class="lg-cost num">3.5만~4.5만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>사랑의 절벽과 투몬 해변</h4>
+            <p>오전에 택시로 사랑의 절벽 전망대에 다녀옵니다. 오후는 호텔 수영장, 해 질 무렵 투몬 해변.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 ↔ 사랑의 절벽</span><span class="lg-how">약 5km · 10분 · 택시</span><span class="lg-cost num">왕복 4만~6만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>남부 해안 투어</h4>
+            <p>호텔에서 픽업하는 단독 차량 투어로 남부 해안을 돌며 바다 전망을 봅니다. 약 4시간이라 오후엔 쉴 수 있습니다.</p>
+            <ul class="legs"><li><span class="lg-route">남부 단독 차량 투어</span><span class="lg-how">약 80km · 4시간 · 호텔 픽업</span><span class="lg-cost num">10만~30만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>쇼핑과 휴식</h4>
+            <p>T 갤러리아(투몬 도보권)와 마이크로네시아 몰에서 쇼핑. 저녁엔 호텔에서 쉬며 새벽 비행을 기다립니다.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 ↔ 마이크로네시아 몰</span><span class="lg-how">약 5km · 10분 · 쇼핑 셔틀이나 택시</span><span class="lg-cost num">택시 왕복 4만~6만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>새벽 귀국</h4>
+            <p>새벽 2시 40분~4시 40분 출발, 인천 아침 6시 반~8시 20분 도착.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 → 공항</span><span class="lg-how">약 6km · 15분 · 예약 택시</span><span class="lg-cost num">3.5만~4.5만원</span></li></ul>
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">165만~225만원</b><small>인당 55만~75만</small></li><li><span>숙소 4박</span><b class="num">80만~100만원</b></li><li><span>식비</span><b class="num">90만~110만원</b></li><li><span>택시·투어</span><b class="num">35만~45만원</b></li><li><span>보험·ETA 등</span><b class="num">약 10만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">380만~490만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 1/6 오전 출발 직항이 있는지가 핵심입니다. 괌은 전자여행허가(ETA)가 필요합니다.</p>
+  </section>
+
+  <section class="dest" id="okinawa">
+    <header class="dest-h">
+      <span class="rank big">2</span>
+      <div class="dest-t">
+        <h3>오키나와 <span class="code">OKA</span></h3>
+        <p class="sub">일본 · 시간과 돈은 가장 여유롭지만 선선함</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill warn">14~20°C</span></li>
+      <li><span>비행</span><b class="num">약 2시간 30분</b></li>
+      <li><span>도착</span><span class="pill good">낮 (예: 13:15 출발 → 15:40 도착)</span></li>
+      <li><span>귀국</span><span class="pill good">낮</span></li>
+      <li><span>3인 총액</span><b class="num">250만~380만원</b> <span class="pill good">예산 안</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>나하 시내 호텔 4박 (유이레일역 근처, 실내 수영장이나 대욕장이 있으면 좋음)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>비행이 짧고 낮에 출발해 낮에 도착합니다.</li><li>엔화가 약해 100엔이 약 847원입니다. 식비와 쇼핑 부담이 작습니다.</li><li>1월이 호텔 비수기라 숙박비가 평균 44% 내려갑니다.</li><li>츄라우미 수족관은 운전 없이 하루 버스 투어로 다녀올 수 있습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>1월 기온이 14~20°C라 따뜻한 남국 느낌은 약합니다.</li><li>바다와 야외 수영장은 구경만 합니다.</li><li>운전을 안 하면 해안 리조트보다 나하 시내에 묵는 편이 편하고, 북부는 버스 투어 일정에 맞춰야 합니다.</li><li>흐리고 바람 부는 날이 꽤 있습니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>낮 도착, 나하</h4>
+            <p>오후에 도착해 나하 국제거리에서 저녁을 먹습니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 국제거리 호텔</span><span class="lg-how">약 5km · 15분 · 유이레일(모노레일)</span><span class="lg-cost num">3인 약 1만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>고래 관찰과 슈리성</h4>
+            <p>오전에 나하 항에서 고래 관찰 반나절(선택). 오후엔 유이레일로 슈리성에 다녀옵니다.</p>
+            <ul class="legs"><li><span class="lg-route">고래 관찰 투어 (선택)</span><span class="lg-how">3~4시간 · 배 · 나하 항 출발</span><span class="lg-cost num">3인 15만~20만원</span></li><li><span class="lg-route">국제거리 ↔ 슈리성</span><span class="lg-how">유이레일 15분</span><span class="lg-cost num">3인 왕복 약 1.5만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>북부 버스 투어</h4>
+            <p>아침 8시 나하에서 출발하는 하루 버스 투어로 만좌모, 츄라우미 수족관, 비세 마을, 코우리 대교를 봅니다.</p>
+            <ul class="legs"><li><span class="lg-route">북부 버스 투어</span><span class="lg-how">약 10시간 반 · 나하 출발·도착</span><span class="lg-cost num">3인 약 12.5만원</span></li><li><span class="lg-route">수족관 입장 (별도)</span><span class="lg-how">성인 2,180엔</span><span class="lg-cost num">3인 약 5.5만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>아메리칸 빌리지</h4>
+            <p>버스로 차탄 아메리칸 빌리지에 가서 쇼핑하고 바다 일몰을 봅니다.</p>
+            <ul class="legs"><li><span class="lg-route">나하 → 차탄 아메리칸 빌리지</span><span class="lg-how">약 20km · 버스 50분~1시간</span><span class="lg-cost num">3인 왕복 약 1.5만원</span></li><li><span class="lg-route">돌아올 때 택시 (선택)</span><span class="lg-how">약 30분</span><span class="lg-cost num">약 3.5만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>남부 바다 보고 귀국</h4>
+            <p>공항 옆 세나가지마 우미카지 테라스에서 바다를 보고 낮편으로 귀국합니다.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 → 우미카지 테라스</span><span class="lg-how">약 10km · 택시 20분</span><span class="lg-cost num">약 2만원</span></li><li><span class="lg-route">우미카지 테라스 → 공항</span><span class="lg-how">약 6km · 택시 15분</span><span class="lg-cost num">약 1.5만원</span></li></ul>
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">90만~135만원</b><small>인당 30만~45만</small></li><li><span>숙소 4박</span><b class="num">60만~90만원</b><small>나하 시내</small></li><li><span>식비</span><b class="num">60만~80만원</b></li><li><span>유이레일·버스·택시</span><b class="num">10만~15만원</b></li><li><span>버스 투어·수족관·고래</span><b class="num">25만~50만원</b></li><li><span>보험·eSIM</span><b class="num">5만~10만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">250만~380만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 숙소는 유이레일역에서 가까운 곳으로 고르세요. 입국 전 Visit Japan Web을 등록하세요.</p>
+  </section>
+
+  <section class="dest" id="kaohsiung">
+    <header class="dest-h">
+      <span class="rank big">3</span>
+      <div class="dest-t">
+        <h3>가오슝 <span class="code">KHH</span></h3>
+        <p class="sub">대만 남부 · 타이난 포함 · 가장 저렴하고 먹거리가 강점</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill warn">16~24°C, 건기</span></li>
+      <li><span>비행</span><b class="num">약 3시간</b></li>
+      <li><span>도착</span><span class="pill neutral">시간대 확인 필요</span></li>
+      <li><span>귀국</span><span class="pill neutral">시간대 확인 필요</span></li>
+      <li><span>3인 총액</span><b class="num">180만~290만원</b> <span class="pill good">예산 안</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>가오슝 시내 호텔 4박 (아이허 강변이나 메이리다오역 근처)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>7곳 중 가장 저렴합니다.</li><li>1월이 건기라 맑은 날이 많고 오키나와보다 따뜻합니다.</li><li>야시장과 음식이 강점입니다.</li><li>지하철과 기차로 이동이 쉬워 운전할 필요가 없습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>해변 휴양지가 아니라 도시와 문화 여행입니다.</li><li>리조트 수영장을 즐기기는 어렵습니다.</li><li>대만을 다녀오셨다면 새로움이 적습니다.</li><li>아침저녁은 15°C 안팎이라 겉옷이 필요합니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>도착, 야시장</h4>
+            <p>시내 호텔에 체크인하고 저녁에 루이펑 야시장에 갑니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 시내 (메이리다오역)</span><span class="lg-how">약 10km · 20분 · 지하철</span><span class="lg-cost num">3인 약 5천원</span></li><li><span class="lg-route">호텔 → 루이펑 야시장</span><span class="lg-how">지하철 10~15분</span><span class="lg-cost num">3인 약 3천원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>보얼 예술특구와 아이허 강</h4>
+            <p>보얼 예술특구를 걷고 아이허 강 유람선을 탑니다. 저녁엔 롄츠탄 용호탑.</p>
+            <ul class="legs"><li><span class="lg-route">시내 → 보얼 예술특구</span><span class="lg-how">약 3km · 경전철 10분</span><span class="lg-cost num">3인 약 4천원</span></li><li><span class="lg-route">아이허 강 유람선</span><span class="lg-how">20~30분</span><span class="lg-cost num">3인 약 2만원</span></li><li><span class="lg-route">시내 → 롄츠탄</span><span class="lg-how">약 10km · 택시 20분</span><span class="lg-cost num">약 1만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>타이난 당일치기</h4>
+            <p>대만에서 가장 오래된 도시입니다. 안핑 고성과 공자묘, 옛 골목을 봅니다.</p>
+            <ul class="legs"><li><span class="lg-route">가오슝역 → 타이난역</span><span class="lg-how">약 50km · 대만철도 35분~1시간</span><span class="lg-cost num">3인 약 1.4만원</span></li><li><span class="lg-route">타이난 시내 이동</span><span class="lg-how">택시 10~20분씩</span><span class="lg-cost num">2만원 안팎</span></li><li><span class="lg-route">타이난역 → 가오슝역</span><span class="lg-how">대만철도</span><span class="lg-cost num">3인 약 1.4만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>치진섬 바다</h4>
+            <p>페리로 치진섬에 건너가 해변과 등대를 보고 해산물로 점심. 오후엔 마사지나 호텔 휴식.</p>
+            <ul class="legs"><li><span class="lg-route">구산 선착장 → 치진섬</span><span class="lg-how">페리 5분</span><span class="lg-cost num">3인 왕복 약 8천원</span></li><li><span class="lg-route">섬 안 이동</span><span class="lg-how">도보</span><span class="lg-cost num">-</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>귀국</h4>
+            <p>출발 시간에 맞춰 공항으로 갑니다.</p>
+            <ul class="legs"><li><span class="lg-route">시내 → 공항</span><span class="lg-how">약 10km · 지하철 20분</span><span class="lg-cost num">3인 약 5천원</span></li></ul>
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">75만~120만원</b><small>인당 25만~40만</small></li><li><span>숙소 4박</span><b class="num">45만~75만원</b></li><li><span>식비</span><b class="num">30만~50만원</b></li><li><span>교통</span><b class="num">5만~10만원</b></li><li><span>관광·마사지·보험</span><b class="num">25만~35만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">180만~290만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 직항(타이거항공 타이완, 티웨이, 제주항공) 출발·도착 시간을 확인하세요. 가족 중 대만에 가본 사람이 있는지도 함께 따져 보세요.</p>
+  </section>
+
+  <section class="dest" id="phuquoc">
+    <header class="dest-h">
+      <span class="rank big">4</span>
+      <div class="dest-t">
+        <h3>푸꾸옥 <span class="code">PQC</span></h3>
+        <p class="sub">베트남 남부 섬 · 건기라 날씨가 가장 확실하고 예산도 맞지만 같은 베트남</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill good">24~31°C, 건기</span></li>
+      <li><span>비행</span><b class="num">약 5시간 40분~6시간</b></li>
+      <li><span>도착</span><span class="pill warn">밤 9~10시 (17:05 출발 → 21:00)</span></li>
+      <li><span>귀국</span><span class="pill bad">밤 10시경 출발 → 인천 새벽</span></li>
+      <li><span>3인 총액</span><b class="num">280만~420만원</b> <span class="pill warn">예산 경계</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>롱비치·즈엉동 지역 리조트 4박 (노보텔급 1박 11만~15만원부터, 3인 객실은 더 비쌈)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>1월이 건기 한가운데라 7곳 중 날씨가 가장 확실합니다.</li><li>공항에서 리조트까지 15분 안팎이라 밤에 도착해도 부담이 적습니다.</li><li>그랩(차량 호출 앱)이 잘 돼 있어 운전 없이 다니기 쉽습니다.</li><li>리조트가 저렴하고 케이블카, 야시장 같은 볼거리가 있습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>같은 베트남이라 작년 다낭과 비슷하게 느끼실 수 있습니다.</li><li>비행이 약 6시간이고 밤 도착, 밤 귀국입니다.</li><li>1/6 출발이면 온전한 날이 3일입니다.</li><li>섬 남쪽과 북쪽을 오가려면 차로 30~40분씩 걸립니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>밤 도착</h4>
+            <p>오후 5시대 인천 출발, 밤 9~10시 도착(현지는 한국보다 2시간 느림). 리조트에 바로 체크인합니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 롱비치 리조트</span><span class="lg-how">약 7km · 15분 · 그랩이나 리조트 픽업</span><span class="lg-cost num">1만원 안팎</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>리조트와 야시장</h4>
+            <p>리조트 해변과 수영장에서 쉬고 롱비치 일몰을 봅니다. 저녁엔 즈엉동 야시장.</p>
+            <ul class="legs"><li><span class="lg-route">리조트 ↔ 즈엉동 야시장</span><span class="lg-how">약 5km · 15분 · 그랩</span><span class="lg-cost num">왕복 1만원 안팎</span></li><li><span class="lg-route">마사지</span><span class="lg-how">1~1.5시간</span><span class="lg-cost num">3인 5만~8만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>혼똠 케이블카와 선셋타운</h4>
+            <p>남쪽 안터이로 내려가 바다 위를 건너는 혼똠 케이블카를 탑니다. 해 질 녘엔 바로 옆 선셋타운.</p>
+            <ul class="legs"><li><span class="lg-route">리조트 → 케이블카역</span><span class="lg-how">약 25km · 30~40분 · 그랩</span><span class="lg-cost num">1.9만~2.7만원</span></li><li><span class="lg-route">혼똠 케이블카 왕복</span><span class="lg-how">편도 15~20분 · 섬 워터파크 포함</span><span class="lg-cost num">3인 약 10.5만원</span></li><li><span class="lg-route">선셋타운 → 리조트</span><span class="lg-how">약 25km · 30~40분 · 그랩</span><span class="lg-cost num">1.9만~2.7만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>그랜드월드, 밤 귀국</h4>
+            <p>오전엔 리조트에서 쉬고 오후에 북쪽 그랜드월드(운하 거리)를 구경합니다. 리조트로 돌아와 짐을 챙겨 공항으로.</p>
+            <ul class="legs"><li><span class="lg-route">리조트 ↔ 그랜드월드</span><span class="lg-how">약 20km · 35분 · 그랩</span><span class="lg-cost num">왕복 3만원 안팎</span></li><li><span class="lg-route">리조트 → 공항</span><span class="lg-how">약 7km · 15분 · 그랩</span><span class="lg-cost num">1만원 안팎</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>새벽 도착</h4>
+            <p>밤 10시경 푸꾸옥 출발, 1/10 새벽 인천 도착. 정확한 시간은 예약 화면에서 확인하세요.</p>
+            
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">135만~195만원</b><small>인당 45만~65만</small></li><li><span>숙소 4박</span><b class="num">60만~100만원</b><small>1박 15만~25만</small></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>케이블카·마사지·관광</span><b class="num">30만~45만원</b></li><li><span>그랩·보험</span><b class="num">15만~20만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">280만~420만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 한국인은 베트남에 45일까지 무비자입니다. 작년 다낭 여행과 비슷하게 느껴질 수 있다는 점을 함께 고려하세요.</p>
+  </section>
+
+  <section class="dest" id="cebu">
+    <header class="dest-h">
+      <span class="rank big">5</span>
+      <div class="dest-t">
+        <h3>세부 <span class="code">CEB</span></h3>
+        <p class="sub">필리핀 · 따뜻하고 예산은 맞지만 왕복 모두 심야 비행</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill good">24~30°C, 가끔 비</span></li>
+      <li><span>비행</span><b class="num">약 4시간 45분</b></li>
+      <li><span>도착</span><span class="pill bad">새벽 1시경</span></li>
+      <li><span>귀국</span><span class="pill bad">새벽 출발</span></li>
+      <li><span>3인 총액</span><b class="num">290만~420만원</b> <span class="pill warn">예산 경계</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>막탄 섬 해변 리조트 4박 (1/6 밤부터 예약)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>따뜻하고 예산 400만원 안에 들어올 가능성이 큽니다.</li><li>리조트 안에서 해변과 수영장을 모두 즐깁니다.</li><li>마사지와 식비가 저렴합니다.</li><li>배를 타고 섬 사이를 돌며 바다를 구경할 수 있습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>왕복 모두 심야 비행이라 첫날과 마지막 날을 거의 못 씁니다.</li><li>세부 시내 교통 체증이 심합니다.</li><li>바다에 들어가지 않으면 할 거리가 적습니다.</li><li>1월에도 가끔 비가 옵니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>밤 출발</h4>
+            <p>저녁 8~9시대 인천 출발, 1/7 새벽 1시경 도착. 리조트는 1/6 밤부터 잡아야 바로 쉴 수 있습니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 막탄 리조트</span><span class="lg-how">약 10km · 20분 · 픽업이나 그랩</span><span class="lg-cost num">1만~2만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>리조트 휴식</h4>
+            <p>늦잠을 자고 리조트 해변과 수영장에서 쉽니다. 저녁엔 마사지.</p>
+            <ul class="legs"><li><span class="lg-route">마사지 2시간</span><span class="lg-how">리조트 근처 마사지숍</span><span class="lg-cost num">3인 6만~9만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>배 타고 바다 구경</h4>
+            <p>호핑 투어로 섬 사이를 배로 돕니다. 물에 들어가지 않고 배 위에서 바다만 봐도 됩니다.</p>
+            <ul class="legs"><li><span class="lg-route">리조트 선착장 → 섬 일대</span><span class="lg-how">배 · 반나절</span><span class="lg-cost num">3인 15만~24만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>세부 시티</h4>
+            <p>산토니뇨 성당, 마젤란 십자가, 탑스 전망대 야경. 돌아와 새벽 비행 전까지 쉽니다.</p>
+            <ul class="legs"><li><span class="lg-route">막탄 → 세부 시티</span><span class="lg-how">약 20km · 40분~1시간 반 · 그랩</span><span class="lg-cost num">왕복 3만~5만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>새벽 귀국</h4>
+            <p>새벽 1~2시대 출발, 아침 7~8시 인천 도착.</p>
+            <ul class="legs"><li><span class="lg-route">리조트 → 공항</span><span class="lg-how">약 10km · 20분</span><span class="lg-cost num">1만~2만원</span></li></ul>
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">135만~195만원</b><small>인당 45만~65만</small></li><li><span>숙소 4박</span><b class="num">80만~120만원</b></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>투어·마사지</span><b class="num">20만~30만원</b></li><li><span>교통·보험 등</span><b class="num">약 15만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">290만~420만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 필리핀 입국 전 eTravel 등록이 필요합니다.</p>
+  </section>
+
+  <section class="dest" id="bali">
+    <header class="dest-h">
+      <span class="rank big">6</span>
+      <div class="dest-t">
+        <h3>발리 <span class="code">DPS</span></h3>
+        <p class="sub">인도네시아 · 가장 먼 나라 느낌이지만 실제로는 3일</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill good">27~31°C, 우기</span></li>
+      <li><span>비행</span><b class="num">약 7시간</b></li>
+      <li><span>도착</span><span class="pill bad">밤 10시경 (15:40 출발 → 21:45)</span></li>
+      <li><span>귀국</span><span class="pill bad">밤 22:45 출발 → 아침 7:15 도착</span></li>
+      <li><span>3인 총액</span><b class="num">340만~460만원</b> <span class="pill warn">예산 경계</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>우붓 2박 + 짐바란 아야나(또는 림바) 1박</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>7곳 중 가장 멀리 떠나온 느낌이 큽니다.</li><li>우붓의 문화와 남부 리조트 휴양을 함께 즐깁니다.</li><li>고급 리조트를 비교적 싸게 묵습니다.</li><li>발리를 여러 번 다녀온 가족이 있어 동선을 효율적으로 짤 수 있습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>왕복 비행이 약 14시간 반이고 밤 도착, 밤 귀국입니다.</li><li>1/6 출발이면 온전한 날이 3일뿐입니다.</li><li>1월은 우기라 오후 소나기가 잦습니다.</li><li>교통 체증이 심합니다. 우붓에서 공항까지 1시간 반~3시간 걸립니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>밤 도착, 우붓</h4>
+            <p>15:40 출발, 21:45 도착. 픽업 차량으로 우붓에 가서 자정 전후 체크인.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 우붓</span><span class="lg-how">약 37km · 밤 1시간~1시간 반 · 픽업 차량</span><span class="lg-cost num">2만~3.5만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>우붓</h4>
+            <p>뜨갈랄랑 계단식 논, 우붓 왕궁과 시장, 사라스와티 사원. 오후 소나기 시간엔 숙소 수영장과 마사지.</p>
+            <ul class="legs"><li><span class="lg-route">기사 딸린 차량 하루</span><span class="lg-how">우붓 일대 · 약 30km</span><span class="lg-cost num">약 6만원</span></li><li><span class="lg-route">마사지</span><span class="lg-how">2시간</span><span class="lg-cost num">3인 6만~10만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>남부 리조트로</h4>
+            <p>오전엔 우붓 카페. 정오 전에 짐바란으로 내려가 아야나에 체크인하고 락바에서 일몰을 봅니다.</p>
+            <ul class="legs"><li><span class="lg-route">우붓 → 짐바란</span><span class="lg-how">약 45km · 1시간 반~2시간 · 기사 차량</span><span class="lg-cost num">3만~4만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>리조트 하루</h4>
+            <p>아야나 수영장, 해변, 스파. 체크아웃 후에도 부대시설을 쓸 수 있는지 미리 확인하세요. 저녁 8시쯤 공항으로.</p>
+            <ul class="legs"><li><span class="lg-route">짐바란 → 공항</span><span class="lg-how">약 12km · 20~30분</span><span class="lg-cost num">1.5만~2만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>아침 도착</h4>
+            <p>22:45 발리 출발, 1/10 아침 7:15 인천 도착.</p>
+            
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">150만~225만원</b><small>인당 50만~75만</small></li><li><span>숙소 3박</span><b class="num">80만~110만원</b><small>아야나 1박 포함</small></li><li><span>식비</span><b class="num">55만~65만원</b></li><li><span>차량·투어·마사지</span><b class="num">30만~35만원</b></li><li><span>도착비자·관광세·보험</span><b class="num">약 25만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">340만~460만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 전자 도착비자와 관광세를 미리 결제하세요. 아야나 체크아웃 후 부대시설 이용 조건도 확인하세요.</p>
+  </section>
+
+  <section class="dest" id="saipan">
+    <header class="dest-h">
+      <span class="rank big">7</span>
+      <div class="dest-t">
+        <h3>사이판 <span class="code">SPN</span></h3>
+        <p class="sub">미국령 북마리아나 · 바다는 최고지만 할 거리가 적고 왕복 심야</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill good">24~29°C, 건기</span></li>
+      <li><span>비행</span><b class="num">약 4시간 30분</b></li>
+      <li><span>도착</span><span class="pill bad">새벽 3시 40분 (22:15 출발)</span></li>
+      <li><span>귀국</span><span class="pill bad">새벽 4시 50분 출발</span></li>
+      <li><span>3인 총액</span><b class="num">380만~450만원</b> <span class="pill warn">예산 경계</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>가라판·산로케 리조트 4박 (세 끼 포함 상품이 있는 켄싱턴 등)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>바다 색이 7곳 중 가장 예쁩니다.</li><li>1월이 건기라 날씨가 안정적입니다.</li><li>섬이 작아 이동이 짧습니다.</li><li>세 끼 포함 리조트를 고르면 식사 걱정이 없습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>왕복 모두 새벽 비행입니다.</li><li>할 거리가 적어 4일이 길게 느껴질 수 있습니다.</li><li>1월 항공권이 비싸 예산 400만원 경계입니다.</li><li>직항이 적어 시간대를 고를 수 없습니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>밤 출발</h4>
+            <p>밤 10시 15분 출발, 1/7 새벽 3시 40분 도착. 숙소는 1/6 밤부터 잡습니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 가라판 호텔</span><span class="lg-how">약 13km · 20분 · 호텔 픽업이나 택시</span><span class="lg-cost num">약 4만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>리조트 휴식</h4>
+            <p>늦잠을 자고 리조트 수영장에서 쉽니다. 해 질 무렵 마이크로 비치 일몰.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 → 마이크로 비치</span><span class="lg-how">가라판 도보권</span><span class="lg-cost num">-</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>마나가하 섬</h4>
+            <p>배로 15분 거리의 작은 섬에서 바다를 봅니다. 물에 들어가지 않아도 경치가 좋습니다.</p>
+            <ul class="legs"><li><span class="lg-route">가라판 선착장 → 마나가하 섬</span><span class="lg-how">배 15분 · 반나절</span><span class="lg-cost num">3인 약 20만원 (입도료 포함)</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>북부 섬 투어</h4>
+            <p>호텔에서 픽업하는 반나절 투어로 만세절벽, 새섬, 그로토 전망대를 봅니다. 저녁엔 새벽 비행 전 호텔에서 쉽니다.</p>
+            <ul class="legs"><li><span class="lg-route">북부 섬 투어</span><span class="lg-how">약 20km · 반나절 · 호텔 픽업 차량</span><span class="lg-cost num">3인 10만~20만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/10</b><span>일</span></div>
+          <div class="day-b">
+            <h4>새벽 귀국</h4>
+            <p>새벽 4시 50분 출발, 아침 8시 50분 인천 도착.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 → 공항</span><span class="lg-how">약 13km · 20분 · 예약 택시나 호텔 픽업</span><span class="lg-cost num">약 4만원</span></li></ul>
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">165만~210만원</b><small>인당 55만~70만</small></li><li><span>숙소 4박</span><b class="num">80만~100만원</b></li><li><span>식비</span><b class="num">70만~75만원</b></li><li><span>투어·택시</span><b class="num">약 45만원</b></li><li><span>보험·ETA</span><b class="num">약 20만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">380만~450만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 괌과 같이 전자여행허가(ETA)가 필요합니다. 세 끼 포함 상품은 3인 요금을 따로 확인하세요.</p>
+  </section>
+
+  <footer class="foot">
+    <div>
+      <h2>계산 기준</h2>
+      <ul>
+        <li>총액은 항공(위탁수하물 포함), 숙소, 식비, 현지 교통, 관광, 보험을 더한 추정치입니다. 쇼핑비는 빠져 있습니다.</li>
+        <li>렌터카 없이 택시, 그랩, 셔틀, 투어 차량으로 다니는 기준입니다.</li>
+        <li>현지 비용은 3인 합계이며 현지 통화를 원화로 대략 바꿨습니다. 1달러 약 1,350원, 100엔 약 850원, 10만동 약 5,400원을 기준으로 했습니다.</li>
+        <li>비행 시간대는 최근 운항 기준입니다. 2027년 1월 스케줄은 예약 화면에서 다시 확인하세요.</li>
+        <li>2026년 11월 1일 작성.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>참고한 자료</h2>
+      <ul class="src"><li><a href="https://www.tripstore.kr/blog/%EA%B4%8C-%EA%B3%B5%ED%95%AD-%EC%9E%85%EA%B5%AD-%EA%B5%90%ED%86%B5%ED%8E%B8" target="_blank" rel="noopener">괌 공항–투몬 택시 요금</a></li><li><a href="https://www.metroseoul.co.kr/article/20231019500419" target="_blank" rel="noopener">괌 오전 출발편 운항 사례 (진에어)</a></li><li><a href="https://www.kayak.co.kr/%EB%82%98%ED%95%98-%ED%98%B8%ED%85%94-%EC%98%A4%ED%82%A4%EB%82%98%EC%99%80-%EB%82%98%ED%95%98%EB%82%98-%ED%98%B8%ED%85%94-%EC%8A%A4%ED%8C%8C.84186.ksp" target="_blank" rel="noopener">오키나와 호텔 1월 요금</a></li><li><a href="https://www.xn--vj4b13a.com/fx/jpy/" target="_blank" rel="noopener">엔화 환율 (2026-10-08 고시)</a></li><li><a href="https://www.kayak.co.kr/%ED%95%AD%EA%B3%B5%EA%B6%8C/%EC%84%9C%EC%9A%B8-%EA%B9%80%ED%8F%AC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-GMP/%EA%B0%80%EC%98%A4%EC%8A%9D%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-KHH" target="_blank" rel="noopener">가오슝 직항 항공사와 요금</a></li><li><a href="https://www.kayak.co.kr/%ED%95%AD%EA%B3%B5%EA%B6%8C/%EC%84%9C%EC%9A%B8-%EC%9D%B8%EC%B2%9C%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-ICN/%EC%84%B8%EB%B6%80-%EB%A7%89%ED%83%84%EC%84%B8%EB%B6%80%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-CEB" target="_blank" rel="noopener">세부 직항 출발 시간대</a></li><li><a href="https://www.traveloka.com/ko-kr/flight/route/Seoul-Bali-Denpasar.ICN.DPS" target="_blank" rel="noopener">발리 직항 시간표</a></li><li><a href="https://www.waug.com/themes/884" target="_blank" rel="noopener">발리 공항 픽업·우붓 차량 투어 요금</a></li><li><a href="https://www.baliholidaysecrets.com/transfer-to-bali-airport/" target="_blank" rel="noopener">발리 공항 이동 시간</a></li><li><a href="https://kr.trip.com/flights/airline-7c/jeju-air-flight-to-spn/" target="_blank" rel="noopener">사이판 제주항공 시간표</a></li><li><a href="https://www.card-gorilla.com/mileage/detail/3899" target="_blank" rel="noopener">푸꾸옥 직항 시간대</a></li><li><a href="https://www.vietnamtourism.com/ko/hon-thom-cable-car-in-phu-quoc-tickets-prices-and-what-the" target="_blank" rel="noopener">푸꾸옥 혼똠 케이블카 요금</a></li><li><a href="https://www.waug.com/ko/activities/136849" target="_blank" rel="noopener">오키나와 북부 버스 투어 요금</a></li><li><a href="https://www.waug.com/ko/activities/125946" target="_blank" rel="noopener">괌 남부 단독 차량 투어 요금</a></li></ul>
+    </div>
+  </footer>
+</div>
+</body></html>
