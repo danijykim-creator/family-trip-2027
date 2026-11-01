@@ -271,6 +271,17 @@ h4.blk small { font-weight: 400; }
 .bud li.tot b { color: var(--accent); font-size: 15px; }
 .check { background: var(--warn-soft); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
 .check b { color: var(--warn); margin-right: 6px; }
+.hts { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.hts li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; align-items: start; }
+.hts li.pick { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.hts li.out { opacity: .72; }
+.hts .ht-n b { font-size: 14.5px; font-weight: 600; }
+.hts .ht-tag { display: inline-block; font-size: 11.5px; line-height: 1.5; background: var(--accent); color: var(--on-accent); border-radius: 999px; padding: 0 8px; margin-left: 6px; white-space: nowrap; vertical-align: 2px; }
+.hts .ht-m { display: block; font-size: 12.5px; color: var(--muted); }
+.hts .ht-p { text-align: right; display: grid; }
+.hts .ht-p b { font-size: 14.5px; font-weight: 600; white-space: nowrap; }
+.hts li.pick .ht-p b { color: var(--accent); }
+.hts .ht-p small { font-size: 11.5px; color: var(--muted); white-space: nowrap; }
 
 /* back to top */
 .totop {
@@ -328,7 +339,7 @@ h4.blk small { font-weight: 400; }
         <td data-label="도착"><div class="v"><span class="pill good">오후 15:05</span><small>대한항공 09:50 출발</small></div></td>
         <td data-label="귀국"><div class="v"><span class="pill bad">새벽 02:00</span></div></td>
         <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일 반</b><small>첫날 오후 포함</small></div></td>
-        <td data-label="3인 총액"><div class="v"><b class="num">410만~460만원</b><span class="pill bad">예산 초과</span></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">427만~457만원</b><span class="pill bad">예산 초과</span></div></td>
         <td class="c-note" data-label="한 줄 평"><div class="v">낮에 도착하고 따뜻하지만, 식비가 비싸 400만원을 조금 넘음</div></td>
       </tr>
 
@@ -361,7 +372,7 @@ h4.blk small { font-weight: 400; }
         <td data-label="도착"><div class="v"><span class="pill good">오후 16:25</span><small>썬푸꾸옥항공 12:25 출발</small></div></td>
         <td data-label="귀국"><div class="v"><span class="pill bad">새벽 00:05</span></div></td>
         <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일 반</b><small>첫날 저녁 포함</small></div></td>
-        <td data-label="3인 총액"><div class="v"><b class="num">325만~415만원</b><span class="pill warn">예산 경계</span></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">358만~408만원</b><span class="pill warn">예산 경계</span></div></td>
         <td class="c-note" data-label="한 줄 평"><div class="v">건기 날씨에 낮 도착편도 있지만, 같은 베트남이고 귀국이 새벽</div></td>
       </tr>
 
@@ -405,8 +416,8 @@ h4.blk small { font-weight: 400; }
     <div class="rb" style="--cap: 67.57%">
       <div class="rb-row">
         <div class="rb-name"><span class="code">GUM</span>괌</div>
-        <div class="rb-track"><span class="rb-bar bad" style="left:70.27%;width:13.51%"></span></div>
-        <div class="rb-val num">410~460만</div>
+        <div class="rb-track"><span class="rb-bar bad" style="left:74.86%;width:8.11%"></span></div>
+        <div class="rb-val num">427~457만</div>
       </div>
 
       <div class="rb-row">
@@ -423,8 +434,8 @@ h4.blk small { font-weight: 400; }
 
       <div class="rb-row">
         <div class="rb-name"><span class="code">PQC</span>푸꾸옥</div>
-        <div class="rb-track"><span class="rb-bar warn" style="left:47.3%;width:24.32%"></span></div>
-        <div class="rb-val num">325~415만</div>
+        <div class="rb-track"><span class="rb-bar warn" style="left:56.22%;width:13.51%"></span></div>
+        <div class="rb-val num">358~408만</div>
       </div>
 
       <div class="rb-row">
@@ -533,9 +544,9 @@ h4.blk small { font-weight: 400; }
       <li><span>비행</span><b class="num">약 4시간 15분</b></li>
       <li><span>도착</span><span class="pill good">오후 15:05 (대한항공 09:50 출발)</span></li>
       <li><span>귀국</span><span class="pill bad">1/10 새벽 02:00 출발 → 05:50 도착</span></li>
-      <li><span>3인 총액</span><b class="num">410만~460만원</b> <span class="pill bad">예산 초과</span></li>
+      <li><span>3인 총액</span><b class="num">427만~457만원</b> <span class="pill bad">예산 초과</span></li>
     </ul>
-    <p class="stay"><span>숙소</span>투몬 지역 호텔 4박 (닛코·크라운플라자급 1박 19만~25만원)</p>
+    <p class="stay"><span>숙소</span>크라운 플라자 리조트 괌 4박 (투몬 해변, 평점 9.0, 4박 약 97만원)</p>
     <div class="pc">
       <div class="pc-col good"><h4>장점</h4><ul><li>대한항공 09:50편으로 1/6 오후 3시에 도착해 첫날 오후부터 쓸 수 있습니다.</li><li>1월이 건기라 날씨가 안정적이고, 따뜻한 곳 가운데 비행이 가장 짧습니다.</li><li>해변, 호텔, 쇼핑, 식당이 투몬에 모여 있어 걷거나 셔틀로 다닐 수 있습니다.</li><li>미국령이라 치안이 좋고 한국인 직원이 있는 호텔도 있습니다.</li></ul></div>
       <div class="pc-col bad"><h4>단점</h4><ul><li>식비가 비싸 3인 총액이 400만원을 조금 넘습니다.</li><li>귀국편이 새벽 2시대 출발이라 마지막 밤을 공항 가는 데 씁니다. 낮 귀국편(대한항공 16:50)은 인당 약 16만원 더 듭니다.</li><li>볼거리 자체는 많지 않아 쉬는 여행에 가깝습니다.</li></ul></div>
@@ -583,11 +594,12 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    <h4 class="blk">조회한 숙소 <small>1/6~1/10 4박 총액 · 세금 포함 · 성인 3명</small></h4><ul class="hts"><li class="pick"><div class="ht-n"><b>크라운 플라자 리조트 괌</b><span class="ht-tag">추천</span><span class="ht-m">5성 · 평점 9.0 (리뷰 149개) · 투몬</span><span class="ht-m">괌 패밀리 호텔 2위 · 애프터눈 티 · 무료 취소 · 트립닷컴 다이아몬드 회원가</span></div><div class="ht-p"><b class="num">97.0만원</b><small>1박 24.2만</small></div></li><li class=""><div class="ht-n"><b>슈어스테이 호텔 괌 에어포트 사우스</b><span class="ht-m">3성 · 평점 7.0 (리뷰 139개) · 공항 근처</span><span class="ht-m">조식 포함 · 야외 수영장 · 투몬까지 택시로 다녀야 함</span></div><div class="ht-p"><b class="num">65.4만원</b><small>1박 16.4만</small></div></li><li class=""><div class="ht-n"><b>그랜드 플라자 호텔</b><span class="ht-m">2성 · 평점 6.9 (리뷰 119개) · 투몬</span><span class="ht-m">침실 2개, 침대 4개 (60㎡) · 루프탑 수영장</span></div><div class="ht-p"><b class="num">95.7만원</b><small>1박 23.9만</small></div></li><li class=""><div class="ht-n"><b>퍼시픽 아일랜드 클럽 괌</b><span class="ht-m">4성 · 평점 8.0 (리뷰 85개) · 투몬</span><span class="ht-m">워터파크 무료 · 무료 취소</span></div><div class="ht-p"><b class="num">111.9만원</b><small>1박 28.0만</small></div></li></ul>
     <h4 class="blk">예산 내역</h4>
-    <ul class="bud"><li><span>항공</span><b class="num">약 195만원</b><small>인당 약 65만 · 조회 가격, 새벽 귀국편 기준</small></li><li><span>숙소 4박</span><b class="num">80만~100만원</b></li><li><span>식비</span><b class="num">90만~110만원</b></li><li><span>택시·투어</span><b class="num">35만~45만원</b></li><li><span>보험·ETA 등</span><b class="num">약 10만원</b></li>
-      <li class="tot"><span>합계</span><b class="num">410만~460만원</b></li>
+    <ul class="bud"><li><span>항공</span><b class="num">약 195만원</b><small>인당 약 65만 · 조회 가격, 새벽 귀국편 기준</small></li><li><span>숙소 4박</span><b class="num">약 97만원</b><small>크라운 플라자 · 조회 가격</small></li><li><span>식비</span><b class="num">90만~110만원</b></li><li><span>택시·투어</span><b class="num">35만~45만원</b></li><li><span>보험·ETA 등</span><b class="num">약 10만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">427만~457만원</b></li>
     </ul>
-    <p class="check"><b>확인할 것</b> 대한항공 09:50 가는 편의 왕복 최저가는 조회 화면 기준 인당 650,100원입니다. 이 편을 누른 뒤 새벽 귀국편(에어서울 02:00이나 진에어 02:20)을 붙인 가격을 성인 3명으로 확인하세요. 저녁 출발 에어서울 19:25편(새벽 1:00 도착)으로 바꾸면 인당 약 11만원 싸지만 첫날을 못 씁니다. 괌은 전자여행허가(ETA)가 필요합니다.</p>
+    <p class="check"><b>확인할 것</b> 대한항공 09:50 가는 편의 왕복 최저가는 조회 화면 기준 인당 650,100원입니다. 이 편을 누른 뒤 새벽 귀국편(에어서울 02:00이나 진에어 02:20)을 붙인 가격을 성인 3명으로 확인하세요. 저녁 출발 에어서울 19:25편(새벽 1:00 도착)으로 바꾸면 인당 약 11만원 싸지만 첫날을 못 씁니다. 크라운 플라자는 성인 3명이 한 방에 묵는 침대 구성인지 확인하세요. 괌은 전자여행허가(ETA)가 필요합니다.</p>
   </section>
 
   <section class="dest" id="kaohsiung">
@@ -653,6 +665,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 146만원</b><small>인당 48.5만 · 조회 가격</small></li><li><span>숙소 4박</span><b class="num">45만~75만원</b></li><li><span>식비</span><b class="num">30만~50만원</b></li><li><span>교통</span><b class="num">5만~10만원</b></li><li><span>관광·마사지·보험</span><b class="num">24만~39만원</b></li>
       <li class="tot"><span>합계</span><b class="num">250만~320만원</b></li>
@@ -723,6 +736,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 162만원</b><small>인당 약 54만 · 조회 가격</small></li><li><span>숙소 4박</span><b class="num">60만~90만원</b><small>나하 시내</small></li><li><span>식비</span><b class="num">60만~80만원</b></li><li><span>유이레일·버스·택시</span><b class="num">10만~15만원</b></li><li><span>버스 투어·수족관·고래</span><b class="num">20만~40만원</b><small>고래 관찰은 선택</small></li><li><span>보험·eSIM</span><b class="num">5만~10만원</b></li>
       <li class="tot"><span>합계</span><b class="num">317만~397만원</b></li>
@@ -743,29 +757,29 @@ h4.blk small { font-weight: 400; }
       <li><span>비행</span><b class="num">약 6시간</b></li>
       <li><span>도착</span><span class="pill good">오후 16:25 (썬푸꾸옥항공 12:25 출발)</span></li>
       <li><span>귀국</span><span class="pill bad">1/10 새벽 00:05 출발 → 07:20 도착</span></li>
-      <li><span>3인 총액</span><b class="num">325만~415만원</b> <span class="pill warn">예산 경계</span></li>
+      <li><span>3인 총액</span><b class="num">358만~408만원</b> <span class="pill warn">예산 경계</span></li>
     </ul>
-    <p class="stay"><span>숙소</span>롱비치·즈엉동 지역 리조트 4박 (노보텔급 1박 11만~15만원부터, 3인 객실은 더 비쌈)</p>
+    <p class="stay"><span>숙소</span>옹랑 해변 빌라 4박 (디 오로라 리트리트, 침실 2개, 조식 포함, 4박 약 93만원)</p>
     <div class="pc">
-      <div class="pc-col good"><h4>장점</h4><ul><li>1월이 건기 한가운데라 6곳 중 날씨가 가장 확실합니다.</li><li>썬푸꾸옥항공 낮 출발편(12:25 → 16:25)이 있어 첫날 저녁부터 쓸 수 있습니다.</li><li>공항에서 리조트까지 15분 안팎이고, 그랩(차량 호출 앱)으로 운전 없이 다니기 쉽습니다.</li><li>리조트가 저렴하고 케이블카, 야시장 같은 볼거리가 있습니다.</li></ul></div>
-      <div class="pc-col bad"><h4>단점</h4><ul><li>같은 베트남이라 작년 다낭과 비슷하게 느끼실 수 있습니다.</li><li>귀국편이 자정 이후 출발이라 마지막 밤을 비행기에서 보냅니다.</li><li>항공권이 인당 60만원 안팎이라 예산 400만원 경계입니다.</li><li>섬 남쪽과 북쪽을 오가려면 차로 30~40분씩 걸립니다.</li></ul></div>
+      <div class="pc-col good"><h4>장점</h4><ul><li>1월이 건기 한가운데라 6곳 중 날씨가 가장 확실합니다.</li><li>썬푸꾸옥항공 낮 출발편(12:25 → 16:25)이 있어 첫날 저녁부터 쓸 수 있습니다.</li><li>침실 2개짜리 빌라를 조식 포함 1박 23만원에 묵습니다.</li><li>그랩(차량 호출 앱)으로 운전 없이 다니기 쉽고, 케이블카와 야시장 같은 볼거리가 있습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>같은 베트남이라 작년 다낭과 비슷하게 느끼실 수 있습니다.</li><li>귀국편이 자정 이후 출발이라 마지막 밤을 비행기에서 보냅니다.</li><li>항공권이 인당 60만원 안팎이라 예산 400만원 경계입니다.</li><li>옹랑은 조용하지만 남쪽 케이블카까지 차로 1시간 가까이 걸립니다.</li></ul></div>
     </div>
     <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
     <ol class="days">
         <li class="day">
           <div class="day-d"><b class="num">1/6</b><span>수</span></div>
           <div class="day-b">
-            <h4>오후 도착, 롱비치 일몰</h4>
-            <p>인천 12:25 출발, 푸꾸옥 16:25 도착(현지는 한국보다 2시간 느림). 리조트에 체크인하고 롱비치에서 일몰을 봅니다.</p>
-            <ul class="legs"><li><span class="lg-route">공항 → 롱비치 리조트</span><span class="lg-how">약 7km · 15분 · 그랩이나 리조트 픽업</span><span class="lg-cost num">1만원 안팎</span></li></ul>
+            <h4>오후 도착, 옹랑 해변 일몰</h4>
+            <p>인천 12:25 출발, 푸꾸옥 16:25 도착(현지는 한국보다 2시간 느림). 옹랑 빌라에 체크인하고 해변에서 일몰을 봅니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 옹랑 빌라</span><span class="lg-how">약 20km · 30분 · 그랩이나 숙소 픽업</span><span class="lg-cost num">1.5만~2만원</span></li></ul>
           </div>
         </li>
         <li class="day">
           <div class="day-d"><b class="num">1/7</b><span>목</span></div>
           <div class="day-b">
-            <h4>리조트와 야시장</h4>
-            <p>리조트 해변과 수영장에서 쉽니다. 저녁엔 즈엉동 야시장과 마사지.</p>
-            <ul class="legs"><li><span class="lg-route">리조트 ↔ 즈엉동 야시장</span><span class="lg-how">약 5km · 15분 · 그랩</span><span class="lg-cost num">왕복 1만원 안팎</span></li><li><span class="lg-route">마사지</span><span class="lg-how">1~1.5시간</span><span class="lg-cost num">3인 5만~8만원</span></li></ul>
+            <h4>빌라 휴식과 야시장</h4>
+            <p>빌라 수영장과 옹랑 해변에서 쉽니다. 저녁엔 즈엉동 야시장과 마사지.</p>
+            <ul class="legs"><li><span class="lg-route">빌라 ↔ 즈엉동 야시장</span><span class="lg-how">약 10km · 20분 · 그랩</span><span class="lg-cost num">왕복 1.5만~2만원</span></li><li><span class="lg-route">마사지</span><span class="lg-how">1~1.5시간</span><span class="lg-cost num">3인 5만~8만원</span></li></ul>
           </div>
         </li>
         <li class="day">
@@ -773,15 +787,15 @@ h4.blk small { font-weight: 400; }
           <div class="day-b">
             <h4>혼똠 케이블카와 선셋타운</h4>
             <p>남쪽 안터이로 내려가 바다 위를 건너는 혼똠 케이블카를 탑니다. 해 질 녘엔 바로 옆 선셋타운.</p>
-            <ul class="legs"><li><span class="lg-route">리조트 → 케이블카역</span><span class="lg-how">약 25km · 30~40분 · 그랩</span><span class="lg-cost num">1.9만~2.7만원</span></li><li><span class="lg-route">혼똠 케이블카 왕복</span><span class="lg-how">편도 15~20분 · 섬 워터파크 포함</span><span class="lg-cost num">3인 약 10.5만원</span></li><li><span class="lg-route">선셋타운 → 리조트</span><span class="lg-how">약 25km · 30~40분 · 그랩</span><span class="lg-cost num">1.9만~2.7만원</span></li></ul>
+            <ul class="legs"><li><span class="lg-route">빌라 → 케이블카역</span><span class="lg-how">약 40km · 50분~1시간 · 그랩</span><span class="lg-cost num">2.5만~3.5만원</span></li><li><span class="lg-route">혼똠 케이블카 왕복</span><span class="lg-how">편도 15~20분 · 섬 워터파크 포함</span><span class="lg-cost num">3인 약 10.5만원</span></li><li><span class="lg-route">선셋타운 → 빌라</span><span class="lg-how">약 40km · 50분~1시간 · 그랩</span><span class="lg-cost num">2.5만~3.5만원</span></li></ul>
           </div>
         </li>
         <li class="day">
           <div class="day-d"><b class="num">1/9</b><span>토</span></div>
           <div class="day-b">
             <h4>그랜드월드, 밤에 공항</h4>
-            <p>오전엔 리조트에서 쉬고 오후에 북쪽 그랜드월드(운하 거리)를 구경합니다. 리조트로 돌아와 쉬다가 밤 9시 반쯤 공항으로 갑니다.</p>
-            <ul class="legs"><li><span class="lg-route">리조트 ↔ 그랜드월드</span><span class="lg-how">약 20km · 35분 · 그랩</span><span class="lg-cost num">왕복 3만원 안팎</span></li><li><span class="lg-route">리조트 → 공항</span><span class="lg-how">약 7km · 15분 · 그랩</span><span class="lg-cost num">1만원 안팎</span></li></ul>
+            <p>오전엔 빌라에서 쉬고 오후에 북쪽 그랜드월드(운하 거리)를 구경합니다. 빌라로 돌아와 쉬다가 밤 9시쯤 공항으로 갑니다.</p>
+            <ul class="legs"><li><span class="lg-route">빌라 ↔ 그랜드월드</span><span class="lg-how">약 15km · 25분 · 그랩</span><span class="lg-cost num">왕복 2만~3만원</span></li><li><span class="lg-route">빌라 → 공항</span><span class="lg-how">약 20km · 30분 · 그랩</span><span class="lg-cost num">1.5만~2만원</span></li></ul>
           </div>
         </li>
         <li class="day">
@@ -793,11 +807,12 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    <h4 class="blk">조회한 숙소 <small>1/6~1/10 4박 총액 · 세금 포함 · 성인 3명</small></h4><ul class="hts"><li class="pick"><div class="ht-n"><b>디 오로라 리트리트, 옹랑 비치</b><span class="ht-tag">추천</span><span class="ht-m">평점 9.6 (리뷰 8개) · 옹랑 해변</span><span class="ht-m">빌라 95㎡, 침실 2개 · 수영장 · 조식 포함 · 무료 취소</span></div><div class="ht-p"><b class="num">93.4만원</b><small>1박 23.3만</small></div></li><li class=""><div class="ht-n"><b>HN 가든 빌라</b><span class="ht-m">평점 9.9 (리뷰 9개) · 즈엉동 근처</span><span class="ht-m">무료 취소</span></div><div class="ht-p"><b class="num">40.7만원</b><small>1박 10.2만</small></div></li><li class=""><div class="ht-n"><b>톰빌라 푸꾸옥</b><span class="ht-m">신규 등록, 리뷰 없음 · 롱비치</span><span class="ht-m">무료 취소</span></div><div class="ht-p"><b class="num">72.4만원</b><small>1박 18.1만</small></div></li><li class="out"><div class="ht-n"><b>씨라비 비치프런트 빌라</b><span class="ht-m">평점 9.3 (리뷰 19개) · 롱비치 해변 앞</span><span class="ht-m">빌라 80㎡, 침실 2개 · 무료 취소 · 예산 밖</span></div><div class="ht-p"><b class="num">258.7만원</b><small>1박 64.7만</small></div></li></ul>
     <h4 class="blk">예산 내역</h4>
-    <ul class="bud"><li><span>항공</span><b class="num">180만~190만원</b><small>인당 60만~62.5만</small></li><li><span>숙소 4박</span><b class="num">60만~100만원</b><small>1박 15만~25만</small></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>케이블카·마사지·관광</span><b class="num">30만~45만원</b></li><li><span>그랩·보험</span><b class="num">15만~20만원</b></li>
-      <li class="tot"><span>합계</span><b class="num">325만~415만원</b></li>
+    <ul class="bud"><li><span>항공</span><b class="num">180만~190만원</b><small>인당 60만~62.5만</small></li><li><span>숙소 4박</span><b class="num">약 93만원</b><small>디 오로라 리트리트 · 조회 가격</small></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>케이블카·마사지·관광</span><b class="num">30만~45만원</b></li><li><span>그랩·보험</span><b class="num">15만~20만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">358만~408만원</b></li>
     </ul>
-    <p class="check"><b>확인할 것</b> 썬푸꾸옥항공 12:25편은 9석 미만 남았습니다. 이 편에 트리니티 00:05 귀국편을 붙인 가격을 성인 3명으로 확인하세요. 한국인은 베트남에 45일까지 무비자입니다.</p>
+    <p class="check"><b>확인할 것</b> 썬푸꾸옥항공 12:25편은 9석 미만 남았습니다. 이 편에 트리니티 00:05 귀국편을 붙인 가격을 성인 3명으로 확인하세요. 숙소 후보는 모두 리뷰가 20개 미만인 빌라라 최근 후기와 사진을 꼭 보세요. 한국인은 베트남에 45일까지 무비자입니다.</p>
   </section>
 
   <section class="dest" id="cebu">
@@ -863,6 +878,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">233만~245만원</b><small>인당 77.5만 · 조회 가격. 귀국편 수하물을 더하면 위쪽</small></li><li><span>숙소 4박</span><b class="num">80만~120만원</b></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>투어·마사지</span><b class="num">20만~30만원</b></li><li><span>교통·보험 등</span><b class="num">약 15만원</b></li>
       <li class="tot"><span>합계</span><b class="num">388만~470만원</b></li>
@@ -933,6 +949,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 254만원</b><small>인당 84.8만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">80만~110만원</b><small>아야나 1박 포함</small></li><li><span>식비</span><b class="num">55만~65만원</b></li><li><span>차량·투어·마사지</span><b class="num">30만~35만원</b></li><li><span>도착비자·관광세·보험</span><b class="num">약 25만원</b></li>
       <li class="tot"><span>합계</span><b class="num">444만~489만원</b></li>
@@ -952,6 +969,7 @@ h4.blk small { font-weight: 400; }
         <li>총액은 항공(위탁수하물 포함), 숙소, 식비, 현지 교통, 관광, 보험을 더한 추정치입니다. 쇼핑비는 빠져 있습니다.</li>
         <li>렌터카 없이 택시, 그랩, 셔틀, 투어 차량으로 다니는 기준입니다.</li>
         <li>현지 비용은 3인 합계이며 현지 통화를 원화로 대략 바꿨습니다. 1달러 약 1,350원, 100엔 약 850원, 10만동 약 5,400원을 기준으로 했습니다.</li>
+        <li>푸꾸옥과 괌 숙소비는 같은 날 트립닷컴에서 1/6~1/10, 4박, 성인 3명으로 조회한 세금 포함 총액입니다. 나머지 네 곳의 숙소비는 추정치입니다.</li>
         <li>항공편과 항공권 가격은 2026년 11월 1일 트립닷컴에서 1/6 출발로 조회한 1인 왕복 요금을 3배 한 값입니다. 성인 3명으로 다시 조회하면 달라질 수 있습니다. 1/6 직항이 없는 사이판은 후보에서 뺐습니다.</li>
         <li>2026년 11월 1일 작성.</li>
       </ul>
