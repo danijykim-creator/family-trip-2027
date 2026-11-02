@@ -145,6 +145,20 @@ h1 { font-size: clamp(26px, 5.2vw, 36px); font-weight: 700; letter-spacing: -0.0
   .rk-c { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* package comparison */
+.pkg { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px 14px; display: grid; gap: 10px; }
+.pkg-l { font-size: 13.5px; color: var(--muted); }
+.pkg-r { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.pkg-r li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 7px 11px; border-radius: 8px; font-size: 14px; background: var(--neutral-soft); }
+.pkg-r li.good { background: var(--good-soft); }
+.pkg-r li.warn { background: var(--warn-soft); }
+.pkg-r li.bad { background: var(--bad-soft); }
+.pkg-r li b { font-weight: 600; white-space: nowrap; }
+.pkg-r li.good b { color: var(--good); }
+.pkg-r li.warn b { color: var(--warn); }
+.pkg-r li.bad b { color: var(--bad); }
+.pkg-n { font-size: 13.5px; }
+
 /* shopping list */
 .shop { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
 .shop-c { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; scroll-margin-top: 64px; }
@@ -372,17 +386,17 @@ h4.blk small { font-weight: 400; }
   <header class="top" id="top">
     <p class="eyebrow">2027년 1~3월 · 가족 3명</p>
     <h1>가족여행 후보지와 날짜 비교</h1>
-    <p class="lede">직항이 있는 따뜻한 곳과 가까운 곳을 날짜 세 가지로 비교했습니다. 1월은 6곳, 2월과 3월은 홍콩·마카오를 더한 7곳을 봅니다. 운전은 하지 않고 택시, 그랩, 셔틀, 투어 차량으로 다니는 기준입니다. 금액은 모두 3인 기준이며 쇼핑비는 빠져 있습니다.</p>
+    <p class="lede">직항이 있는 따뜻한 곳과 가까운 곳을 날짜 세 가지로 비교했습니다. 1월 6~10일은 6곳, 2월과 3월은 홍콩·마카오를 더한 7곳을 봅니다. 1월 6~9일은 가오슝만 봅니다. 운전은 하지 않고 택시, 그랩, 셔틀, 투어 차량으로 다니는 기준입니다. 금액은 모두 3인 기준이며 쇼핑비는 빠져 있습니다.</p>
     <ul class="conds">
       <li><b>예산</b> 3인 400만원</li>
       <li><b>항공</b> 직항만</li>
-      <li><b>날짜</b> 1/6~10 · 2/24~27 · 3/18~21</li>
+      <li><b>날짜</b> 1/6~10 · 1/6~9 · 2/24~27 · 3/18~21</li>
       <li><b>이동</b> 운전 없음</li>
       <li><b>제외</b> 태국 · 캄보디아 (베트남은 푸꾸옥만)</li>
     </ul>
   </header>
 
-  <nav class="jump" aria-label="날짜와 후보지 바로가기"><div class="seg" role="tablist" aria-label="여행 날짜"><button type="button" role="tab" id="t-jan" data-k="jan" aria-controls="p-jan" aria-selected="true">1월 6~10</button><button type="button" role="tab" id="t-feb" data-k="feb" aria-controls="p-feb" aria-selected="false" tabindex="-1">2월 24~27</button><button type="button" role="tab" id="t-mar" data-k="mar" aria-controls="p-mar" aria-selected="false" tabindex="-1">3월 18~21</button></div><a class="x" href="#best">추천 순위</a><a class="x" href="#where">비행 경로</a><span class="chips" data-for="jan"><a href="#guam"><span class="rank sm">1</span>괌</a><a href="#kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#okinawa"><span class="rank sm">3</span>오키나와</a><a href="#phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#cebu"><span class="rank sm">6</span>세부</a><a href="#bali"><span class="rank sm">7</span>발리</a></span><span class="chips" data-for="feb" hidden><a href="#feb-guam"><span class="rank sm">1</span>괌</a><a href="#feb-kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#feb-okinawa"><span class="rank sm">3</span>오키나와</a><a href="#feb-phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#feb-hkmacau"><span class="rank sm">5</span>홍콩·마카오</a><a href="#feb-cebu"><span class="rank sm">6</span>세부</a><a href="#feb-bali"><span class="rank sm">7</span>발리</a></span><span class="chips" data-for="mar" hidden><a href="#mar-guam"><span class="rank sm">1</span>괌</a><a href="#mar-kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#mar-okinawa"><span class="rank sm">3</span>오키나와</a><a href="#mar-phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#mar-hkmacau"><span class="rank sm">5</span>홍콩·마카오</a><a href="#mar-cebu"><span class="rank sm">6</span>세부</a><a href="#mar-bali"><span class="rank sm">7</span>발리</a></span><a class="x" href="#shop">쇼핑 목록</a></nav>
+  <nav class="jump" aria-label="날짜와 후보지 바로가기"><div class="seg" role="tablist" aria-label="여행 날짜"><button type="button" role="tab" id="t-jan" data-k="jan" aria-controls="p-jan" aria-selected="true">1월 6~10</button><button type="button" role="tab" id="t-jan9" data-k="jan9" aria-controls="p-jan9" aria-selected="false" tabindex="-1">1월 6~9</button><button type="button" role="tab" id="t-feb" data-k="feb" aria-controls="p-feb" aria-selected="false" tabindex="-1">2월 24~27</button><button type="button" role="tab" id="t-mar" data-k="mar" aria-controls="p-mar" aria-selected="false" tabindex="-1">3월 18~21</button></div><a class="x" href="#best">추천 순위</a><a class="x" href="#where">비행 경로</a><span class="chips" data-for="jan"><a href="#guam"><span class="rank sm">1</span>괌</a><a href="#kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#okinawa"><span class="rank sm">3</span>오키나와</a><a href="#phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#cebu"><span class="rank sm">6</span>세부</a><a href="#bali"><span class="rank sm">7</span>발리</a></span><span class="chips" data-for="jan9" hidden><a href="#jan9-kaohsiung"><span class="rank sm">2</span>가오슝</a></span><span class="chips" data-for="feb" hidden><a href="#feb-guam"><span class="rank sm">1</span>괌</a><a href="#feb-kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#feb-okinawa"><span class="rank sm">3</span>오키나와</a><a href="#feb-phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#feb-hkmacau"><span class="rank sm">5</span>홍콩·마카오</a><a href="#feb-cebu"><span class="rank sm">6</span>세부</a><a href="#feb-bali"><span class="rank sm">7</span>발리</a></span><span class="chips" data-for="mar" hidden><a href="#mar-guam"><span class="rank sm">1</span>괌</a><a href="#mar-kaohsiung"><span class="rank sm">2</span>가오슝</a><a href="#mar-okinawa"><span class="rank sm">3</span>오키나와</a><a href="#mar-phuquoc"><span class="rank sm">4</span>푸꾸옥</a><a href="#mar-hkmacau"><span class="rank sm">5</span>홍콩·마카오</a><a href="#mar-cebu"><span class="rank sm">6</span>세부</a><a href="#mar-bali"><span class="rank sm">7</span>발리</a></span><a class="x" href="#shop">쇼핑 목록</a></nav>
 
 
   <section class="part" id="best">
@@ -400,7 +414,7 @@ h4.blk small { font-weight: 400; }
         </div>
         <p class="rk-why">따뜻한 휴양지 가운데 낮에 도착하면서 예산 안에 드는 유일한 조합입니다. 3월엔 대한항공 낮 출발 왕복이 2월의 절반 가격입니다. 다만 새벽 5시 40분 귀국이라 실제로 쓰는 날은 2일 반입니다.</p>
         <ul class="rk-c"><li><span>따뜻함</span><span class="pill good">24~30°C</span></li><li><span>비행</span><span class="pill warn">15:05 도착 · 새벽 귀국</span></li><li><span>예산</span><span class="pill good">여유 있음</span></li><li><span>취향</span><span class="pill good">처음 가는 미국령 휴양지</span></li></ul>
-        <p class="rk-o">다른 날짜 · 1월 427만~457만원 · 2월 411만~456만원</p>
+        <p class="rk-o">다른 날짜 · 1월 4박 427만~457만원 · 2월 411만~456만원</p>
         <a class="rk-go" href="#mar-guam">3월 괌 일정 보기</a>
       </li>
       <li class="rk">
@@ -412,7 +426,7 @@ h4.blk small { font-weight: 400; }
         </div>
         <p class="rk-why">왕복 낮 비행에 7곳 중 가장 싸서 몸도 지갑도 편합니다. 3월 중순은 가오슝이 가장 따뜻해지는 때입니다. 해변 휴양보다는 도시·음식 여행입니다. 4박 5일로 길게 가려면 1월(250만~320만원)도 좋습니다.</p>
         <ul class="rk-c"><li><span>따뜻함</span><span class="pill warn">19~27°C</span></li><li><span>비행</span><span class="pill good">15:55 도착 · 17:00 귀국</span></li><li><span>예산</span><span class="pill good">가장 쌈</span></li><li><span>취향</span><span class="pill warn">해변보다 도시·음식</span></li></ul>
-        <p class="rk-o">다른 날짜 · 1월 250만~320만원 · 2월 220만~270만원</p>
+        <p class="rk-o">다른 날짜 · 1월 4박 250만~320만원 · 1월 3박 234만~287만원 · 2월 220만~270만원</p>
         <a class="rk-go" href="#mar-kaohsiung">3월 가오슝 일정 보기</a>
       </li>
       <li class="rk">
@@ -424,7 +438,7 @@ h4.blk small { font-weight: 400; }
         </div>
         <p class="rk-why">왕복 낮 비행에 마지막 날 저녁 6시 35분 출발이라 3박이어도 시간이 넉넉합니다. 치이카와 오키나와 한정 상품이 있습니다. 다만 15~20°C로 선선합니다. 3월은 일본 연휴와 겹치고 가장 싼 귀국편이 낮 12시 40분이라 2월이 낫습니다.</p>
         <ul class="rk-c"><li><span>따뜻함</span><span class="pill bad">15~20°C</span></li><li><span>비행</span><span class="pill good">14:25 도착 · 18:35 귀국</span></li><li><span>예산</span><span class="pill good">여유 있음</span></li><li><span>취향</span><span class="pill good">치이카와, 엔저 쇼핑</span></li></ul>
-        <p class="rk-o">다른 날짜 · 1월 354만~404만원 · 3월 307만~360만원</p>
+        <p class="rk-o">다른 날짜 · 1월 4박 354만~404만원 · 3월 307만~360만원</p>
         <a class="rk-go" href="#feb-okinawa">2월 오키나와 일정 보기</a>
       </li>
       <li class="rk">
@@ -436,7 +450,7 @@ h4.blk small { font-weight: 400; }
         </div>
         <p class="rk-why">가장 덥고 날씨가 확실하며, 5성 모벤픽(침실 2개, 조식 포함)에 묵어도 예산 안입니다. 다만 인천 새벽 5시 출발과 토요일 자정 귀국이 체력에 부담이고, 작년 다낭과 같은 베트남입니다.</p>
         <ul class="rk-c"><li><span>따뜻함</span><span class="pill good">25~33°C</span></li><li><span>비행</span><span class="pill bad">05:00 출발 · 자정 귀국</span></li><li><span>예산</span><span class="pill good">예산 안</span></li><li><span>취향</span><span class="pill bad">같은 베트남</span></li></ul>
-        <p class="rk-o">다른 날짜 · 1월 358만~408만원 · 2월 324만~368만원</p>
+        <p class="rk-o">다른 날짜 · 1월 4박 358만~408만원 · 2월 324만~368만원</p>
         <a class="rk-go" href="#mar-phuquoc">3월 푸꾸옥 일정 보기</a>
       </li>
       <li class="rk">
@@ -460,7 +474,7 @@ h4.blk small { font-weight: 400; }
         </div>
         <p class="rk-why">따뜻하고 3월 항공권이 싸서 예산은 넉넉합니다. 하지만 새벽 1시 20분에 도착해 첫날을 못 쓰는, 처음부터 피하려던 문제가 그대로입니다.</p>
         <ul class="rk-c"><li><span>따뜻함</span><span class="pill good">24~31°C</span></li><li><span>비행</span><span class="pill bad">새벽 01:20 도착</span></li><li><span>예산</span><span class="pill good">여유 있음</span></li><li><span>취향</span><span class="pill warn">바다 말고는 할 거리 적음</span></li></ul>
-        <p class="rk-o">다른 날짜 · 1월 388만~470만원 · 2월 338만~411만원</p>
+        <p class="rk-o">다른 날짜 · 1월 4박 388만~470만원 · 2월 338만~411만원</p>
         <a class="rk-go" href="#mar-cebu">3월 세부 일정 보기</a>
       </li>
       <li class="rk">
@@ -472,7 +486,7 @@ h4.blk small { font-weight: 400; }
         </div>
         <p class="rk-why">가장 멀리 가는 느낌은 크지만 3박 4일엔 맞지 않습니다. 밤에 도착하고, 일요일 밤 출발이라 월요일 아침에 돌아옵니다. 1월 4박 5일은 444만원부터라 예산을 넘습니다.</p>
         <ul class="rk-c"><li><span>따뜻함</span><span class="pill good">26~31°C</span></li><li><span>비행</span><span class="pill bad">밤 도착 · 월요일 아침 귀국</span></li><li><span>예산</span><span class="pill warn">400만원 안팎</span></li><li><span>취향</span><span class="pill good">가장 멀리</span></li></ul>
-        <p class="rk-o">다른 날짜 · 1월 444만~489만원 · 2월 440만~485만원</p>
+        <p class="rk-o">다른 날짜 · 1월 4박 444만~489만원 · 2월 440만~485만원</p>
         <a class="rk-go" href="#mar-bali">3월 발리 일정 보기</a>
       </li>
     </ol>
@@ -485,35 +499,35 @@ h4.blk small { font-weight: 400; }
     </div>
     <div class="tbl-wrap">
       <table class="cmp ov">
-        <thead><tr><th>여행지</th><th>1월 6~10일<small>수~일 · 4박 5일 · 조회 가격</small></th><th>2월 24~27일<small>수~토 · 3박 4일 · 항공 조회</small></th><th>3월 18~21일<small>목~일 · 3박 4일 · 항공 조회</small></th></tr></thead>
+        <thead><tr><th>여행지</th><th>1월 6~10일<small>수~일 · 4박 5일 · 조회 가격</small></th><th>1월 6~9일<small>수~토 · 3박 4일 · 항공·숙소 조회</small></th><th>2월 24~27일<small>수~토 · 3박 4일 · 항공 조회</small></th><th>3월 18~21일<small>목~일 · 3박 4일 · 항공 조회</small></th></tr></thead>
         <tbody>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#guam"><span class="rank">1</span><span class="nm">괌</span><span class="code">GUM</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#guam"><b class="num">427만~457만원</b></a><span class="pill bad">예산 초과</span><small>24~29°C · 오후 15:05 도착 · 3일 반</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-guam"><b class="num">411만~456만원</b></a><span class="pill bad">예산 초과</span><small>24~30°C · 오후 15:05 도착 · 2일 반</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-guam"><b class="num">305만~355만원</b></a><span class="pill good">예산 안</span><small>24~30°C · 오후 15:05 도착 · 2일 반</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#guam"><b class="num">427만~457만원</b></a><span class="pill bad">예산 초과</span><small>24~29°C · 오후 15:05 도착 · 3일 반</small></div></td><td data-label="1월 6~9일"><div class="v"><span class="na">조회 안 함</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-guam"><b class="num">411만~456만원</b></a><span class="pill bad">예산 초과</span><small>24~30°C · 오후 15:05 도착 · 2일 반</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-guam"><b class="num">305만~355만원</b></a><span class="pill good">예산 안</span><small>24~30°C · 오후 15:05 도착 · 2일 반</small></div></td>
       </tr>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#kaohsiung"><span class="rank">2</span><span class="nm">가오슝</span><span class="code">KHH</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#kaohsiung"><b class="num">250만~320만원</b></a><span class="pill good">예산 안</span><small>16~24°C · 낮 13:05 도착 · 4일 반</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-kaohsiung"><b class="num">220만~270만원</b></a><span class="pill good">예산 안</span><small>17~25°C · 오후 15:55 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-kaohsiung"><b class="num">198만~248만원</b></a><span class="pill good">예산 안</span><small>19~27°C · 오후 15:55 도착 · 3일</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#kaohsiung"><b class="num">250만~320만원</b></a><span class="pill good">예산 안</span><small>16~24°C · 낮 13:05 도착 · 4일 반</small></div></td><td data-label="1월 6~9일"><div class="v"><a class="ov-a" href="#jan9-kaohsiung"><b class="num">234만~287만원</b></a><span class="pill good">예산 안</span><small>16~24°C · 오후 15:55 도착 · 3일</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-kaohsiung"><b class="num">220만~270만원</b></a><span class="pill good">예산 안</span><small>17~25°C · 오후 15:55 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-kaohsiung"><b class="num">198만~248만원</b></a><span class="pill good">예산 안</span><small>19~27°C · 오후 15:55 도착 · 3일</small></div></td>
       </tr>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#okinawa"><span class="rank">3</span><span class="nm">오키나와</span><span class="code">OKA</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#okinawa"><b class="num">354만~404만원</b></a><span class="pill warn">예산 경계</span><small>14~20°C · 낮 12:35 도착 · 4일 반</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-okinawa"><b class="num">309만~366만원</b></a><span class="pill good">예산 안</span><small>15~20°C · 오후 14:25 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-okinawa"><b class="num">307만~360만원</b></a><span class="pill good">예산 안</span><small>16~22°C · 낮 12:35 도착 · 3일</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#okinawa"><b class="num">354만~404만원</b></a><span class="pill warn">예산 경계</span><small>14~20°C · 낮 12:35 도착 · 4일 반</small></div></td><td data-label="1월 6~9일"><div class="v"><span class="na">조회 안 함</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-okinawa"><b class="num">309만~366만원</b></a><span class="pill good">예산 안</span><small>15~20°C · 오후 14:25 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-okinawa"><b class="num">307만~360만원</b></a><span class="pill good">예산 안</span><small>16~22°C · 낮 12:35 도착 · 3일</small></div></td>
       </tr>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#phuquoc"><span class="rank">4</span><span class="nm">푸꾸옥</span><span class="code">PQC</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#phuquoc"><b class="num">358만~408만원</b></a><span class="pill warn">예산 경계</span><small>24~31°C · 오후 16:25 도착 · 3일 반</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-phuquoc"><b class="num">324만~368만원</b></a><span class="pill good">예산 안</span><small>24~31°C · 아침 08:50 도착 · 3일 반</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-phuquoc"><b class="num">329만~378만원</b></a><span class="pill good">예산 안</span><small>25~33°C · 아침 08:50 도착 · 3일</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#phuquoc"><b class="num">358만~408만원</b></a><span class="pill warn">예산 경계</span><small>24~31°C · 오후 16:25 도착 · 3일 반</small></div></td><td data-label="1월 6~9일"><div class="v"><span class="na">조회 안 함</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-phuquoc"><b class="num">324만~368만원</b></a><span class="pill good">예산 안</span><small>24~31°C · 아침 08:50 도착 · 3일 반</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-phuquoc"><b class="num">329만~378만원</b></a><span class="pill good">예산 안</span><small>25~33°C · 아침 08:50 도착 · 3일</small></div></td>
       </tr>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#feb-hkmacau"><span class="rank">5</span><span class="nm">홍콩·마카오</span><span class="code">MFM·HKG</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><span class="na">1월 비교에서는 뺐습니다</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-hkmacau"><b class="num">315만~418만원</b></a><span class="pill warn">예산 경계</span><small>15~20°C · 오후 14:20 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-hkmacau"><b class="num">326만~438만원</b></a><span class="pill warn">예산 경계</span><small>17~22°C · 오후 14:20 도착 · 3일</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><span class="na">1월 비교에서는 뺐습니다</span></div></td><td data-label="1월 6~9일"><div class="v"><span class="na">조회 안 함</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-hkmacau"><b class="num">315만~418만원</b></a><span class="pill warn">예산 경계</span><small>15~20°C · 오후 14:20 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-hkmacau"><b class="num">326만~438만원</b></a><span class="pill warn">예산 경계</span><small>17~22°C · 오후 14:20 도착 · 3일</small></div></td>
       </tr>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#cebu"><span class="rank">6</span><span class="nm">세부</span><span class="code">CEB</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#cebu"><b class="num">388만~470만원</b></a><span class="pill warn">예산 경계</span><small>24~30°C · 새벽 1:10 도착 · 3일 반</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-cebu"><b class="num">338만~411만원</b></a><span class="pill warn">예산 경계</span><small>24~31°C · 새벽 1:25 도착 · 2일 반</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-cebu"><b class="num">267만~340만원</b></a><span class="pill good">예산 안</span><small>24~31°C · 새벽 1:20 도착 · 2일 반</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#cebu"><b class="num">388만~470만원</b></a><span class="pill warn">예산 경계</span><small>24~30°C · 새벽 1:10 도착 · 3일 반</small></div></td><td data-label="1월 6~9일"><div class="v"><span class="na">조회 안 함</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-cebu"><b class="num">338만~411만원</b></a><span class="pill warn">예산 경계</span><small>24~31°C · 새벽 1:25 도착 · 2일 반</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-cebu"><b class="num">267만~340만원</b></a><span class="pill good">예산 안</span><small>24~31°C · 새벽 1:20 도착 · 2일 반</small></div></td>
       </tr>
       <tr>
         <td class="c-name" data-label="여행지"><a href="#bali"><span class="rank">7</span><span class="nm">발리</span><span class="code">DPS</span></a></td>
-        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#bali"><b class="num">444만~489만원</b></a><span class="pill bad">예산 초과</span><small>27~31°C · 밤 21:50 도착 · 3일</small></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-bali"><b class="num">440만~485만원</b></a><span class="pill bad">예산 초과</span><small>26~31°C · 밤 21:50 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-bali"><b class="num">394만~439만원</b></a><span class="pill warn">예산 경계</span><small>26~31°C · 밤 21:50 도착 · 3일</small></div></td>
+        <td data-label="1월 6~10일"><div class="v"><a class="ov-a" href="#bali"><b class="num">444만~489만원</b></a><span class="pill bad">예산 초과</span><small>27~31°C · 밤 21:50 도착 · 3일</small></div></td><td data-label="1월 6~9일"><div class="v"><span class="na">조회 안 함</span></div></td><td data-label="2월 24~27일"><div class="v"><a class="ov-a" href="#feb-bali"><b class="num">440만~485만원</b></a><span class="pill bad">예산 초과</span><small>26~31°C · 밤 21:50 도착 · 3일</small></div></td><td data-label="3월 18~21일"><div class="v"><a class="ov-a" href="#mar-bali"><b class="num">394만~439만원</b></a><span class="pill warn">예산 경계</span><small>26~31°C · 밤 21:50 도착 · 3일</small></div></td>
       </tr>
         </tbody>
       </table>
@@ -790,6 +804,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     <h4 class="blk">조회한 숙소 <small>숙박 기간 총액 · 세금 포함 · 성인 3명</small></h4><p class="ht-g">1/6~1/10 4박</p><ul class="hts"><li class="pick"><div class="ht-n"><b>크라운 플라자 리조트 괌</b><span class="ht-tag">추천</span><span class="ht-m">5성 · 평점 9.0 (리뷰 149개) · 투몬</span><span class="ht-m">괌 패밀리 호텔 2위 · 애프터눈 티 · 무료 취소 · 트립닷컴 다이아몬드 회원가</span></div><div class="ht-p"><b class="num">97.0만원</b><small>1박 24.2만</small></div></li><li class=""><div class="ht-n"><b>슈어스테이 호텔 괌 에어포트 사우스</b><span class="ht-m">3성 · 평점 7.0 (리뷰 139개) · 공항 근처</span><span class="ht-m">조식 포함 · 야외 수영장 · 투몬까지 택시로 다녀야 함</span></div><div class="ht-p"><b class="num">65.4만원</b><small>1박 16.4만</small></div></li><li class=""><div class="ht-n"><b>그랜드 플라자 호텔</b><span class="ht-m">2성 · 평점 6.9 (리뷰 119개) · 투몬</span><span class="ht-m">침실 2개, 침대 4개 (60㎡) · 루프탑 수영장</span></div><div class="ht-p"><b class="num">95.7만원</b><small>1박 23.9만</small></div></li><li class=""><div class="ht-n"><b>퍼시픽 아일랜드 클럽 괌</b><span class="ht-m">4성 · 평점 8.0 (리뷰 85개) · 투몬</span><span class="ht-m">워터파크 무료 · 무료 취소</span></div><div class="ht-p"><b class="num">111.9만원</b><small>1박 28.0만</small></div></li></ul>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 195만원</b><small>인당 약 65만 · 조회 가격, 새벽 귀국편 기준</small></li><li><span>숙소 4박</span><b class="num">약 97만원</b><small>크라운 플라자 · 조회 가격</small></li><li><span>식비</span><b class="num">90만~110만원</b></li><li><span>택시·투어</span><b class="num">35만~45만원</b></li><li><span>보험·ETA 등</span><b class="num">약 10만원</b></li>
       <li class="tot"><span>합계</span><b class="num">427만~457만원</b></li>
@@ -860,6 +875,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 146만원</b><small>인당 48.5만 · 조회 가격</small></li><li><span>숙소 4박</span><b class="num">45만~75만원</b></li><li><span>식비</span><b class="num">30만~50만원</b></li><li><span>교통</span><b class="num">5만~10만원</b></li><li><span>관광·마사지·보험</span><b class="num">24만~39만원</b></li>
@@ -932,6 +948,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     <h4 class="blk">조회한 숙소 <small>숙박 기간 총액 · 세금 포함 · 성인 3명</small></h4><p class="ht-g">나하 1박 · 1/6~1/7</p><ul class="hts"><li class="pick"><div class="ht-n"><b>호텔 산스이 나하 류큐 온센 나미노우에노유</b><span class="ht-tag">추천</span><span class="ht-m">4성 · 평점 8.5 (리뷰 1,203개) · 국제거리 근처</span><span class="ht-m">온천 대욕장 · 무료 취소</span></div><div class="ht-p"><b class="num">17.4만원</b></div></li><li class=""><div class="ht-n"><b>더 네스트 나하</b><span class="ht-m">4성 · 평점 9.2 (리뷰 688개) · 도심에서 680m</span><span class="ht-m">일몰 뷰 · 무료 취소</span></div><div class="ht-p"><b class="num">11.5만원</b></div></li><li class=""><div class="ht-n"><b>APA 호텔 나하 마쓰야마</b><span class="ht-m">3성 · 평점 7.6 (리뷰 13개) · 국제거리 근처</span><span class="ht-m">커넥팅룸 조건에 맞는 유일한 숙소 · 무료 취소</span></div><div class="ht-p"><b class="num">15.3만원</b></div></li><li class=""><div class="ht-n"><b>호텔 아쿠아 시타 나하</b><span class="ht-m">4성 · 평점 8.8 (리뷰 1,075개) · 국제거리 근처</span><span class="ht-m">루프탑 수영장 (1월엔 쌀쌀함) · 무료 취소</span></div><div class="ht-p"><b class="num">16.2만원</b></div></li><li class=""><div class="ht-n"><b>호텔 JAL 시티 나하</b><span class="ht-m">3성 · 평점 9.0 (리뷰 823개) · 국제거리</span><span class="ht-m">조식 평이 좋음 · 무료 취소</span></div><div class="ht-p"><b class="num">23.9만원</b></div></li><li class=""><div class="ht-n"><b>호텔 그랜드 콘소트 나하</b><span class="ht-m">4성 · 평점 9.4 (리뷰 879개) · 국제거리</span><span class="ht-m">일본식 조식 · 무료 취소</span></div><div class="ht-p"><b class="num">24.4만원</b></div></li><li class="out"><div class="ht-n"><b>더 나하 테라스</b><span class="ht-m">5성 · 평점 9.3 (리뷰 1,203개) · 나하 도심</span><span class="ht-m">85㎡ 침실 2개 · 조식 포함 · 예산 밖</span></div><div class="ht-p"><b class="num">82.6만원</b></div></li></ul><p class="ht-g">차탄 아메리칸 빌리지 3박 · 1/7~1/10</p><ul class="hts"><li class="pick"><div class="ht-n"><b>콘도미니엄 호텔 미하마 우피</b><span class="ht-tag">추천</span><span class="ht-m">3성 · 평점 8.9 (리뷰 541개) · 아메리칸 빌리지 도보 150m</span><span class="ht-m">66㎡ 침실 2개, 침대 4개 · 세탁 서비스 · 무료 취소 · 다이아몬드 회원가</span></div><div class="ht-p"><b class="num">74.4만원</b><small>1박 24.8만</small></div></li><li class=""><div class="ht-n"><b>선라이즈 호텔 오키나와</b><span class="ht-m">2성 · 평점 없음 · 아메리칸 빌리지에서 4.8km</span><span class="ht-m">22㎡로 좁음 · 걸어서 다니기 어려움</span></div><div class="ht-p"><b class="num">46.3만원</b><small>1박 15.4만</small></div></li><li class=""><div class="ht-n"><b>몬드. 오키나와 아레나 콘도미니엄</b><span class="ht-m">평점 9.5 (리뷰 288개) · 아메리칸 빌리지에서 3.4km</span><span class="ht-m">아파트 전체, 침실 2개 · 택시로 다녀야 함 · 무료 취소</span></div><div class="ht-p"><b class="num">69.8만원</b><small>1박 23.3만</small></div></li><li class=""><div class="ht-n"><b>더 호텔 자탄 바이 선레스트 리조트</b><span class="ht-m">3성 · 평점 8.9 (리뷰 147개) · 아메리칸 빌리지 도보 1.2km</span><span class="ht-m">66㎡ 침실 2개 · 무료 취소</span></div><div class="ht-p"><b class="num">71.3만원</b><small>1박 23.8만</small></div></li><li class=""><div class="ht-n"><b>라핀 미하마 레지던스 호텔</b><span class="ht-m">3성 · 평점 9.4 (리뷰 128개) · 아메리칸 빌리지 도보 120m</span><span class="ht-m">침실 2개, 침대 4개 · 전용 테라스 · 무료 취소</span></div><div class="ht-p"><b class="num">88.7만원</b><small>1박 29.6만</small></div></li><li class="out"><div class="ht-n"><b>콘도-빈-</b><span class="ht-m">평점 9.7 (리뷰 99개) · 아메리칸 빌리지까지 차로 7.4km</span><span class="ht-m">195㎡ 침실 2개 · 예산 밖</span></div><div class="ht-p"><b class="num">170.8만원</b><small>1박 56.9만</small></div></li></ul>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 162만원</b><small>인당 약 54만 · 조회 가격</small></li><li><span>숙소 4박</span><b class="num">약 92만원</b><small>나하 1박 + 차탄 3박 · 조회 가격</small></li><li><span>식비</span><b class="num">60만~80만원</b></li><li><span>유이레일·버스·택시</span><b class="num">15만~20만원</b><small>나하 → 차탄 → 공항 택시 포함</small></li><li><span>버스 투어·수족관·고래</span><b class="num">20만~40만원</b><small>고래 관찰은 선택</small></li><li><span>보험·eSIM</span><b class="num">5만~10만원</b></li>
       <li class="tot"><span>합계</span><b class="num">354만~404만원</b></li>
@@ -1003,6 +1020,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     <h4 class="blk">조회한 숙소 <small>숙박 기간 총액 · 세금 포함 · 성인 3명</small></h4><p class="ht-g">1/6~1/10 4박</p><ul class="hts"><li class="pick"><div class="ht-n"><b>디 오로라 리트리트, 옹랑 비치</b><span class="ht-tag">추천</span><span class="ht-m">평점 9.6 (리뷰 8개) · 옹랑 해변</span><span class="ht-m">빌라 95㎡, 침실 2개 · 수영장 · 조식 포함 · 무료 취소</span></div><div class="ht-p"><b class="num">93.4만원</b><small>1박 23.3만</small></div></li><li class=""><div class="ht-n"><b>HN 가든 빌라</b><span class="ht-m">평점 9.9 (리뷰 9개) · 즈엉동 근처</span><span class="ht-m">무료 취소</span></div><div class="ht-p"><b class="num">40.7만원</b><small>1박 10.2만</small></div></li><li class=""><div class="ht-n"><b>톰빌라 푸꾸옥</b><span class="ht-m">신규 등록, 리뷰 없음 · 롱비치</span><span class="ht-m">무료 취소</span></div><div class="ht-p"><b class="num">72.4만원</b><small>1박 18.1만</small></div></li><li class="out"><div class="ht-n"><b>씨라비 비치프런트 빌라</b><span class="ht-m">평점 9.3 (리뷰 19개) · 롱비치 해변 앞</span><span class="ht-m">빌라 80㎡, 침실 2개 · 무료 취소 · 예산 밖</span></div><div class="ht-p"><b class="num">258.7만원</b><small>1박 64.7만</small></div></li></ul>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">180만~190만원</b><small>인당 60만~62.5만</small></li><li><span>숙소 4박</span><b class="num">약 93만원</b><small>디 오로라 리트리트 · 조회 가격</small></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>케이블카·마사지·관광</span><b class="num">30만~45만원</b></li><li><span>그랩·보험</span><b class="num">15만~20만원</b></li>
       <li class="tot"><span>합계</span><b class="num">358만~408만원</b></li>
@@ -1073,6 +1091,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">233만~245만원</b><small>인당 77.5만 · 조회 가격. 귀국편 수하물을 더하면 위쪽</small></li><li><span>숙소 4박</span><b class="num">80만~120만원</b></li><li><span>식비</span><b class="num">40만~60만원</b></li><li><span>투어·마사지</span><b class="num">20만~30만원</b></li><li><span>교통·보험 등</span><b class="num">약 15만원</b></li>
@@ -1145,12 +1164,150 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 254만원</b><small>인당 84.8만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">80만~110만원</b><small>아야나 1박 포함</small></li><li><span>식비</span><b class="num">55만~65만원</b></li><li><span>차량·투어·마사지</span><b class="num">30만~35만원</b></li><li><span>도착비자·관광세·보험</span><b class="num">약 25만원</b></li>
       <li class="tot"><span>합계</span><b class="num">444만~489만원</b></li>
     </ul>
     <p class="check"><b>확인할 것</b> 제주항공 왕복(15:10 출발, 23:05 귀국)은 조회 화면 기준 인당 847,700원입니다. 1/10 일요일에 돌아오려면 오는 편을 1/9 밤 출발로 잡아야 합니다. 조회한 오는 편 날짜가 1/10이었다면 1/11 월요일 아침 도착이니, 날짜를 1/9로 바꿔 성인 3명으로 다시 확인하세요. 전자 도착비자와 관광세를 미리 결제하고, 아야나 체크아웃 후 부대시설 이용 조건도 확인하세요.</p>
     <p class="shoplink"><a href="#shop-bali">발리에서 살 만한 것 보기</a></p>
+  </section>
+</div>
+<div class="panel" id="p-jan9" role="tabpanel" aria-labelledby="t-jan9" tabindex="-1" hidden>
+  <div class="panel-h">
+    <h2>1월 6일(수) ~ 9일(토) · 3박 4일</h2>
+    <p>엄마가 보내주신 패키지와 같은 날짜입니다. 가오슝만 항공과 숙소를 조회했습니다. 패키지와의 가격 비교도 아래에 넣었습니다.</p>
+  </div>
+
+  <section class="part">
+    <div class="blockh">
+      <h2>한눈에 비교</h2>
+      <p>이름을 누르면 상세 일정으로 갑니다.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>여행지</th><th>1월 기온</th><th>비행</th><th>도착</th><th>귀국</th><th>쓸 수 있는 날</th><th>3인 총액</th><th>한 줄 평</th></tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="c-name" data-label="여행지"><a href="#jan9-kaohsiung"><span class="rank">2</span><span class="nm">가오슝</span><span class="code">KHH</span></a></td>
+        <td data-label="1월 기온"><div class="v"><span class="pill warn">16~24°C, 건기</span></div></td>
+        <td class="c-fly" data-label="비행"><div class="v"><span class="num">3시간 30분</span></div></td>
+        <td data-label="도착"><div class="v"><span class="pill good">오후 15:55</span><small>트리니티 13:25 출발</small></div></td>
+        <td data-label="귀국"><div class="v"><span class="pill good">오후 17:00</span></div></td>
+        <td data-label="쓸 수 있는 날"><div class="v"><b class="num">3일</b><small>첫날 오후 + 마지막 날 오후 3시까지</small></div></td>
+        <td data-label="3인 총액"><div class="v"><b class="num">234만~287만원</b><span class="pill good">예산 안</span></div></td>
+        <td class="c-note" data-label="한 줄 평"><div class="v">엄마가 보내주신 패키지와 같은 날짜, 왕복 낮 비행에 예산도 넉넉함</div></td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span class="pill good">초록</span>유리
+      <span class="pill warn">주황</span>애매
+      <span class="pill bad">빨강</span>불리
+      <span class="pill">회색</span>확인 필요
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="blockh">
+      <h2>3인 총액 범위</h2>
+      <p>막대는 항공·숙소·식비·현지 비용을 더한 범위입니다. 빨간 점선이 예산 400만원입니다.</p>
+    </div>
+    <div class="rb" style="--cap: 67.57%">
+      <div class="rb-row">
+        <div class="rb-name"><span class="code">KHH</span>가오슝</div>
+        <div class="rb-track"><span class="rb-bar good" style="left:22.7%;width:14.33%"></span></div>
+        <div class="rb-val num">234~287만</div>
+      </div>
+      <div class="rb-axis"><span></span><div><span class="rb-tick" style="left:13.51%"><i>200만</i></span><span class="rb-tick" style="left:40.54%"><i>300만</i></span><span class="rb-tick" style="left:94.59%"><i>500만</i></span><span class="rb-cap" style="left:67.57%"><i>예산 400만</i></span></div><span></span></div>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="blockh">
+      <h2>이 날짜의 결론</h2>
+      <p>엄마가 보내주신 패키지와 같은 1/6~1/9 일정입니다.</p>
+    </div>
+    <ul class="choose">
+      <li>
+        <span class="q">따로 예약할지 패키지로 갈지</span>
+        <span class="a"><a href="#jan9-kaohsiung"><span class="rank sm">2</span>가오슝</a></span>
+        <span class="why">항공·숙소·보험만 맞춰 보면 패키지 쿠폰가 194만원과 따로 예약 187만~213만원이 거의 같습니다. 패키지에 들어 있는 시티스위트를 원하면 패키지가 19만원 쌉니다.</span>
+      </li>
+      <li>
+        <span class="q">하루를 더 쓰고 싶다면</span>
+        <span class="a"><a href="#jan9-kaohsiung"><span class="rank sm">2</span>가오슝</a></span>
+        <span class="why">1/10(일) 귀국으로 바꾸면 4박 5일이 되고, 1월 6~10 탭의 250만~320만원이 기준입니다. 그 조합은 김포 출발이라 공항도 가깝습니다.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="dest" id="jan9-kaohsiung">
+    <header class="dest-h">
+      <span class="rank big">2</span>
+      <div class="dest-t">
+        <h3>가오슝 <span class="code">KHH</span></h3>
+        <p class="sub">대만 남부 · 타이난 포함 · 엄마가 보내주신 패키지와 같은 날짜, 왕복 낮 비행에 예산도 넉넉함</p>
+      </div>
+    </header>
+    <ul class="facts">
+      <li><span>1월 기온</span><span class="pill warn">16~24°C, 건기</span></li>
+      <li><span>비행</span><b class="num">약 3시간 30분 (인천 출발)</b></li>
+      <li><span>도착</span><span class="pill good">오후 15:55 (트리니티 13:25 출발)</span></li>
+      <li><span>귀국</span><span class="pill good">1/9 오후 17:00 출발 → 20:45 도착</span></li>
+      <li><span>3인 총액</span><b class="num">234만~287만원</b> <span class="pill good">예산 안</span></li>
+    </ul>
+    <p class="stay"><span>숙소</span>가오슝 시내 호텔 3박 (레전드 호텔 피어2, 침대 3개, 조식 포함)</p>
+    <div class="pc">
+      <div class="pc-col good"><h4>장점</h4><ul><li>트리니티 왕복이 모두 낮 비행입니다(13:25 출발, 17:00 귀국).</li><li>엄마가 보내주신 패키지와 날짜가 같아 바로 비교할 수 있습니다.</li><li>조식 포함 호텔 3박이 24만~37만원이라 숙소 선택지가 넓습니다.</li><li>3인 총액이 234만~287만원으로 예산 400만원에 여유가 많습니다.</li></ul></div>
+      <div class="pc-col bad"><h4>단점</h4><ul><li>1/9(토) 귀국이라 원래 계획한 1/10(일)보다 하루 짧습니다.</li><li>항공권이 인당 53만원으로, 1/10 귀국 김포 출발편(48.5만원)보다 비쌉니다.</li><li>해변 휴양지가 아니라 도시와 문화 여행입니다.</li><li>조회한 호텔 대부분이 잔여 객실 1~4개라 서두르는 편이 좋습니다.</li></ul></div>
+    </div>
+    <h4 class="blk">일정과 이동 <small>비용은 3인 합계</small></h4>
+    <ol class="days">
+        <li class="day">
+          <div class="day-d"><b class="num">1/6</b><span>수</span></div>
+          <div class="day-b">
+            <h4>오후 도착, 야시장</h4>
+            <p>트리니티 13:25 인천 출발, 가오슝 15:55 도착(현지는 한국보다 1시간 느림). 시내 호텔에 짐을 두고 아이허 강변을 걷고, 저녁에 루이펑 야시장에 갑니다.</p>
+            <ul class="legs"><li><span class="lg-route">공항 → 시내 (메이리다오역)</span><span class="lg-how">약 10km · 20분 · 지하철</span><span class="lg-cost num">3인 약 5천원</span></li><li><span class="lg-route">호텔 → 루이펑 야시장</span><span class="lg-how">지하철 10~15분</span><span class="lg-cost num">3인 약 3천원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/7</b><span>목</span></div>
+          <div class="day-b">
+            <h4>타이난 당일치기</h4>
+            <p>대만에서 가장 오래된 도시입니다. 안핑 고성과 공자묘, 옛 골목을 봅니다.</p>
+            <ul class="legs"><li><span class="lg-route">가오슝역 → 타이난역</span><span class="lg-how">약 50km · 대만철도 35분~1시간</span><span class="lg-cost num">3인 약 1.4만원</span></li><li><span class="lg-route">타이난 시내 이동</span><span class="lg-how">택시 10~20분씩</span><span class="lg-cost num">2만원 안팎</span></li><li><span class="lg-route">타이난역 → 가오슝역</span><span class="lg-how">대만철도</span><span class="lg-cost num">3인 약 1.4만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/8</b><span>금</span></div>
+          <div class="day-b">
+            <h4>치진섬과 보얼 예술특구</h4>
+            <p>오전엔 페리로 치진섬에 건너가 해변과 등대를 보고 해산물로 점심. 오후엔 보얼 예술특구를 걷고 저녁에 아이허 강 유람선을 탑니다.</p>
+            <ul class="legs"><li><span class="lg-route">구산 선착장 → 치진섬</span><span class="lg-how">페리 5분</span><span class="lg-cost num">3인 왕복 약 8천원</span></li><li><span class="lg-route">구산 → 보얼 예술특구</span><span class="lg-how">약 2km · 경전철 5분</span><span class="lg-cost num">3인 약 3천원</span></li><li><span class="lg-route">아이허 강 유람선</span><span class="lg-how">20~30분</span><span class="lg-cost num">3인 약 2만원</span></li></ul>
+          </div>
+        </li>
+        <li class="day">
+          <div class="day-d"><b class="num">1/9</b><span>토</span></div>
+          <div class="day-b">
+            <h4>롄츠탄, 오후 귀국</h4>
+            <p>오전에 롄츠탄 용호탑을 보고 호텔에서 짐을 찾아 오후 3시쯤 공항으로 갑니다. 17:00 출발, 인천 20:45 도착.</p>
+            <ul class="legs"><li><span class="lg-route">호텔 ↔ 롄츠탄</span><span class="lg-how">약 10km · 택시 20분</span><span class="lg-cost num">왕복 약 2만원</span></li><li><span class="lg-route">시내 → 공항</span><span class="lg-how">약 10km · 지하철 20분</span><span class="lg-cost num">3인 약 5천원</span></li></ul>
+          </div>
+        </li>
+    </ol>
+    <h4 class="blk">조회한 숙소 <small>숙박 기간 총액 · 세금 포함 · 성인 3명</small></h4><p class="ht-g">3박 · 1/6~1/9 조회, 조식 포함 조건</p><ul class="hts"><li class="pick"><div class="ht-n"><b>레전드 호텔 가오슝 피어2</b><span class="ht-tag">추천</span><span class="ht-m">평점 9.4 (리뷰 859개) · 보얼예술특구</span><span class="ht-m">36㎡ 침실 1개, 침대 3개 · 조식 포함 · 무료 취소 · 1개 남음</span></div><div class="ht-p"><b class="num">26.7만원</b><small>1박 8.9만</small></div></li><li class=""><div class="ht-n"><b>허브 호텔 고션 Cisian 지점</b><span class="ht-m">3성 · 평점 8.8 (리뷰 628개) · 메이리다오역, 리우허 야시장</span><span class="ht-m">조식 포함 · 무료 취소 · 가장 쌈 · 2개 남음</span></div><div class="ht-p"><b class="num">24.2만원</b><small>1박 8.1만</small></div></li><li class=""><div class="ht-n"><b>리버 인 지리</b><span class="ht-m">4성 · 평점 8.7 (리뷰 137개) · 가오슝 메인역</span><span class="ht-m">조식 포함 · 무료 취소 · 3개 남음</span></div><div class="ht-p"><b class="num">29.5만원</b><small>1박 9.8만</small></div></li><li class=""><div class="ht-n"><b>탈무드 호텔 클래식 가오슝 기차역관</b><span class="ht-m">3성 · 평점 8.7 (리뷰 28개) · 가오슝 메인역</span><span class="ht-m">조식 포함 · 무료 취소 · 리뷰가 적음 · 4개 남음</span></div><div class="ht-p"><b class="num">35.3만원</b><small>1박 11.8만</small></div></li><li class=""><div class="ht-n"><b>가오슝 아호텔</b><span class="ht-m">4성 · 평점 8.7 (리뷰 253개) · 아이허 강변</span><span class="ht-m">조식 포함 · 무료 취소</span></div><div class="ht-p"><b class="num">36.5만원</b><small>1박 12.2만</small></div></li><li class=""><div class="ht-n"><b>카인드니스 호텔 중산 바드 브랜치</b><span class="ht-m">평점 9.1 (리뷰 799개) · 가오슝 메인역</span><span class="ht-m">조식 포함 · 무료 취소</span></div><div class="ht-p"><b class="num">36.8만원</b><small>1박 12.3만</small></div></li><li class=""><div class="ht-n"><b>시티 스위츠 가오슝 체나이</b><span class="ht-m">4성 · 평점 9.1 (리뷰 884개) · 보얼예술특구</span><span class="ht-m">패키지에 들어 있는 호텔 · 조식 포함 · 대만 업스케일 15위</span></div><div class="ht-p"><b class="num">49.8만원</b><small>1박 16.6만</small></div></li><li class="out"><div class="ht-n"><b>라 호텔 베이스볼 테마 홀</b><span class="ht-m">평점 9.0 (리뷰 713개) · 가오슝역</span><span class="ht-m">1박 37.8만원으로 기준(60만원) 안이지만 3박이면 너무 비쌈</span></div><div class="ht-p"><b class="num">113.5만원</b><small>1박 37.8만</small></div></li></ul>
+    <h4 class="blk">엄마가 보내주신 패키지와 비교 <small>항공 · 숙소 3박 · 보험만, 3인 합계</small></h4><div class="pkg"><p class="pkg-l">참좋은여행 가오슝 자유여행 3박 4일 상품입니다. 티웨이항공 왕복(수하물 15kg), 시티스위트 체나이 3인 1실 조식 포함, 여행자보험 최대 1억원이 들어 있습니다. 점심·저녁 식비, 현지 교통, 관광은 빠져 있습니다. 아래는 항공·숙소·보험만 같은 기준으로 맞춘 3인 합계입니다.</p><ul class="pkg-r"><li class="good"><span>따로 예약 · 허브 호텔</span><b class="num">약 187만원</b></li><li class="good"><span>따로 예약 · 레전드 피어2</span><b class="num">약 190만원</b></li><li class="good"><span>패키지 쿠폰가</span><b class="num">약 194만원</b></li><li class="warn"><span>따로 예약 · 시티스위트 (패키지와 같은 호텔)</span><b class="num">약 213만원</b></li><li class="bad"><span>패키지 정가</span><b class="num">225만원</b></li></ul><p class="pkg-n">패키지에 들어 있는 시티스위트를 그대로 따로 예약하면 213만원입니다. 쿠폰가 194만원이 19만원 더 쌉니다. 대신 더 싼 호텔을 고르면 따로 예약이 4만~7만원 쌉니다. 사실상 비슷한 가격이라, 티웨이 항공 시간대와 쿠폰 조건을 보고 정하면 됩니다.</p></div>
+    <h4 class="blk">예산 내역</h4>
+    <ul class="bud"><li><span>항공</span><b class="num">약 159만원</b><small>인당 53.05만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">27만~50만원</b><small>레전드 피어2 ~ 시티스위트 · 조회 가격</small></li><li><span>식비</span><b class="num">25만~40만원</b><small>조식 포함</small></li><li><span>교통</span><b class="num">4만~7만원</b></li><li><span>관광·마사지·보험</span><b class="num">19만~31만원</b></li>
+      <li class="tot"><span>합계</span><b class="num">234만~287만원</b></li>
+    </ul>
+    <p class="check"><b>확인할 것</b> 트리니티 왕복(1/6 13:25 출발, 1/9 17:00 귀국)은 조회 화면 기준 인당 530,500원입니다. 오는 날을 1/8(금)로 당기면 525,400원, 1/10(일)로 미루면 532,000원대입니다. 에바항공 06:50 귀국편은 6,000원만 더 비싸고 수하물이 23kg이지만 마지막 날을 못 씁니다. 이번 조회는 인천 출발이고, 1/10 귀국으로 찾았던 김포 출발편은 485,400원이었으니 김포 1/6~1/9도 확인해 보세요. 호텔은 성인 3명으로 조회한 것인지, 침대가 3개인지 확인하세요.</p>
+    <p class="shoplink"><a href="#shop-kaohsiung">가오슝에서 살 만한 것 보기</a></p>
   </section>
 </div>
 <div class="panel" id="p-feb" role="tabpanel" aria-labelledby="t-feb" tabindex="-1" hidden>
@@ -1386,6 +1543,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 241만원</b><small>인당 80.4만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">70만~80만원</b><small>1월 조회 가격 기준 추정</small></li><li><span>식비</span><b class="num">65만~80만원</b></li><li><span>택시·투어</span><b class="num">25만~45만원</b><small>남부 투어는 선택</small></li><li><span>보험·ETA 등</span><b class="num">약 10만원</b></li>
       <li class="tot"><span>합계</span><b class="num">411만~456만원</b></li>
@@ -1448,6 +1606,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 137만원</b><small>인당 45.7만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">35만~55만원</b><small>추정</small></li><li><span>식비</span><b class="num">25만~40만원</b></li><li><span>교통</span><b class="num">4만~7만원</b></li><li><span>관광·마사지·보험</span><b class="num">19만~31만원</b></li>
@@ -1512,6 +1671,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 162만원</b><small>인당 53.9만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">65만~80만원</b><small>1월 조회 가격 기준 추정</small></li><li><span>식비</span><b class="num">45만~60만원</b></li><li><span>유이레일·버스·택시</span><b class="num">12만~16만원</b></li><li><span>버스 투어·수족관·고래</span><b class="num">20만~40만원</b><small>고래 관찰은 선택</small></li><li><span>보험·eSIM</span><b class="num">5만~8만원</b></li>
       <li class="tot"><span>합계</span><b class="num">309만~366만원</b></li>
@@ -1574,6 +1734,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">187만~202만원</b><small>인당 62.4만 · 조회 가격 + 위탁수하물</small></li><li><span>숙소 3박</span><b class="num">약 70만원</b><small>1월 디 오로라 가격 기준 추정</small></li><li><span>식비</span><b class="num">30만~45만원</b><small>조식 포함</small></li><li><span>케이블카·마사지·관광</span><b class="num">25만~35만원</b></li><li><span>그랩·보험</span><b class="num">12만~16만원</b></li>
@@ -1638,6 +1799,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">128만~140만원</b><small>인당 42.6만~46.8만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">80만~125만원</b><small>추정 · 마카오 2박 + 홍콩 1박</small></li><li><span>식비</span><b class="num">50만~70만원</b></li><li><span>디즈니랜드</span><b class="num">45만~65만원</b><small>입장권 + 프리미어 액세스 3종 · 추정</small></li><li><span>교통·보험</span><b class="num">12만~18만원</b><small>강주아오 대교 버스, 공항철도, 택시</small></li>
       <li class="tot"><span>합계</span><b class="num">315만~418만원</b></li>
@@ -1701,6 +1863,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">216만~234만원</b><small>인당 72.1만 · 조회 가격 + 위탁수하물</small></li><li><span>숙소 3박</span><b class="num">60만~90만원</b><small>추정</small></li><li><span>식비</span><b class="num">30만~45만원</b></li><li><span>투어·마사지</span><b class="num">20만~30만원</b></li><li><span>교통·보험 등</span><b class="num">약 12만원</b></li>
       <li class="tot"><span>합계</span><b class="num">338만~411만원</b></li>
@@ -1763,6 +1926,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 270만원</b><small>인당 90만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">80만~110만원</b><small>아야나 1박 포함</small></li><li><span>식비</span><b class="num">40만~50만원</b></li><li><span>차량·투어·마사지</span><b class="num">25만~30만원</b></li><li><span>도착비자·관광세·보험</span><b class="num">약 25만원</b></li>
@@ -2005,6 +2169,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 135만원</b><small>인당 44.8만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">70만~85만원</b><small>1월 조회 가격 기준 추정</small></li><li><span>식비</span><b class="num">65만~80만원</b></li><li><span>택시·투어</span><b class="num">25만~45만원</b><small>남부 투어는 선택</small></li><li><span>보험·ETA 등</span><b class="num">약 10만원</b></li>
       <li class="tot"><span>합계</span><b class="num">305만~355만원</b></li>
@@ -2067,6 +2232,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 115만원</b><small>인당 38.2만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">35만~55만원</b><small>추정</small></li><li><span>식비</span><b class="num">25만~40만원</b></li><li><span>교통</span><b class="num">4만~7만원</b></li><li><span>관광·마사지·보험</span><b class="num">19만~31만원</b></li>
@@ -2131,6 +2297,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     <h4 class="blk">조회한 숙소 <small>숙박 기간 총액 · 세금 포함 · 성인 3명</small></h4><p class="ht-g">나하 1박 · 2/18~19로 조회된 가격</p><ul class="hts"><li class="pick"><div class="ht-n"><b>고쿠사이 타운즈 인</b><span class="ht-tag">추천</span><span class="ht-m">2성 · 평점 9.1 (리뷰 345개) · 국제거리</span><span class="ht-m">40㎡ 침실 2개, 침대 3개 · 무료 취소</span></div><div class="ht-p"><b class="num">15.4만원</b></div></li><li class=""><div class="ht-n"><b>프라임 트리 이즈미자키 콘도 호텔</b><span class="ht-m">3성 · 평점 9.5 (리뷰 376개) · 국제거리 근처</span><span class="ht-m">70㎡ 침실 2개, 침대 5개 · 무료 취소 · 더 넓게 쓰려면</span></div><div class="ht-p"><b class="num">30.9만원</b></div></li><li class=""><div class="ht-n"><b>KY 아파트먼트 츠보카와 나하</b><span class="ht-m">평점 8.7 (리뷰 386개) · 나하 시내</span><span class="ht-m">50㎡ 침실 2개, 침대 4개 · 무료 취소</span></div><div class="ht-p"><b class="num">15.9만원</b></div></li><li class=""><div class="ht-n"><b>빌라 이즈미자키</b><span class="ht-m">2성 · 평점 8.7 (리뷰 397개) · 국제거리</span><span class="ht-m">40㎡ 침실 2개, 침대 4개 · 무료 취소</span></div><div class="ht-p"><b class="num">19.4만원</b></div></li><li class=""><div class="ht-n"><b>호텔 출라 비스타 세나가</b><span class="ht-m">3성 · 평점 9.2 (리뷰 345개) · 공항 쪽 세나가</span><span class="ht-m">80㎡ 침실 2개 · 국제거리와 멂</span></div><div class="ht-p"><b class="num">27.4만원</b></div></li><li class=""><div class="ht-n"><b>호텔 텐시칸 쿠모지</b><span class="ht-m">2성 · 평점 8.5 (리뷰 19개) · 국제거리</span><span class="ht-m">50㎡ 침실 2개, 침대 5개 · 1개 남음</span></div><div class="ht-p"><b class="num">27.8만원</b></div></li></ul><p class="ht-g">차탄 아메리칸 빌리지 2박 · 2/19~21로 조회된 가격</p><ul class="hts"><li class="pick"><div class="ht-n"><b>라핀 미하마 레지던스 호텔</b><span class="ht-tag">추천</span><span class="ht-m">3성 · 평점 9.4 (리뷰 128개) · 아메리칸 빌리지 도보 120m</span><span class="ht-m">침실 2개, 침대 4개 · 전용 테라스 · 무료 취소</span></div><div class="ht-p"><b class="num">68.2만원</b><small>1박 34.1만</small></div></li><li class=""><div class="ht-n"><b>더 호텔 자탄 바이 선레스트 리조트</b><span class="ht-m">3성 · 평점 8.9 (리뷰 147개) · 아메리칸 빌리지 도보 1.2km</span><span class="ht-m">66㎡ 침실 2개 · 무료 취소 · 3개 남음</span></div><div class="ht-p"><b class="num">61.9만원</b><small>1박 30.9만</small></div></li><li class=""><div class="ht-n"><b>카리유시 콘도미니엄 리조트 자탄 마리나 베이 미하마</b><span class="ht-m">3성 · 평점 9.1 (리뷰 288개) · 아메리칸 빌리지까지 차로 7.3km로 표시</span><span class="ht-m">74㎡ 침실 2개 · 욕조 · 무료 취소</span></div><div class="ht-p"><b class="num">71.0만원</b><small>1박 35.5만</small></div></li><li class=""><div class="ht-n"><b>더 쇼어 인 코스트 라이프 차탄</b><span class="ht-m">평점 9.3 (리뷰 140개) · 아메리칸 빌리지 도보 1.3km</span><span class="ht-m">65㎡ 침실 2개 · 조식 포함 · 무료 취소</span></div><div class="ht-p"><b class="num">80.9만원</b><small>1박 40.4만</small></div></li><li class=""><div class="ht-n"><b>그랜드 호텔 지노완</b><span class="ht-m">3성 · 평점 9.3 (리뷰 163개) · 기노완, 3.7km</span><span class="ht-m">52㎡ 침실 2개 · 일몰 뷰 · 1개 남음</span></div><div class="ht-p"><b class="num">84.8만원</b><small>1박 42.4만</small></div></li><li class=""><div class="ht-n"><b>몬드. 오키나와 아레나 콘도미니엄</b><span class="ht-m">평점 9.5 (리뷰 288개) · 아메리칸 빌리지에서 3.4km</span><span class="ht-m">아파트 전체, 침실 2개 · 택시로 다녀야 함</span></div><div class="ht-p"><b class="num">93.5만원</b><small>1박 46.7만</small></div></li><li class=""><div class="ht-n"><b>씨사이드 콘도미니엄 라나 차탄</b><span class="ht-m">3성 · 평점 9.0 (리뷰 196개) · 아메리칸 빌리지 도보 650m</span><span class="ht-m">50㎡ 침실 2개 · 일출 뷰 · 2개 남음</span></div><div class="ht-p"><b class="num">115.3만원</b><small>1박 57.7만</small></div></li></ul>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 141만원</b><small>인당 47.1만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">84만~95만원</b><small>고쿠사이 타운즈 인 + 라핀 미하마 · 2/18~21 조회 가격, 3월 연휴 반영</small></li><li><span>식비</span><b class="num">45만~60만원</b></li><li><span>유이레일·버스·택시</span><b class="num">12만~16만원</b></li><li><span>버스 투어·수족관·고래</span><b class="num">20만~40만원</b><small>고래 관찰은 선택</small></li><li><span>보험·eSIM</span><b class="num">5만~8만원</b></li>
       <li class="tot"><span>합계</span><b class="num">307만~360만원</b></li>
@@ -2194,6 +2361,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     <h4 class="blk">조회한 숙소 <small>숙박 기간 총액 · 세금 포함 · 성인 3명</small></h4><p class="ht-g">3박 · 2/18~21로 조회된 가격</p><ul class="hts"><li class="pick"><div class="ht-n"><b>모벤픽 레지던스 푸꾸옥</b><span class="ht-tag">추천</span><span class="ht-m">5성 · 평점 8.9 (리뷰 1,156개) · 옹랑 해변</span><span class="ht-m">90㎡ 침실 2개 · 조식 포함 · 패밀리 호텔 20위 · 다이아몬드 회원가</span></div><div class="ht-p"><b class="num">132.8만원</b><small>1박 44.3만</small></div></li><li class=""><div class="ht-n"><b>위 영 아파트먼트 바이 호프스</b><span class="ht-m">3성 · 평점 9.1 (리뷰 304개) · 선셋타운 근처</span><span class="ht-m">56㎡ 침실 2개 · 불꽃놀이·바다 전망 · 무료 취소 · 가장 알뜰한 대안</span></div><div class="ht-p"><b class="num">62.0만원</b><small>1박 20.7만</small></div></li><li class=""><div class="ht-n"><b>르 밤부 리조트 &amp; 스파</b><span class="ht-m">3성 · 평점 9.5 (리뷰 31개) · 옹랑 해변</span><span class="ht-m">50㎡ 침실 2개 · 야외 수영장 · 4개 남음</span></div><div class="ht-p"><b class="num">99.4만원</b><small>1박 33.1만</small></div></li><li class=""><div class="ht-n"><b>루나 솔 선셋 앤 파이어워크 시그니처</b><span class="ht-m">3성 · 평점 8.9 (리뷰 102개) · 선셋타운</span><span class="ht-m">70㎡ 침실 2개 · 불꽃놀이 · 3개 남음</span></div><div class="ht-p"><b class="num">76.5만원</b><small>1박 25.5만</small></div></li><li class=""><div class="ht-n"><b>로지 힐사이드 씨뷰 아파트먼트</b><span class="ht-m">4성 · 평점 8.4 (리뷰 458개) · 선셋타운</span><span class="ht-m">78㎡ 침실 2개 · 일몰 뷰 · 무료 취소</span></div><div class="ht-p"><b class="num">93.9만원</b><small>1박 31.3만</small></div></li><li class=""><div class="ht-n"><b>루나 아쥬르 힐사이드</b><span class="ht-m">4성 · 평점 8.3 (리뷰 343개) · 선셋타운</span><span class="ht-m">75㎡ 침실 2개 · 일몰 뷰</span></div><div class="ht-p"><b class="num">98.1만원</b><small>1박 32.7만</small></div></li><li class=""><div class="ht-n"><b>코스모스 아파트 호텔</b><span class="ht-m">3성 · 평점 8.5 (리뷰 19개) · 롱비치</span><span class="ht-m">침실 2개 · 야시장·해변 도보 · 무료 취소</span></div><div class="ht-p"><b class="num">51.7만원</b><small>1박 17.2만</small></div></li><li class="out"><div class="ht-n"><b>라하나 리조트 &amp; 스파</b><span class="ht-m">4성 · 평점 9.3 (리뷰 670개) · 즈엉동</span><span class="ht-m">130㎡ · 조식 포함 · 1박 64만원으로 기준(60만원)을 넘음</span></div><div class="ht-p"><b class="num">192.1만원</b><small>1박 64.0만</small></div></li><li class="out"><div class="ht-n"><b>아주라 리조트</b><span class="ht-m">3성 · 평점 8.5 (리뷰 69개) · 롱비치</span><span class="ht-m">조식 포함 · 판매 완료</span></div><div class="ht-p"><b class="num">65.2만원</b><small>1박 21.7만</small></div></li></ul>
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">129만~137만원</b><small>인당 42.75만 · 조회 가격 + 가는 편 수하물</small></li><li><span>숙소 3박</span><b class="num">133만~145만원</b><small>모벤픽 · 2/18~21 조회 가격</small></li><li><span>식비</span><b class="num">30만~45만원</b><small>조식 포함</small></li><li><span>케이블카·마사지·관광</span><b class="num">25만~35만원</b></li><li><span>그랩·보험</span><b class="num">12만~16만원</b></li>
       <li class="tot"><span>합계</span><b class="num">329만~378만원</b></li>
@@ -2256,6 +2424,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">124만~140만원</b><small>인당 41.5만 · 조회 가격 + 귀국편 수하물</small></li><li><span>숙소 3박</span><b class="num">90만~140만원</b><small>추정 · 금·토 숙박</small></li><li><span>식비</span><b class="num">50만~70만원</b></li><li><span>디즈니랜드</span><b class="num">50만~70만원</b><small>토요일이라 높은 등급 · 추정</small></li><li><span>교통·보험</span><b class="num">12만~18만원</b></li>
@@ -2320,6 +2489,7 @@ h4.blk small { font-weight: 400; }
         </li>
     </ol>
     
+    
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">145만~163만원</b><small>인당 48.3만 · 조회 가격 + 위탁수하물</small></li><li><span>숙소 3박</span><b class="num">60만~90만원</b><small>추정</small></li><li><span>식비</span><b class="num">30만~45만원</b></li><li><span>투어·마사지</span><b class="num">20만~30만원</b></li><li><span>교통·보험 등</span><b class="num">약 12만원</b></li>
       <li class="tot"><span>합계</span><b class="num">267만~340만원</b></li>
@@ -2382,6 +2552,7 @@ h4.blk small { font-weight: 400; }
           </div>
         </li>
     </ol>
+    
     
     <h4 class="blk">예산 내역</h4>
     <ul class="bud"><li><span>항공</span><b class="num">약 224만원</b><small>인당 74.7만 · 조회 가격</small></li><li><span>숙소 3박</span><b class="num">80만~110만원</b><small>아야나 1박 포함</small></li><li><span>식비</span><b class="num">40만~50만원</b></li><li><span>차량·투어·마사지</span><b class="num">25만~30만원</b></li><li><span>도착비자·관광세·보험</span><b class="num">약 25만원</b></li>
@@ -2468,8 +2639,9 @@ h4.blk small { font-weight: 400; }
   });
 })();
 (function () {
-  var KEYS = ['jan', 'feb', 'mar'];
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.seg [role="tab"]'));
+  // date keys come from the rendered tabs, so adding a date never needs a script change
+  var KEYS = tabs.map(function (t) { return t.getAttribute('data-k'); });
   var current = 'jan';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function activate(k) {
