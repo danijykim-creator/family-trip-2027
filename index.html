@@ -384,6 +384,507 @@ h4.blk small { font-weight: 400; }
 .src li { break-inside: avoid; }
 </style>
 <style>
+/* ---------------------------------------------------------------
+   Material Design 3 레이어
+   색은 Google Material Color Utilities(HCT)로 소스 색 #0A6F80에서 유도했고,
+   타입·모양·엘리베이션 값은 M3 베이스라인 스펙을 그대로 따른다.
+   --------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+  --f-body: Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --f-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* M3 type scale — size / line-height / weight / tracking */
+  --md-display-l: 400 57px/64px var(--f-body); --md-tk-display-l: -0.25px;
+  --md-display-s: 400 36px/44px var(--f-body); --md-tk-0: 0px;
+  --md-headline-l: 400 32px/40px var(--f-body);
+  --md-headline-m: 400 28px/36px var(--f-body);
+  --md-headline-s: 400 24px/32px var(--f-body);
+  --md-title-l: 400 22px/28px var(--f-body);
+  --md-title-m: 500 16px/24px var(--f-body); --md-tk-title-m: 0.15px;
+  --md-title-s: 500 14px/20px var(--f-body); --md-tk-title-s: 0.1px;
+  --md-body-l: 400 16px/24px var(--f-body);   --md-tk-body-l: 0.5px;
+  --md-body-m: 400 14px/20px var(--f-body);   --md-tk-body-m: 0.25px;
+  --md-body-s: 400 12px/16px var(--f-body);   --md-tk-body-s: 0.4px;
+  --md-label-l: 500 14px/20px var(--f-body);  --md-tk-label-l: 0.1px;
+  --md-label-m: 500 12px/16px var(--f-body);  --md-tk-label-m: 0.5px;
+  --md-label-s: 500 11px/16px var(--f-body);  --md-tk-label-s: 0.5px;
+
+  /* M3 shape scale */
+  --md-shape-xs: 4px;  --md-shape-s: 8px;   --md-shape-m: 12px;
+  --md-shape-l: 16px;  --md-shape-xl: 28px; --md-shape-full: 9999px;
+
+  /* M3 elevation */
+  --md-elev-1: 0 1px 2px rgba(0,0,0,.30), 0 1px 3px 1px rgba(0,0,0,.15);
+  --md-elev-2: 0 1px 2px rgba(0,0,0,.30), 0 2px 6px 2px rgba(0,0,0,.15);
+  --md-elev-3: 0 4px 8px 3px rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.30);
+
+  /* M3 spacing — 4dp grid */
+  --md-sp-1: 4px; --md-sp-2: 8px; --md-sp-3: 12px; --md-sp-4: 16px;
+  --md-sp-6: 24px; --md-sp-8: 32px; --md-sp-10: 40px;
+
+  --md-sys-color-primary: #1f6876;
+  --md-sys-color-on-primary: #eefbff;
+  --md-sys-color-primary-container: #a5e7f8;
+  --md-sys-color-on-primary-container: #005664;
+  --md-sys-color-secondary: #4b6369;
+  --md-sys-color-on-secondary: #eefbff;
+  --md-sys-color-secondary-container: #cde7ee;
+  --md-sys-color-on-secondary-container: #3e555b;
+  --md-sys-color-tertiary: #466182;
+  --md-sys-color-on-tertiary: #f7f9ff;
+  --md-sys-color-tertiary-container: #b8d4fb;
+  --md-sys-color-on-tertiary-container: #2d4969;
+  --md-sys-color-error: #a83836;
+  --md-sys-color-on-error: #fff7f6;
+  --md-sys-color-error-container: #fa746f;
+  --md-sys-color-on-error-container: #6e0a12;
+  --md-sys-color-surface: #f6fafb;
+  --md-sys-color-on-surface: #2a3437;
+  --md-sys-color-surface-variant: #dae4e7;
+  --md-sys-color-on-surface-variant: #576163;
+  --md-sys-color-outline: #727c7f;
+  --md-sys-color-outline-variant: #aab4b7;
+  --md-sys-color-surface-dim: #d2dcdf;
+  --md-sys-color-surface-bright: #f6fafb;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #eff5f7;
+  --md-sys-color-surface-container: #e8eff1;
+  --md-sys-color-surface-container-high: #e1eaec;
+  --md-sys-color-surface-container-highest: #dae4e7;
+  --md-sys-color-inverse-surface: #0a0f10;
+  --md-sys-color-inverse-on-surface: #999e9f;
+  --md-sys-color-inverse-primary: #a5e7f8;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-success: #2b6a3c;
+  --md-sys-color-success-container: #aff3b7;
+  --md-sys-color-on-success-container: #00210a;
+  --md-sys-color-caution: #845400;
+  --md-sys-color-caution-container: #ffddb6;
+  --md-sys-color-on-caution-container: #2a1800;
+  --md-sys-color-route-1: #006683;
+  --md-sys-color-route-1-container: #bde9ff;
+  --md-sys-color-on-route-1-container: #001f2a;
+  --md-sys-color-route-2: #665395;
+  --md-sys-color-route-2-container: #e9ddff;
+  --md-sys-color-on-route-2-container: #220b4e;
+  --md-sys-color-route-3: #a03f31;
+  --md-sys-color-route-3-container: #ffdad4;
+  --md-sys-color-on-route-3-container: #400100;
+  --md-sys-color-route-4: #396a28;
+  --md-sys-color-route-4-container: #baf2a0;
+  --md-sys-color-on-route-4-container: #042100;
+
+  --bg: var(--md-sys-color-surface);
+  --surface: var(--md-sys-color-surface-container-low);
+  --ink: var(--md-sys-color-on-surface);
+  --muted: var(--md-sys-color-on-surface-variant);
+  --line: var(--md-sys-color-outline-variant);
+  --accent: var(--md-sys-color-primary);
+  --accent-soft: var(--md-sys-color-primary-container);
+  --on-accent: var(--md-sys-color-on-primary);
+  --neutral: var(--md-sys-color-outline);
+  --neutral-soft: var(--md-sys-color-surface-container-high);
+  --good: var(--md-sys-color-success);
+  --good-soft: var(--md-sys-color-success-container);
+  --warn: var(--md-sys-color-caution);
+  --warn-soft: var(--md-sys-color-caution-container);
+  --bad: var(--md-sys-color-error);
+  --bad-soft: var(--md-sys-color-error-container);
+  --sea: var(--md-sys-color-surface-container);
+  --land: var(--md-sys-color-secondary-container);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --md-sys-color-primary: #9ecedb;
+    --md-sys-color-on-primary: #104651;
+    --md-sys-color-primary-container: #275964;
+    --md-sys-color-on-primary-container: #baebf8;
+    --md-sys-color-secondary: #b2cbd2;
+    --md-sys-color-on-secondary: #2d444a;
+    --md-sys-color-secondary-container: #283f45;
+    --md-sys-color-on-secondary-container: #abc4ca;
+    --md-sys-color-tertiary: #cde1ff;
+    --md-sys-color-on-tertiary: #365272;
+    --md-sys-color-tertiary-container: #b8d4fb;
+    --md-sys-color-on-tertiary-container: #2d4969;
+    --md-sys-color-error: #fa746f;
+    --md-sys-color-on-error: #490006;
+    --md-sys-color-error-container: #871f21;
+    --md-sys-color-on-error-container: #ff9993;
+    --md-sys-color-surface: #0a0f10;
+    --md-sys-color-on-surface: #dde7ea;
+    --md-sys-color-surface-variant: #1e272a;
+    --md-sys-color-on-surface-variant: #a3adb0;
+    --md-sys-color-outline: #6d777a;
+    --md-sys-color-outline-variant: #404a4c;
+    --md-sys-color-surface-dim: #0a0f10;
+    --md-sys-color-surface-bright: #242e30;
+    --md-sys-color-surface-container-lowest: #000000;
+    --md-sys-color-surface-container-low: #0e1416;
+    --md-sys-color-surface-container: #141b1d;
+    --md-sys-color-surface-container-high: #192123;
+    --md-sys-color-surface-container-highest: #1e272a;
+    --md-sys-color-inverse-surface: #f6fafb;
+    --md-sys-color-inverse-on-surface: #515657;
+    --md-sys-color-inverse-primary: #356671;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-success: #93d69d;
+    --md-sys-color-success-container: #0e5226;
+    --md-sys-color-on-success-container: #aff3b7;
+    --md-sys-color-caution: #ffb95a;
+    --md-sys-color-caution-container: #643f00;
+    --md-sys-color-on-caution-container: #ffddb6;
+    --md-sys-color-route-1: #65d3ff;
+    --md-sys-color-route-1-container: #004d64;
+    --md-sys-color-on-route-1-container: #bde9ff;
+    --md-sys-color-route-2: #d0bcff;
+    --md-sys-color-route-2-container: #4e3b7c;
+    --md-sys-color-on-route-2-container: #e9ddff;
+    --md-sys-color-route-3: #ffb4a7;
+    --md-sys-color-route-3-container: #80281c;
+    --md-sys-color-on-route-3-container: #ffdad4;
+    --md-sys-color-route-4: #9ed586;
+    --md-sys-color-route-4-container: #225112;
+    --md-sys-color-on-route-4-container: #baf2a0;
+
+    --bg: var(--md-sys-color-surface);
+    --surface: var(--md-sys-color-surface-container-low);
+    --ink: var(--md-sys-color-on-surface);
+    --muted: var(--md-sys-color-on-surface-variant);
+    --line: var(--md-sys-color-outline-variant);
+    --accent: var(--md-sys-color-primary);
+    --accent-soft: var(--md-sys-color-primary-container);
+    --on-accent: var(--md-sys-color-on-primary);
+    --neutral: var(--md-sys-color-outline);
+    --neutral-soft: var(--md-sys-color-surface-container-high);
+    --good: var(--md-sys-color-success);
+    --good-soft: var(--md-sys-color-success-container);
+    --warn: var(--md-sys-color-caution);
+    --warn-soft: var(--md-sys-color-caution-container);
+    --bad: var(--md-sys-color-error);
+    --bad-soft: var(--md-sys-color-error-container);
+    --sea: var(--md-sys-color-surface-container);
+    --land: var(--md-sys-color-secondary-container);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --md-sys-color-primary: #9ecedb;
+  --md-sys-color-on-primary: #104651;
+  --md-sys-color-primary-container: #275964;
+  --md-sys-color-on-primary-container: #baebf8;
+  --md-sys-color-secondary: #b2cbd2;
+  --md-sys-color-on-secondary: #2d444a;
+  --md-sys-color-secondary-container: #283f45;
+  --md-sys-color-on-secondary-container: #abc4ca;
+  --md-sys-color-tertiary: #cde1ff;
+  --md-sys-color-on-tertiary: #365272;
+  --md-sys-color-tertiary-container: #b8d4fb;
+  --md-sys-color-on-tertiary-container: #2d4969;
+  --md-sys-color-error: #fa746f;
+  --md-sys-color-on-error: #490006;
+  --md-sys-color-error-container: #871f21;
+  --md-sys-color-on-error-container: #ff9993;
+  --md-sys-color-surface: #0a0f10;
+  --md-sys-color-on-surface: #dde7ea;
+  --md-sys-color-surface-variant: #1e272a;
+  --md-sys-color-on-surface-variant: #a3adb0;
+  --md-sys-color-outline: #6d777a;
+  --md-sys-color-outline-variant: #404a4c;
+  --md-sys-color-surface-dim: #0a0f10;
+  --md-sys-color-surface-bright: #242e30;
+  --md-sys-color-surface-container-lowest: #000000;
+  --md-sys-color-surface-container-low: #0e1416;
+  --md-sys-color-surface-container: #141b1d;
+  --md-sys-color-surface-container-high: #192123;
+  --md-sys-color-surface-container-highest: #1e272a;
+  --md-sys-color-inverse-surface: #f6fafb;
+  --md-sys-color-inverse-on-surface: #515657;
+  --md-sys-color-inverse-primary: #356671;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-success: #93d69d;
+  --md-sys-color-success-container: #0e5226;
+  --md-sys-color-on-success-container: #aff3b7;
+  --md-sys-color-caution: #ffb95a;
+  --md-sys-color-caution-container: #643f00;
+  --md-sys-color-on-caution-container: #ffddb6;
+  --md-sys-color-route-1: #65d3ff;
+  --md-sys-color-route-1-container: #004d64;
+  --md-sys-color-on-route-1-container: #bde9ff;
+  --md-sys-color-route-2: #d0bcff;
+  --md-sys-color-route-2-container: #4e3b7c;
+  --md-sys-color-on-route-2-container: #e9ddff;
+  --md-sys-color-route-3: #ffb4a7;
+  --md-sys-color-route-3-container: #80281c;
+  --md-sys-color-on-route-3-container: #ffdad4;
+  --md-sys-color-route-4: #9ed586;
+  --md-sys-color-route-4-container: #225112;
+  --md-sys-color-on-route-4-container: #baf2a0;
+
+  --bg: var(--md-sys-color-surface);
+  --surface: var(--md-sys-color-surface-container-low);
+  --ink: var(--md-sys-color-on-surface);
+  --muted: var(--md-sys-color-on-surface-variant);
+  --line: var(--md-sys-color-outline-variant);
+  --accent: var(--md-sys-color-primary);
+  --accent-soft: var(--md-sys-color-primary-container);
+  --on-accent: var(--md-sys-color-on-primary);
+  --neutral: var(--md-sys-color-outline);
+  --neutral-soft: var(--md-sys-color-surface-container-high);
+  --good: var(--md-sys-color-success);
+  --good-soft: var(--md-sys-color-success-container);
+  --warn: var(--md-sys-color-caution);
+  --warn-soft: var(--md-sys-color-caution-container);
+  --bad: var(--md-sys-color-error);
+  --bad-soft: var(--md-sys-color-error-container);
+  --sea: var(--md-sys-color-surface-container);
+  --land: var(--md-sys-color-secondary-container);
+  color-scheme: dark;
+}
+/* ===== M3 기본 ===== */
+body {
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-body-l);
+  letter-spacing: var(--md-tk-body-l);
+  line-height: 1.7;
+}
+.page { padding-inline: var(--md-sp-4); }
+
+/* ===== 타입 스케일 ===== */
+h1 { font: var(--md-headline-l); letter-spacing: 0; margin: 0 0 var(--md-sp-2); }
+h2 { font: var(--md-headline-s); letter-spacing: 0; }
+h3 { font: var(--md-title-l); letter-spacing: 0; }
+h4 { font: var(--md-title-m); letter-spacing: var(--md-tk-title-m); }
+.lede { font: var(--md-body-l); letter-spacing: var(--md-tk-body-l); color: var(--md-sys-color-on-surface-variant); }
+.eyebrow, .ht-tag, .sh-tag, .legend, .map-note, .src, .foot {
+  font: var(--md-label-m); letter-spacing: var(--md-tk-label-m);
+}
+.blockh p, .day-b p, .c-note, small { font: var(--md-body-m); letter-spacing: var(--md-tk-body-m); }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+
+/* ===== 상단 앱바 ===== */
+.top {
+  background: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  padding-block: var(--md-sp-6) var(--md-sp-4);
+}
+
+/* ===== 내비게이션 칩 (M3 filter chip) ===== */
+.jump {
+  background: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  padding-block: var(--md-sp-2);
+  gap: var(--md-sp-2);
+}
+.jump a {
+  display: inline-flex; align-items: center; height: 32px;
+  padding: 0 var(--md-sp-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-shape-s);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-label-l); letter-spacing: var(--md-tk-label-l);
+  text-decoration: none;
+  transition: background-color .12s linear, color .12s linear, border-color .12s linear;
+}
+.jump a:hover { background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent); }
+.jump a:active { background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent); }
+.jump a.x {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  border-color: transparent;
+}
+
+/* ===== 카드 ===== */
+.bk-c, .day-b, .shop-c, .map-wrap, .panel, .check, .rk {
+  border-radius: var(--md-shape-m);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface-container-low);
+  box-shadow: none;
+}
+.bk-c.hi {
+  background: var(--md-sys-color-surface-container-low);
+  border-color: transparent;
+  box-shadow: var(--md-elev-1), inset 4px 0 0 var(--md-sys-color-primary);
+}
+.bk-h { font: var(--md-label-l); letter-spacing: var(--md-tk-label-l); color: var(--md-sys-color-on-surface-variant); }
+.bk-l { font: var(--md-body-m); letter-spacing: var(--md-tk-body-m); }
+.bk-c b, .bk-c .num { font: var(--md-title-l); letter-spacing: 0; }
+.bk-l b { font: var(--md-body-m); font-weight: 500; letter-spacing: var(--md-tk-body-m); }
+.bk-l b.no { color: var(--md-sys-color-error); }
+.bk-l b.ok { color: var(--md-sys-color-success); }
+
+/* ===== 금액 요약 (filled tonal) ===== */
+.money > div {
+  border-radius: var(--md-shape-m);
+  background: var(--md-sys-color-surface-container);
+  border: none;
+}
+.money .paid { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); }
+.money .left { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
+.money .cap  { background: var(--md-sys-color-tertiary-container); color: var(--md-sys-color-on-tertiary-container); }
+.money span { font: var(--md-label-l); letter-spacing: var(--md-tk-label-l); opacity: .85; }
+.money b { font: var(--md-title-l); letter-spacing: 0; }
+
+/* ===== 칩 (M3 assist chip) ===== */
+.pill {
+  display: inline-flex; align-items: center; height: 24px;
+  padding: 0 var(--md-sp-2);
+  border-radius: var(--md-shape-s);
+  font: var(--md-label-m); letter-spacing: var(--md-tk-label-m);
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface-variant);
+  border: none;
+}
+.pill.good { background: var(--md-sys-color-success-container); color: var(--md-sys-color-on-success-container); }
+.pill.warn { background: var(--md-sys-color-caution-container); color: var(--md-sys-color-on-caution-container); }
+.pill.bad  { background: var(--md-sys-color-error-container);   color: var(--md-sys-color-on-error-container); }
+.ht-tag, .sh-tag {
+  border-radius: var(--md-shape-s);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  padding: 2px var(--md-sp-2);
+}
+
+/* ===== 리스트 아이템 ===== */
+.hts li, .bud li, .legs li, .shop-l li {
+  border-color: var(--md-sys-color-outline-variant);
+}
+.hts li.pick {
+  background: var(--md-sys-color-surface-container);
+  border-radius: var(--md-shape-m);
+  border-color: transparent;
+  box-shadow: inset 4px 0 0 var(--md-sys-color-primary);
+}
+.hts li.out { opacity: .6; }
+.bud li.tot {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border-radius: var(--md-shape-s);
+}
+
+/* ===== 날짜 카드 ===== */
+.day-b h4 { font: var(--md-title-m); letter-spacing: var(--md-tk-title-m); color: var(--md-sys-color-on-surface); }
+.day-d b { color: var(--md-sys-color-primary); }
+
+/* ===== FAB ===== */
+.totop {
+  width: 56px; height: 56px;
+  border-radius: var(--md-shape-l);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border: none;
+  box-shadow: var(--md-elev-3);
+}
+.totop:hover { background: color-mix(in srgb, var(--md-sys-color-on-primary-container) 8%, var(--md-sys-color-primary-container)); }
+
+/* ===== 링크와 포커스 ===== */
+a { color: var(--md-sys-color-primary); }
+a:focus-visible, .jump a:focus-visible, .totop:focus-visible {
+  outline: 3px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== 구분선 ===== */
+.part + .part, .foot { border-top-color: var(--md-sys-color-outline-variant); }
+
+/* ===== 볼거리 카드 ===== */
+.sp-g-h { margin: var(--md-sp-6) 0 var(--md-sp-3); }
+.sp-g-h h3 { font: var(--md-title-m); letter-spacing: var(--md-tk-title-m);
+  color: var(--md-sys-color-primary); margin: 0; }
+.sp-grid { display: grid; gap: var(--md-sp-4);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.sp { border-radius: var(--md-shape-m); overflow: hidden;
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  display: grid; grid-template-rows: auto 1fr; }
+.sp-art { width: 100%; aspect-ratio: 16 / 9; display: block; }
+.sp-b { padding: var(--md-sp-4); display: grid; gap: var(--md-sp-2); align-content: start; }
+.sp-n { font: var(--md-title-m); letter-spacing: var(--md-tk-title-m); margin: 0; }
+.sp-zh { font: var(--md-body-s); color: var(--md-sys-color-on-surface-variant);
+  margin-inline-start: 4px; }
+.sp-a { font: var(--md-label-l); letter-spacing: var(--md-tk-label-l);
+  color: var(--md-sys-color-primary); margin: 0; }
+.sp-s { font: var(--md-body-m); letter-spacing: var(--md-tk-body-m); margin: 0; }
+.sp-t { font: var(--md-body-s); letter-spacing: var(--md-tk-body-s); margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  background: var(--md-sys-color-surface-container-high);
+  border-radius: var(--md-shape-s); padding: var(--md-sp-2) var(--md-sp-3); }
+.sp-f { display: flex; flex-wrap: wrap; gap: var(--md-sp-2) var(--md-sp-4);
+  align-items: center; justify-content: space-between; margin: 0; }
+.sp-r { font: var(--md-label-m); letter-spacing: var(--md-tk-label-m);
+  color: var(--md-sys-color-on-surface-variant); }
+.sp-g { font: var(--md-label-l); letter-spacing: var(--md-tk-label-l);
+  text-decoration: none; }
+.sp-g:hover { text-decoration: underline; }
+
+/* ===== 지도 ===== */
+.gm-chips { display: flex; flex-wrap: wrap; gap: var(--md-sp-2);
+  margin-bottom: var(--md-sp-4); }
+.gm-c { display: inline-flex; align-items: center; gap: var(--md-sp-2);
+  height: 32px; padding: 0 var(--md-sp-4); cursor: pointer;
+  border: 1px solid var(--md-sys-color-outline); border-radius: var(--md-shape-s);
+  background: transparent; color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-label-l); letter-spacing: var(--md-tk-label-l);
+  transition: background-color .12s linear; }
+.gm-c i { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.gm-c:hover { background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent); }
+.gm-c.x { background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container); border-color: transparent; }
+.gm-wrap { border-radius: var(--md-shape-m); padding: var(--md-sp-2);
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant); }
+.gm { width: 100%; height: auto; display: block; }
+.gm-grid line { stroke: var(--md-sys-color-outline-variant); stroke-width: .8; }
+.gm-mrt { fill: none; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round;
+  opacity: .55; }
+.gm-red { stroke: #c0392b; } .gm-org { stroke: #d98324; }
+.gm-st { fill: var(--md-sys-color-surface); stroke: var(--md-sys-color-outline);
+  stroke-width: 1.4; }
+.gm-ferry { stroke: var(--md-sys-color-primary); stroke-width: 3; stroke-dasharray: 6 5; }
+.gm-rt { fill: none; stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round;
+  opacity: .9; }
+.gm-rn { stroke: var(--md-sys-color-surface); stroke-width: 2; }
+.gm-rt-n { font: 700 10px var(--f-body); fill: #fff; text-anchor: middle; }
+.gm-dot { fill: var(--md-sys-color-surface); stroke: var(--md-sys-color-on-surface);
+  stroke-width: 2; }
+.gm-home { fill: var(--md-sys-color-primary); stroke: var(--md-sys-color-surface);
+  stroke-width: 2; }
+.gm-lb { font: 500 12px var(--f-body); fill: var(--md-sys-color-on-surface);
+  paint-order: stroke; stroke: var(--md-sys-color-surface); stroke-width: 3.5;
+  stroke-linejoin: round; }
+.gm-lb-b { fill: var(--md-sys-color-primary); }
+.gm-st-l, .gm-off { font: 400 10.5px var(--f-body);
+  fill: var(--md-sys-color-on-surface-variant); paint-order: stroke;
+  stroke: var(--md-sys-color-surface); stroke-width: 3; stroke-linejoin: round; }
+.gm-scale line { stroke: var(--md-sys-color-on-surface-variant); stroke-width: 1.4; }
+.gm-scale text { font: 400 10px var(--f-body); fill: var(--md-sys-color-on-surface-variant); }
+.gm-key { list-style: none; margin: var(--md-sp-3) 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--md-sp-2) var(--md-sp-4);
+  font: var(--md-label-m); letter-spacing: var(--md-tk-label-m);
+  color: var(--md-sys-color-on-surface-variant); }
+.gm-key li { display: inline-flex; align-items: center; gap: 6px; }
+.gm-key i { width: 16px; height: 4px; border-radius: 2px; flex: none; }
+.gm-key .k-red { background: #c0392b; } .gm-key .k-org { background: #d98324; }
+.gm-key .k-fer { background: var(--md-sys-color-primary);
+  height: 0; border-top: 3px dashed var(--md-sys-color-primary); }
+.gm-key .k-home { width: 10px; height: 10px; border-radius: 3px;
+  background: var(--md-sys-color-primary); }
+.gm-key .k-dot { width: 9px; height: 9px; border-radius: 50%;
+  background: var(--md-sys-color-surface);
+  box-shadow: inset 0 0 0 2px var(--md-sys-color-on-surface); }
+@media (max-width: 560px) {
+  .gm-lb { font-size: 13px; }
+  .gm-st-l, .gm-off { font-size: 11.5px; }
+}
+
+</style>
+
+<style>
 /* booked summary */
 .bk { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
 .bk-c { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
@@ -454,6 +955,8 @@ h4.blk small { font-weight: 400; }
   <nav class="jump" aria-label="바로가기">
     <a class="x" href="#booked">예약 내역</a>
     <a class="x" href="#plan">일정</a>
+    <a class="x" href="#spots">볼거리</a>
+    <a class="x" href="#map">지도</a>
     <a class="x" href="#move">동선</a>
     <a class="x" href="#food">맛집</a>
     <a class="x" href="#shop">쇼핑</a>
@@ -522,13 +1025,431 @@ h4.blk small { font-weight: 400; }
         </li>
         <li class="day">
           <div class="day-d"><b class="num">1/8</b><span>금</span></div>
-          <div class="day-b"><h4>롄츠탄과 쇼핑, 마사지</h4><p>오전에 롄츠탄 용호탑에 다녀옵니다. 오후엔 숙소 바로 위 신광미쓰코시와 다위안바이에서 쇼핑하고 마사지로 쉽니다. 저녁은 여동생 생일 축하 자리로 씁니다.</p><ul class="legs"><li><span class="lg-route">숙소 ↔ 롄츠탄 (쮜잉역)</span><span class="lg-how">레드선 8정거장 · 편도 25분</span><span class="lg-cost num">3인 왕복 약 1.2만원</span></li><li><span class="lg-route">신광미쓰코시·다위안바이</span><span class="lg-how">숙소에서 도보 2~5분</span><span class="lg-cost num">-</span></li><li><span class="lg-route">한신백화점 (생일 식당 쪽)</span><span class="lg-how">약 1.1km · 도보 15분 또는 택시 5분</span><span class="lg-cost num">약 1만원</span></li><li><span class="lg-route">마사지</span><span class="lg-how">1~1.5시간</span><span class="lg-cost num">3인 6만~9만원</span></li></ul></div>
+          <div class="day-b"><h4>롄츠탄과 쇼핑, 생일 저녁</h4><p>오전에 롄츠탄 용호탑과 춘추각에 다녀옵니다. 오후엔 숙소 바로 위 신광미쓰코시와 다위안바이에서 쇼핑하고 마사지로 쉽니다. 저녁은 雋 GEN에서 여동생 생일 축하 자리를 가집니다. 생일은 1/15지만 미리 하는 자리입니다.</p><ul class="legs"><li><span class="lg-route">숙소 ↔ 롄츠탄 (쭤잉역)</span><span class="lg-how">레드선 8정거장 · 편도 25분</span><span class="lg-cost num">3인 왕복 약 1.2만원</span></li><li><span class="lg-route">신광미쓰코시·다위안바이</span><span class="lg-how">숙소에서 도보 2~5분</span><span class="lg-cost num">-</span></li><li><span class="lg-route">숙소 → 雋 GEN (생일 저녁)</span><span class="lg-how">약 1.3km · 택시 5분</span><span class="lg-cost num">약 1만원</span></li><li><span class="lg-route">雋 GEN → 숙소</span><span class="lg-how">택시 5분</span><span class="lg-cost num">약 1만원</span></li><li><span class="lg-route">마사지</span><span class="lg-how">1~1.5시간</span><span class="lg-cost num">3인 6만~9만원</span></li></ul></div>
         </li>
         <li class="day">
           <div class="day-d"><b class="num">1/9</b><span>토</span></div>
           <div class="day-b"><h4>오전 여유, 오후 귀국</h4><p>오전에 체크아웃하고 숙소에 짐을 맡깁니다. 근처에서 아침을 먹고 마지막 쇼핑을 한 뒤, 오후 2시쯤 짐을 찾아 공항으로 갑니다. 17:00 출발, 인천 20:45 도착.</p><ul class="legs"><li><span class="lg-route">숙소 → 공항</span><span class="lg-how">약 9km · 10분 · 레드선, 환승 없음</span><span class="lg-cost num">3인 약 5천원</span></li></ul></div>
         </li>
     </ol>
+  </section>
+
+
+  <section class="part" id="spots">
+    <div class="blockh">
+      <h2>볼거리</h2>
+      <p>일정에 넣은 곳들이 어떤 데인지 정리했습니다. 평점과 후기 수는 구글 지도 기준이고,
+         링크를 누르면 실제 사진을 볼 수 있습니다. 카드의 그림은 직접 그린 것이라 실제 모습과 다릅니다.</p>
+    </div>
+    <div class="sp-g-h"><h3>1/6 수에 가는 곳</h3></div>
+    <div class="sp-grid">
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="루이허 야시장 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<circle cx="132" cy="20" r="9" fill="var(--md-sys-color-tertiary-container)"/>
+<path d="M18 40h124l-8-12H26z" fill="var(--md-sys-color-primary)"/>
+<path d="M26 28h116l-4 6H30z" fill="var(--md-sys-color-primary-container)"/>
+<rect x="24" y="40" width="112" height="34" fill="var(--md-sys-color-secondary-container)"/>
+<rect x="24" y="40" width="112" height="4" fill="var(--md-sys-color-outline)" opacity=".35"/>
+<rect x="36" y="50" width="26" height="16" rx="2" fill="var(--md-sys-color-tertiary)"/>
+<rect x="70" y="50" width="26" height="16" rx="2" fill="var(--md-sys-color-primary)"/>
+<rect x="104" y="50" width="22" height="16" rx="2" fill="var(--md-sys-color-secondary)"/>
+<circle cx="44" cy="22" r="6" fill="var(--md-sys-color-tertiary)"/><rect x="43" y="10" width="2" height="7" fill="var(--md-sys-color-outline)"/>
+<circle cx="62" cy="18" r="5" fill="var(--md-sys-color-tertiary)"/><rect x="61" y="8" width="2" height="6" fill="var(--md-sys-color-outline)"/>
+<path d="M88 24c3-4-3-6 0-10" stroke="var(--md-sys-color-outline)" stroke-width="2" fill="none" opacity=".5"/>
+<path d="M98 24c3-4-3-6 0-10" stroke="var(--md-sys-color-outline)" stroke-width="2" fill="none" opacity=".5"/>
+<rect y="74" width="160" height="16" fill="var(--md-sys-color-outline)" opacity=".2"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">루이허 야시장 <span class="sp-zh">瑞豐夜市</span></h4>
+          <p class="sp-a">쭤잉區 · 巨蛋역 5분</p>
+          <p class="sp-s">가오슝에서 가장 큰 야시장입니다. 먹거리 구역이 바둑판처럼 나뉘어 있어 한 바퀴만 돌면 다 봅니다. 간판 메뉴는 톈스옌쑤지(天使雁酥雞) 프라이드치킨이고, 그 밖에 소시지, 취두부, 모찌 가게가 몰려 있습니다. 안쪽은 옷과 액세서리, 끝쪽은 인형뽑기 같은 게임 구역이라 여동생이 좋아할 만합니다.</p>
+          <p class="sp-t">월·수·일 휴무. 오후 5시에 열어 자정에 닫습니다. 현금을 챙기세요.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.2 · 후기 38,340</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJG12iPwcFbjQR8vPAeEnvkX8" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="광지충딩 (빛의 돔) 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<g transform="translate(80 74)">
+ <path d="M0 0 -46 0A46 46 0 0 1 -39.8-23Z" fill="var(--md-sys-color-primary)"/>
+ <path d="M0 0 -39.8-23A46 46 0 0 1 -23-39.8Z" fill="var(--md-sys-color-tertiary)"/>
+ <path d="M0 0 -23-39.8A46 46 0 0 1 0-46Z" fill="var(--md-sys-color-primary-container)"/>
+ <path d="M0 0 0-46A46 46 0 0 1 23-39.8Z" fill="var(--md-sys-color-secondary)"/>
+ <path d="M0 0 23-39.8A46 46 0 0 1 39.8-23Z" fill="var(--md-sys-color-tertiary-container)"/>
+ <path d="M0 0 39.8-23A46 46 0 0 1 46 0Z" fill="var(--md-sys-color-secondary-container)"/>
+ <g stroke="var(--md-sys-color-surface-container-highest)" stroke-width="2.2" fill="none">
+  <path d="M-46 0H46"/><path d="M0 0-39.8-23M0 0-23-39.8M0 0V-46M0 0 23-39.8M0 0 39.8-23"/>
+  <path d="M-33 0A33 33 0 0 1 33 0" /><path d="M-19 0A19 19 0 0 1 19 0"/>
+ </g>
+ <circle r="8" fill="var(--md-sys-color-primary)"/><circle r="8" fill="none" stroke="var(--md-sys-color-surface-container-highest)" stroke-width="2.2"/>
+</g>
+<rect y="74" width="160" height="16" fill="var(--md-sys-color-outline)" opacity=".18"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">광지충딩 (빛의 돔) <span class="sp-zh">美麗島站 光之穹頂</span></h4>
+          <p class="sp-a">메이리다오역 지하 1층 · 환승하며 들름</p>
+          <p class="sp-s">메이리다오역 지하에 있는 지름 30m짜리 스테인드글라스 천장입니다. 이탈리아 작가 나르키소스 콸리아타가 만들었고 세계에서 가장 큰 유리 공예로 꼽힙니다. 역 안에 있어서 환승하는 김에 2~3분이면 봅니다.</p>
+          <p class="sp-t">레드선과 오렌지선이 만나는 역이라 어차피 지나갑니다. 개찰구 안쪽이 아니라 B1 대합실에 있습니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.4 · 후기 4,731</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJKTktNo4EbjQRoRKMt38KIUY" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+    </div>
+    <div class="sp-g-h"><h3>1/7 목에 가는 곳</h3></div>
+    <div class="sp-grid">
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="보얼예술특구 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<path d="M12 70V46l16-12 16 12v24z" fill="var(--md-sys-color-primary-container)"/>
+<path d="M48 70V46l16-12 16 12v24z" fill="var(--md-sys-color-secondary-container)"/>
+<path d="M84 70V46l16-12 16 12v24z" fill="var(--md-sys-color-primary-container)"/>
+<rect x="20" y="54" width="10" height="16" fill="var(--md-sys-color-primary)"/>
+<rect x="56" y="54" width="10" height="16" fill="var(--md-sys-color-secondary)"/>
+<rect x="92" y="54" width="10" height="16" fill="var(--md-sys-color-primary)"/>
+<circle cx="38" cy="56" r="6" fill="var(--md-sys-color-tertiary)"/>
+<g stroke="var(--md-sys-color-outline)" stroke-width="3" fill="none">
+ <path d="M130 70V22h-14"/><path d="M116 22l18 12"/>
+</g>
+<rect x="124" y="30" width="12" height="10" fill="var(--md-sys-color-primary)"/>
+<rect y="70" width="160" height="20" fill="var(--md-sys-color-outline)" opacity=".18"/>
+<path d="M0 78h160M0 84h160" stroke="var(--md-sys-color-outline)" stroke-width="1.5" opacity=".45"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">보얼예술특구 <span class="sp-zh">駁二藝術特區</span></h4>
+          <p class="sp-a">옌청區 · 옌청푸역에서 도보 10분 또는 경전철</p>
+          <p class="sp-s">버려진 항만 창고 수십 동을 그대로 두고 안팎을 전시장과 상점으로 바꾼 구역입니다. 벽화, 대형 조형물, 옛 철로가 그대로 남아 있어 걸으면서 사진 찍기 좋습니다. 바다 바람이 들어와 한낮에도 덜 덥습니다. 창고마다 독립 서점과 디자인 소품 가게가 있어 여동생 선물을 고르기에도 맞습니다.</p>
+          <p class="sp-t">평일 10~18시, 금·토·일은 20시까지. 구역이 넓으니 다요로(大勇) 창고군부터 보세요.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.5 · 후기 72,280</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJW8ThIHYEbjQR8k12HL3R1uY" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="가오슝 뮤직센터 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<path d="M14 66c0-20 12-32 26-32s22 12 22 32z" fill="var(--md-sys-color-primary)"/>
+<path d="M60 66c0-24 12-38 26-38s24 14 24 38z" fill="var(--md-sys-color-primary-container)"/>
+<path d="M104 66c0-16 10-26 20-26s22 10 22 26z" fill="var(--md-sys-color-secondary)"/>
+<path d="M14 66c0-20 12-32 26-32M60 66c0-24 12-38 26-38M104 66c0-16 10-26 20-26"
+      stroke="var(--md-sys-color-surface-container-highest)" stroke-width="2" fill="none" opacity=".6"/>
+<rect y="66" width="160" height="24" fill="var(--md-sys-color-secondary-container)"/>
+<path d="M8 74h30M48 74h26M86 74h40M20 82h34M70 82h50" stroke="var(--md-sys-color-outline)"
+      stroke-width="2" opacity=".4" stroke-linecap="round"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">가오슝 뮤직센터 <span class="sp-zh">高雄流行音樂中心</span></h4>
+          <p class="sp-a">보얼예술특구 바로 옆 · 도보 10분</p>
+          <p class="sp-s">물결 모양 건물 여러 동이 항구를 따라 늘어선 공연장입니다. 공연을 안 봐도 건물 사이를 걷는 것만으로 볼만하고, 해 질 무렵 조명이 켜지면 사진이 잘 나옵니다. 보얼에서 이어서 걸으면 동선이 끊기지 않습니다.</p>
+          <p class="sp-t">구글 평점 4.8로 이 목록에서 가장 높습니다. 야외 구역은 상시 개방입니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.8 · 후기 1,067</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJUR4zdtsFbjQRqt9TkoCNagc" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="치진섬 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<circle cx="132" cy="20" r="10" fill="var(--md-sys-color-tertiary-container)"/>
+<rect y="56" width="160" height="34" fill="var(--md-sys-color-primary-container)"/>
+<path d="M14 56h132c-8-10-26-15-66-15s-58 5-66 15z" fill="var(--md-sys-color-secondary)"/>
+<path d="M22 56h116c-6-6-20-9-58-9s-52 3-58 9z" fill="var(--md-sys-color-secondary-container)" opacity=".7"/>
+<rect x="46" y="26" width="10" height="22" fill="#eef3f4"/>
+<path d="M46 26h10l-2-6h-6z" fill="#eef3f4"/>
+<rect x="44" y="16" width="14" height="5" rx="1.5" fill="var(--md-sys-color-primary)"/>
+<rect x="48" y="9" width="6" height="7" rx="1.5" fill="var(--md-sys-color-tertiary)"/>
+<path d="M58 13l18-5M58 19l18 5" stroke="var(--md-sys-color-tertiary)" stroke-width="2" opacity=".65"
+      stroke-linecap="round"/>
+<path d="M94 68h34l-6 10H100z" fill="var(--md-sys-color-primary)"/>
+<rect x="104" y="60" width="18" height="8" rx="1.5" fill="#eef3f4"/>
+<path d="M0 82q10-5 20 0t20 0 20 0 20 0 20 0 20 0 20 0" stroke="var(--md-sys-color-outline)" stroke-width="2"
+      fill="none" opacity=".4"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">치진섬 <span class="sp-zh">旗津</span></h4>
+          <p class="sp-a">구산 선착장에서 페리 5분</p>
+          <p class="sp-s">가오슝항 건너편의 긴 모래섬입니다. 페리에서 내리면 바로 치진 라오제가 나오고, 해산물 식당과 노점이 양옆으로 이어집니다. 길 끝에는 톈허우궁 사당, 언덕 위에는 흰색 치허우 등대가 있습니다. 등대에서 항구와 시내가 한눈에 보입니다. 반대편은 검은 모래 해변이라 바다까지 걸어 나갈 수 있습니다.</p>
+          <p class="sp-t">페리는 10~15분 간격, 1인 NT$30이고 아이패스로 찍고 탑니다. 섬 안에서 전동 자전거를 빌리면 등대까지 편합니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.2 · 후기 27,938</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJay59ifEDbjQRld7ipbyyH-4" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="치허우 등대 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<rect y="76" width="160" height="14" fill="var(--md-sys-color-primary-container)"/>
+<path d="M4 76c14-20 34-30 76-30s62 10 76 30z" fill="var(--md-sys-color-secondary)"/>
+<path d="M24 76c10-13 26-20 56-20s46 7 56 20z" fill="var(--md-sys-color-secondary-container)" opacity=".65"/>
+<path d="M72 70V36h16v34z" fill="#eef3f4"/>
+<path d="M72 36h16l-3-8h-10z" fill="#eef3f4"/>
+<rect x="69" y="22" width="22" height="7" rx="2" fill="var(--md-sys-color-primary)"/>
+<rect x="75" y="13" width="10" height="9" rx="2" fill="var(--md-sys-color-tertiary)"/>
+<path d="M91 18l32-7M91 26l32 7M69 18L37 11M69 26L37 33" stroke="var(--md-sys-color-tertiary)" stroke-width="2.5"
+      opacity=".5" stroke-linecap="round"/>
+<path d="M74 48h12M74 58h12" stroke="var(--md-sys-color-primary)" stroke-width="1.6" opacity=".45"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">치허우 등대 <span class="sp-zh">旗後燈塔</span></h4>
+          <p class="sp-a">치진 라오제에서 오르막 10분</p>
+          <p class="sp-s">1883년에 세운 흰 등대입니다. 언덕 위라 항구 입구, 시쯔완, 85빌딩까지 한 화면에 들어옵니다. 입장료가 없고 치진에서 전망이 가장 좋은 자리입니다.</p>
+          <p class="sp-t">10~21시. 오르막이 10분쯤 되니 계단보다 포장도로 쪽으로 올라가세요.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.6 · 후기 5,500</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJifn-9_ADbjQRTR2Q9DmlzEo" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="아이허 유람선 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<rect x="14" y="16" width="10" height="26" fill="var(--md-sys-color-secondary-container)"/>
+<rect x="38" y="10" width="12" height="32" fill="var(--md-sys-color-primary-container)"/>
+<rect x="62" y="20" width="9" height="22" fill="var(--md-sys-color-secondary-container)"/>
+<rect x="118" y="8" width="14" height="34" fill="var(--md-sys-color-primary-container)"/>
+<rect x="138" y="18" width="10" height="24" fill="var(--md-sys-color-secondary-container)"/>
+<path d="M78 42V18h6v24z" fill="var(--md-sys-color-primary)"/><path d="M84 22h26v4H84z" fill="var(--md-sys-color-primary)"/>
+<rect y="46" width="160" height="44" fill="var(--md-sys-color-secondary-container)"/>
+<path d="M0 46h160" stroke="var(--md-sys-color-outline)" stroke-width="1" opacity=".4"/>
+<path d="M46 66h48l-6 10H52z" fill="var(--md-sys-color-primary)"/>
+<rect x="56" y="58" width="28" height="8" rx="2" fill="var(--md-sys-color-primary-container)"/>
+<circle cx="70" cy="54" r="3" fill="var(--md-sys-color-tertiary)"/>
+<path d="M10 82h22M44 86h30M98 82h26M124 76h20" stroke="var(--md-sys-color-tertiary)" stroke-width="2"
+      opacity=".45" stroke-linecap="round"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">아이허 유람선 <span class="sp-zh">愛河 愛之船</span></h4>
+          <p class="sp-a">첸진區 허둥로 · 중앙공원역에서 도보 10분</p>
+          <p class="sp-s">시내를 가로지르는 아이허에서 30분쯤 타는 유람선입니다. 배는 낮은 다리 아래를 지나 뮤직센터와 다강교 쪽을 돌아옵니다. 해가 지고 강변 조명이 켜진 뒤가 제일 좋습니다. 휠체어도 태울 수 있을 만큼 승하선이 평탄합니다.</p>
+          <p class="sp-t">15~22시 운항. 안내 방송은 중국어만 나옵니다. 배가 어느 정도 차야 출발하니 시간 여유를 두세요.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.3 · 후기 2,353</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJGaqBzLQEbjQROAf-FJQ_d5U" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+    </div>
+    <div class="sp-g-h"><h3>1/8 금에 가는 곳</h3></div>
+    <div class="sp-grid">
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="롄츠탄 용호탑 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<rect y="58" width="160" height="32" fill="var(--md-sys-color-secondary-container)"/>
+<g fill="var(--md-sys-color-primary)">
+ <path d="M30 60V34h18v26z"/><path d="M24 34h30l-15-9z"/>
+ <path d="M26 28h26l-13-7z"/><path d="M28 22h22l-11-6z"/>
+</g>
+<g fill="var(--md-sys-color-tertiary)">
+ <path d="M106 60V34h18v26z"/><path d="M100 34h30l-15-9z"/>
+ <path d="M102 28h26l-13-7z"/><path d="M104 22h22l-11-6z"/>
+</g>
+<rect x="34" y="44" width="10" height="16" fill="var(--md-sys-color-surface-container-highest)" opacity=".85"/>
+<rect x="110" y="44" width="10" height="16" fill="var(--md-sys-color-surface-container-highest)" opacity=".85"/>
+<path d="M48 70h20v-6h20v6h20" stroke="var(--md-sys-color-primary-container)" stroke-width="6" fill="none"
+      stroke-linejoin="round"/>
+<path d="M0 80h160" stroke="var(--md-sys-color-outline)" stroke-width="1.5" opacity=".35"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">롄츠탄 용호탑 <span class="sp-zh">蓮池潭 龍虎塔</span></h4>
+          <p class="sp-a">쭤잉區 · 쭤잉역에서 택시 10분</p>
+          <p class="sp-s">호수 위로 지그재그 다리를 건너 용의 입으로 들어가 호랑이 입으로 나오는 탑입니다. 그렇게 지나면 액운이 빠진다고 합니다. 탑은 7층까지 올라갈 수 있고 꼭대기에서 호수와 주변 사당이 내려다보입니다. 안쪽 벽화도 촘촘합니다.</p>
+          <p class="sp-t">8~17시 30분. 오전에 가면 한산합니다. 반드시 용 쪽으로 들어가 호랑이 쪽으로 나오세요.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.3 · 후기 21,105</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJJcBAjaEFbjQRx4A8dRM2bVI" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="춘추각 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<rect y="62" width="160" height="28" fill="var(--md-sys-color-secondary-container)"/>
+<g fill="var(--md-sys-color-primary)">
+ <path d="M26 64V40h20v24z"/><path d="M20 40h32l-16-10z"/><path d="M24 32h24l-12-8z"/>
+</g>
+<g fill="var(--md-sys-color-primary)">
+ <path d="M114 64V40h20v24z"/><path d="M108 40h32l-16-10z"/><path d="M112 32h24l-12-8z"/>
+</g>
+<rect x="31" y="48" width="10" height="16" fill="var(--md-sys-color-surface-container-highest)" opacity=".85"/>
+<rect x="119" y="48" width="10" height="16" fill="var(--md-sys-color-surface-container-highest)" opacity=".85"/>
+<path d="M74 64V30q6-6 12 0v34z" fill="var(--md-sys-color-tertiary-container)"/>
+<circle cx="80" cy="24" r="7" fill="var(--md-sys-color-tertiary)"/>
+<path d="M60 70h40" stroke="var(--md-sys-color-primary-container)" stroke-width="6" stroke-linecap="round"/>
+<path d="M0 80h160" stroke="var(--md-sys-color-outline)" stroke-width="1.5" opacity=".35"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">춘추각 <span class="sp-zh">春秋閣</span></h4>
+          <p class="sp-a">용호탑에서 호숫가로 도보 5분</p>
+          <p class="sp-s">용호탑 바로 북쪽에 있는 쌍둥이 누각입니다. 호수 위에 용을 탄 관음상이 서 있고 그 앞으로 다리가 놓여 있습니다. 용호탑과 묶어서 한 번에 보면 롄츠탄에서 볼 것은 거의 끝납니다.</p>
+          <p class="sp-t">8~20시. 두 곳 합쳐 1시간 30분이면 넉넉합니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.3 · 후기 4,939</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJH24YWp8FbjQRth_YQG30ohc" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="신광미쓰코시 산둬점 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<rect x="22" y="14" width="116" height="62" fill="var(--md-sys-color-primary-container)"/>
+<g fill="var(--md-sys-color-surface-container-highest)" opacity=".8">
+ <rect x="34" y="24" width="18" height="12"/><rect x="60" y="24" width="18" height="12"/>
+ <rect x="86" y="24" width="18" height="12"/><rect x="112" y="24" width="14" height="12"/>
+ <rect x="34" y="42" width="18" height="12"/><rect x="60" y="42" width="18" height="12"/>
+ <rect x="86" y="42" width="18" height="12"/><rect x="112" y="42" width="14" height="12"/>
+</g>
+<path d="M22 62h116v6H22z" fill="var(--md-sys-color-primary)"/>
+<path d="M30 68h24l-4 8H34zM62 68h24l-4 8H66zM94 68h24l-4 8H98z" fill="var(--md-sys-color-tertiary)"/>
+<rect x="70" y="60" width="20" height="16" fill="var(--md-sys-color-secondary)"/>
+<rect y="76" width="160" height="14" fill="var(--md-sys-color-outline)" opacity=".2"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">신광미쓰코시 산둬점 <span class="sp-zh">新光三越 三多店</span></h4>
+          <p class="sp-a">숙소에서 도보 3분 · 산둬상권역 바로 위</p>
+          <p class="sp-s">숙소에서 가장 가까운 백화점입니다. 지하 2층에 식품관과 푸드코트가 있어 펑리수나 누가크래커 같은 선물을 한 번에 삽니다. 바로 옆 다위안바이와 붙어 있어 두 곳을 이어서 돌 수 있습니다.</p>
+          <p class="sp-t">11~22시. 여권을 가져가면 면세 환급을 받습니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.1 · 후기 6,580</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJ9Sh0e30DbjQRkKSIsn6NguM" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="한신백화점 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<rect x="30" y="8" width="100" height="68" fill="var(--md-sys-color-secondary-container)"/>
+<rect x="38" y="8" width="84" height="4" fill="var(--md-sys-color-primary)"/>
+<g fill="var(--md-sys-color-surface-container-highest)" opacity=".8">
+ <rect x="40" y="18" width="80" height="8"/><rect x="40" y="31" width="80" height="8"/>
+ <rect x="40" y="44" width="80" height="8"/>
+</g>
+<rect x="40" y="58" width="80" height="18" fill="var(--md-sys-color-primary-container)"/>
+<rect x="68" y="60" width="24" height="16" fill="var(--md-sys-color-primary)"/>
+<path d="M30 56h100v4H30z" fill="var(--md-sys-color-tertiary)"/>
+<rect y="76" width="160" height="14" fill="var(--md-sys-color-outline)" opacity=".2"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">한신백화점 <span class="sp-zh">漢神百貨</span></h4>
+          <p class="sp-a">숙소에서 1.1km · 택시 5분</p>
+          <p class="sp-s">가오슝에서 가장 고급으로 치는 백화점입니다. 명품 매장이 모여 있고 지하 3층에 식당가가 있습니다. 평일에는 한산해서 천천히 둘러보기 좋습니다.</p>
+          <p class="sp-t">평일 11~21시 30분, 금·토는 22시까지. 산둬상권에서 도보로는 15분이라 택시가 낫습니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.3 · 후기 11,543</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJHx7vBoADbjQR1QeU0jgn-ks" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="雋 GEN 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<ellipse cx="80" cy="64" rx="46" ry="11" fill="var(--md-sys-color-secondary-container)"/>
+<ellipse cx="80" cy="60" rx="46" ry="11" fill="var(--md-sys-color-primary-container)"/>
+<ellipse cx="80" cy="60" rx="30" ry="7" fill="var(--md-sys-color-surface-container-highest)" opacity=".7"/>
+<path d="M50 56a30 22 0 0 1 60 0z" fill="var(--md-sys-color-primary)"/>
+<rect x="76" y="28" width="8" height="8" rx="2" fill="var(--md-sys-color-tertiary)"/>
+<path d="M74 24c0-5 6-5 6-10 0 5 6 5 6 10" stroke="var(--md-sys-color-tertiary)" stroke-width="2" fill="none"/>
+<path d="M18 74l44-18M22 80l44-18" stroke="var(--md-sys-color-outline)" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="132" cy="30" r="8" fill="var(--md-sys-color-tertiary-container)"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">雋 GEN <span class="sp-zh">雋 中餐廳</span></h4>
+          <p class="sp-a">첸전區 푸싱4로 · 숙소에서 택시 5분</p>
+          <p class="sp-s">여동생 생일 축하 자리로 고른 미슐랭 1스타 광둥 식당입니다. 1980년대 홍콩·마카오 광둥요리를 재현합니다. 구글 평점 4.6이고, 후기에는 &#x27;3스타급 서비스&#x27;, &#x27;직원이 요리를 하나하나 설명해준다&#x27;는 말이 반복해서 나옵니다.</p>
+          <p class="sp-t">월요일 휴무. 점심 12~14시 30분, 저녁 18~22시. 예약은 07-338-4885.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.6 · 후기 134</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJkR6GIAADbjQRlQjRUqtZbz8" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+    </div>
+    <div class="sp-g-h"><h3>일정에 없는 예비 후보</h3></div>
+    <div class="sp-grid">
+      <article class="sp">
+        <svg class="sp-art" viewBox="0 0 160 90" role="img"
+             aria-label="85 스카이타워 일러스트" preserveAspectRatio="xMidYMid slice">
+<rect width="160" height="90" fill="var(--md-sys-color-surface-container-highest)"/>
+<path d="M56 90V34h12v56zM92 90V34h12v56z" fill="var(--md-sys-color-primary-container)"/>
+<path d="M68 90V54h24v36z" fill="var(--md-sys-color-secondary-container)"/>
+<path d="M60 34h40l-20-20z" fill="var(--md-sys-color-primary)"/>
+<rect x="78" y="4" width="4" height="12" fill="var(--md-sys-color-outline)"/>
+<rect x="66" y="40" width="28" height="6" fill="var(--md-sys-color-primary)"/>
+<g fill="var(--md-sys-color-surface-container-highest)" opacity=".6">
+ <rect x="58" y="50" width="8" height="4"/><rect x="58" y="60" width="8" height="4"/>
+ <rect x="58" y="70" width="8" height="4"/><rect x="94" y="50" width="8" height="4"/>
+ <rect x="94" y="60" width="8" height="4"/><rect x="94" y="70" width="8" height="4"/>
+</g>
+<rect x="20" y="66" width="20" height="24" fill="var(--md-sys-color-secondary-container)"/>
+<rect x="124" y="60" width="18" height="30" fill="var(--md-sys-color-secondary-container)"/>
+        </svg>
+        <div class="sp-b">
+          <h4 class="sp-n">85 스카이타워 <span class="sp-zh">高雄85大樓</span></h4>
+          <p class="sp-a">숙소에서 도보 10분</p>
+          <p class="sp-s">가운데가 뚫린 85층짜리 가오슝의 상징 건물입니다. 74층에 전망대가 있습니다. 숙소에서 걸어갈 거리라 첫날 저녁이나 마지막 날 오전에 시간이 뜨면 채우기 좋습니다.</p>
+          <p class="sp-t">일정에 넣지 않은 예비 후보입니다. 아이허 유람선에서도 이 건물이 보입니다.</p>
+          <p class="sp-f">
+            <span class="sp-r">구글 4.1 · 후기 13,298</span>
+            <a class="sp-g" href="https://www.google.com/maps/place/?q=place_id:ChIJAZBaKn8DbjQRqpQI86o3ryg" target="_blank" rel="noopener">
+              지도와 사진 보기 ↗</a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="part" id="map">
+    <div class="blockh">
+      <h2>지도</h2>
+      <p>실제 위경도를 그대로 옮긴 지도입니다. 가로세로 축척이 같아서 격자 한 칸이 1km입니다.
+         아래 날짜를 누르면 그날 이동하는 순서가 번호로 표시됩니다.
+         해안선은 그리지 않았고, 지하철 선은 실제 역 좌표를 이은 것입니다.</p>
+    </div>
+    <div class="gm-chips" role="tablist" aria-label="날짜별 이동경로"><button type="button" class="gm-c x" data-d="1" role="tab" aria-selected="true"><i style="background:var(--md-sys-color-route-1)"></i>1/6 수 · 도착과 야시장</button><button type="button" class="gm-c" data-d="2" role="tab" aria-selected="false"><i style="background:var(--md-sys-color-route-2)"></i>1/7 목 · 보얼예술특구와 치진섬</button><button type="button" class="gm-c" data-d="3" role="tab" aria-selected="false"><i style="background:var(--md-sys-color-route-3)"></i>1/8 금 · 롄츠탄과 쇼핑, 생일 저녁</button><button type="button" class="gm-c" data-d="4" role="tab" aria-selected="false"><i style="background:var(--md-sys-color-route-4)"></i>1/9 토 · 오전 여유, 오후 귀국</button></div>
+    <div class="gm-wrap">
+      <svg class="gm" viewBox="-110 -16 640 727" role="img"
+           aria-label="가오슝 주요 장소와 날짜별 이동경로 지도"><g class="gm-grid"><line x1="0.0" y1="0" x2="0.0" y2="695"/><line x1="68.1" y1="0" x2="68.1" y2="695"/><line x1="136.2" y1="0" x2="136.2" y2="695"/><line x1="204.3" y1="0" x2="204.3" y2="695"/><line x1="272.5" y1="0" x2="272.5" y2="695"/><line x1="340.6" y1="0" x2="340.6" y2="695"/><line x1="408.7" y1="0" x2="408.7" y2="695"/><line x1="0" y1="695.0" x2="420" y2="695.0"/><line x1="0" y1="626.9" x2="420" y2="626.9"/><line x1="0" y1="558.8" x2="420" y2="558.8"/><line x1="0" y1="490.7" x2="420" y2="490.7"/><line x1="0" y1="422.6" x2="420" y2="422.6"/><line x1="0" y1="354.6" x2="420" y2="354.6"/><line x1="0" y1="286.5" x2="420" y2="286.5"/><line x1="0" y1="218.4" x2="420" y2="218.4"/><line x1="0" y1="150.3" x2="420" y2="150.3"/><line x1="0" y1="82.2" x2="420" y2="82.2"/><line x1="0" y1="14.1" x2="420" y2="14.1"/></g><polyline class="gm-mrt gm-red" points="343.9,31.4 301.9,193.7 298.1,396.7 293.4,458.1 288.0,507.5 312.1,589.6 336.6,649.3"/><polyline class="gm-mrt gm-org" points="101.8,532.2 166.4,517.5 293.4,458.1 402.7,466.0"/><circle class="gm-st" cx="343.9" cy="31.4" r="3"/><circle class="gm-st" cx="301.9" cy="193.7" r="3"/><circle class="gm-st" cx="298.1" cy="396.7" r="3"/><circle class="gm-st" cx="293.4" cy="458.1" r="3"/><circle class="gm-st" cx="288.0" cy="507.5" r="3"/><circle class="gm-st" cx="312.1" cy="589.6" r="3"/><circle class="gm-st" cx="336.6" cy="649.3" r="3"/><circle class="gm-st" cx="101.8" cy="532.2" r="3"/><circle class="gm-st" cx="166.4" cy="517.5" r="3"/><circle class="gm-st" cx="293.4" cy="458.1" r="3"/><circle class="gm-st" cx="402.7" cy="466.0" r="3"/><line class="gm-ferry" x1="70.0" y1="545.5" x2="67.7" y2="588.7"/><circle class="gm-dot" cx="277.4" cy="195.9" r="4.5"/><circle class="gm-dot" cx="293.4" cy="458.1" r="4.5"/><circle class="gm-dot" cx="150.7" cy="544.1" r="4.5"/><circle class="gm-dot" cx="202.4" cy="558.9" r="4.5"/><circle class="gm-dot" cx="60.4" cy="594.2" r="4.5"/><circle class="gm-dot" cx="35.5" cy="577.2" r="4.5"/><circle class="gm-dot" cx="208.6" cy="509.1" r="4.5"/><circle class="gm-dot" cx="227.3" cy="86.9" r="4.5"/><circle class="gm-dot" cx="230.1" cy="72.6" r="4.5"/><circle class="gm-dot" cx="327.6" cy="585.1" r="4.5"/><circle class="gm-dot" cx="252.3" cy="548.9" r="4.5"/><circle class="gm-dot" cx="275.0" cy="662.3" r="4.5"/><circle class="gm-dot" cx="280.9" cy="606.7" r="4.5"/><rect class="gm-home" x="306.1" y="583.6" width="12" height="12" rx="3"/><g class="gm-day" data-d="1"><polyline class="gm-rt" points="412.0,687.0 312.1,589.6 293.4,458.1 301.9,193.7 277.4,195.9 312.1,589.6" style="stroke:var(--md-sys-color-route-1)"/><circle class="gm-rn" cx="412.0" cy="687.0" r="9.5" style="fill:var(--md-sys-color-route-1)"/><text class="gm-rt-n" x="412.0" y="690.6">1</text><circle class="gm-rn" cx="312.1" cy="589.6" r="9.5" style="fill:var(--md-sys-color-route-1)"/><text class="gm-rt-n" x="312.1" y="593.2">2</text><circle class="gm-rn" cx="277.4" cy="195.9" r="9.5" style="fill:var(--md-sys-color-route-1)"/><text class="gm-rt-n" x="277.4" y="199.5">3</text><text class="gm-off" x="398.0" y="674.0" text-anchor="end">↘ 공항 (지도 밖)</text></g><g class="gm-day" data-d="2" hidden><polyline class="gm-rt" points="312.1,589.6 166.4,517.5 150.7,544.1 202.4,558.9 70.0,545.5 67.7,588.7 35.5,577.2 67.7,588.7 70.0,545.5 208.6,509.1 288.0,507.5 312.1,589.6" style="stroke:var(--md-sys-color-route-2)"/><circle class="gm-rn" cx="312.1" cy="589.6" r="9.5" style="fill:var(--md-sys-color-route-2)"/><text class="gm-rt-n" x="312.1" y="593.2">1</text><circle class="gm-rn" cx="150.7" cy="544.1" r="9.5" style="fill:var(--md-sys-color-route-2)"/><text class="gm-rt-n" x="150.7" y="547.7">2</text><circle class="gm-rn" cx="202.4" cy="558.9" r="9.5" style="fill:var(--md-sys-color-route-2)"/><text class="gm-rt-n" x="202.4" y="562.5">3</text><circle class="gm-rn" cx="67.7" cy="588.7" r="9.5" style="fill:var(--md-sys-color-route-2)"/><text class="gm-rt-n" x="67.7" y="592.3">4</text><circle class="gm-rn" cx="35.5" cy="577.2" r="9.5" style="fill:var(--md-sys-color-route-2)"/><text class="gm-rt-n" x="35.5" y="580.8">5</text><circle class="gm-rn" cx="208.6" cy="509.1" r="9.5" style="fill:var(--md-sys-color-route-2)"/><text class="gm-rt-n" x="208.6" y="512.7">6</text></g><g class="gm-day" data-d="3" hidden><polyline class="gm-rt" points="312.1,589.6 343.9,31.4 227.3,86.9 230.1,72.6 343.9,31.4 312.1,589.6 327.6,585.1 275.0,662.3 312.1,589.6" style="stroke:var(--md-sys-color-route-3)"/><circle class="gm-rn" cx="312.1" cy="589.6" r="9.5" style="fill:var(--md-sys-color-route-3)"/><text class="gm-rt-n" x="312.1" y="593.2">1</text><circle class="gm-rn" cx="227.3" cy="86.9" r="9.5" style="fill:var(--md-sys-color-route-3)"/><text class="gm-rt-n" x="227.3" y="90.5">2</text><circle class="gm-rn" cx="230.1" cy="72.6" r="9.5" style="fill:var(--md-sys-color-route-3)"/><text class="gm-rt-n" x="230.1" y="76.2">3</text><circle class="gm-rn" cx="327.6" cy="585.1" r="9.5" style="fill:var(--md-sys-color-route-3)"/><text class="gm-rt-n" x="327.6" y="588.7">4</text><circle class="gm-rn" cx="275.0" cy="662.3" r="9.5" style="fill:var(--md-sys-color-route-3)"/><text class="gm-rt-n" x="275.0" y="665.9">5</text></g><g class="gm-day" data-d="4" hidden><polyline class="gm-rt" points="312.1,589.6 280.9,606.7 312.1,589.6 412.0,687.0" style="stroke:var(--md-sys-color-route-4)"/><circle class="gm-rn" cx="312.1" cy="589.6" r="9.5" style="fill:var(--md-sys-color-route-4)"/><text class="gm-rt-n" x="312.1" y="593.2">1</text><circle class="gm-rn" cx="280.9" cy="606.7" r="9.5" style="fill:var(--md-sys-color-route-4)"/><text class="gm-rt-n" x="280.9" y="610.3">2</text><circle class="gm-rn" cx="412.0" cy="687.0" r="9.5" style="fill:var(--md-sys-color-route-4)"/><text class="gm-rt-n" x="412.0" y="690.6">3</text><text class="gm-off" x="398.0" y="674.0" text-anchor="end">↘ 공항 (지도 밖)</text></g><text class="gm-lb" x="265.4" y="199.9" text-anchor="end">루이허 야시장</text><text class="gm-lb" x="305.4" y="456.1" text-anchor="start">광지충딩 (빛의 돔)</text><text class="gm-lb" x="138.7" y="548.1" text-anchor="end">보얼예술특구</text><text class="gm-lb" x="214.4" y="573.9" text-anchor="start">가오슝 뮤직센터</text><text class="gm-lb" x="72.4" y="609.2" text-anchor="start">치진섬</text><text class="gm-lb" x="23.5" y="578.2" text-anchor="end">치허우 등대</text><text class="gm-lb" x="196.6" y="502.1" text-anchor="end">아이허 유람선</text><text class="gm-lb" x="215.3" y="93.9" text-anchor="end">롄츠탄 용호탑</text><text class="gm-lb" x="245.1" y="68.6" text-anchor="start">춘추각</text><text class="gm-lb" x="339.6" y="581.1" text-anchor="start">신광미쓰코시 산둬점</text><text class="gm-lb" x="264.3" y="544.9" text-anchor="start">한신백화점</text><text class="gm-lb" x="263.0" y="666.3" text-anchor="end">雋 GEN</text><text class="gm-lb" x="268.9" y="610.7" text-anchor="end">85 스카이타워</text><text class="gm-lb gm-lb-b" x="326.1" y="607.6">숙소 유톰 · 산둬상권역</text><text class="gm-st-l" x="353.9" y="35.4" text-anchor="start">쭤잉역</text><text class="gm-st-l" x="91.8" y="524.2" text-anchor="end">시쯔완역</text><text class="gm-st-l" x="176.4" y="532.5" text-anchor="start">옌청푸역</text><g class="gm-scale" transform="translate(-96 689)"><line x1="0" y1="0" x2="68.1" y2="0"/><line x1="0" y1="-4" x2="0" y2="4"/><line x1="68.1" y1="-4" x2="68.1" y2="4"/><text x="34.1" y="-8" text-anchor="middle">1km</text></g>
+      </svg>
+    </div>
+    <ul class="gm-key">
+      <li><i class="k-red"></i>첩운 레드선</li>
+      <li><i class="k-org"></i>첩운 오렌지선</li>
+      <li><i class="k-fer"></i>치진 페리</li>
+      <li><i class="k-home"></i>숙소</li>
+      <li><i class="k-dot"></i>볼거리</li>
+    </ul>
   </section>
 
 
@@ -624,7 +1545,7 @@ h4.blk small { font-weight: 400; }
     </div>
     <div>
       <h2>참고한 자료</h2>
-      <ul class="src"><li><a href="https://www.kayak.co.kr/%ED%95%AD%EA%B3%B5%EA%B6%8C/%EC%84%9C%EC%9A%B8-%EA%B9%80%ED%8F%AC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-GMP/%EA%B0%80%EC%98%A4%EC%8A%9D%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-KHH" target="_blank" rel="noopener">가오슝 직항 항공사와 요금</a></li><li><a href="https://www.kingautos.net/341257" target="_blank" rel="noopener">타이난·가오슝 택시 요율</a></li><li><a href="https://www.tripool.app/ko/articles/cijin-travel-spot-and-transportation" target="_blank" rel="noopener">치진섬 가는 법과 볼거리</a></li><li><a href="https://www.tripstore.kr/blog/%EA%B0%80%EC%98%A4%EC%8A%9D-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C-%EA%B3%B3-%EC%97%AC%ED%96%89-%EC%B6%94%EC%B2%9C" target="_blank" rel="noopener">가오슝 관광지별 소요 시간</a></li><li><a href="https://www.tripstore.kr/blog/%EA%B0%80%EC%98%A4%EC%8A%9D-%EC%97%AC%ED%96%89-%ED%8C%81-%EC%8B%AC%EC%95%BC-%EB%8F%84%EC%B0%A9-%EC%88%99%EC%86%8C-%EA%B1%B0%EC%A0%90" target="_blank" rel="noopener">가오슝 숙소 지역과 공항 접근성</a></li><li><a href="https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurants" target="_blank" rel="noopener">가오슝 미슐랭 레스토랑 목록</a></li><li><a href="https://n.yam.com/Article/20260722731110" target="_blank" rel="noopener">2026 미슐랭 가오슝 1스타 6곳</a></li><li><a href="https://n.yam.com/Article/20260723288082" target="_blank" rel="noopener">2026 미슐랭 타이완 가오슝 수록 현황</a></li><li><a href="https://www.tatlerasia.com/dining/food/cantonese-fine-dining-restaurant-kaohsiung-gen-zh-hant" target="_blank" rel="noopener">雋 GEN 가격</a></li><li><a href="https://www.marieclaire.com.tw/lifestyle/taste/88120" target="_blank" rel="noopener">島語 뷔페 가격과 예약</a></li><li><a href="https://supertaste.tvbs.com.tw/food/348446" target="_blank" rel="noopener">옌청푸 맛집과 대기</a></li><li><a href="https://www.hk01.com/旅遊/60399435/" target="_blank" rel="noopener">루이허 야시장 9곳</a></li><li><a href="https://margaret.tw/kaohsiung-bib-gourmand/" target="_blank" rel="noopener">2026 빕구르망 21곳</a></li><li><a href="https://www.tripstore.kr/blog/%EA%B0%80%EC%98%A4%EC%8A%9D-%EC%87%BC%ED%95%91-%EB%A7%88%ED%8A%B8-%EC%95%BC%EC%8B%9C%EC%9E%A5-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">가오슝 쇼핑 가이드 (tripstore)</a></li></ul>
+      <ul class="src"><li><a href="https://www.kayak.co.kr/%ED%95%AD%EA%B3%B5%EA%B6%8C/%EC%84%9C%EC%9A%B8-%EA%B9%80%ED%8F%AC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-GMP/%EA%B0%80%EC%98%A4%EC%8A%9D%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD-KHH" target="_blank" rel="noopener">가오슝 직항 항공사와 요금</a></li><li><a href="https://www.kingautos.net/341257" target="_blank" rel="noopener">타이난·가오슝 택시 요율</a></li><li><a href="https://www.tripool.app/ko/articles/cijin-travel-spot-and-transportation" target="_blank" rel="noopener">치진섬 가는 법과 볼거리</a></li><li><a href="https://www.tripstore.kr/blog/%EA%B0%80%EC%98%A4%EC%8A%9D-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C-%EA%B3%B3-%EC%97%AC%ED%96%89-%EC%B6%94%EC%B2%9C" target="_blank" rel="noopener">가오슝 관광지별 소요 시간</a></li><li><a href="https://www.tripstore.kr/blog/%EA%B0%80%EC%98%A4%EC%8A%9D-%EC%97%AC%ED%96%89-%ED%8C%81-%EC%8B%AC%EC%95%BC-%EB%8F%84%EC%B0%A9-%EC%88%99%EC%86%8C-%EA%B1%B0%EC%A0%90" target="_blank" rel="noopener">가오슝 숙소 지역과 공항 접근성</a></li><li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google 지도 — 장소 좌표·영업시간·평점</a></li><li><a href="https://www.krtc.com.tw/" target="_blank" rel="noopener">가오슝 첩운 노선도 (Kaohsiung MRT)</a></li><li><a href="https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurants" target="_blank" rel="noopener">가오슝 미슐랭 레스토랑 목록</a></li><li><a href="https://n.yam.com/Article/20260722731110" target="_blank" rel="noopener">2026 미슐랭 가오슝 1스타 6곳</a></li><li><a href="https://n.yam.com/Article/20260723288082" target="_blank" rel="noopener">2026 미슐랭 타이완 가오슝 수록 현황</a></li><li><a href="https://www.tatlerasia.com/dining/food/cantonese-fine-dining-restaurant-kaohsiung-gen-zh-hant" target="_blank" rel="noopener">雋 GEN 가격</a></li><li><a href="https://www.marieclaire.com.tw/lifestyle/taste/88120" target="_blank" rel="noopener">島語 뷔페 가격과 예약</a></li><li><a href="https://supertaste.tvbs.com.tw/food/348446" target="_blank" rel="noopener">옌청푸 맛집과 대기</a></li><li><a href="https://www.hk01.com/旅遊/60399435/" target="_blank" rel="noopener">루이허 야시장 9곳</a></li><li><a href="https://margaret.tw/kaohsiung-bib-gourmand/" target="_blank" rel="noopener">2026 빕구르망 21곳</a></li><li><a href="https://www.tripstore.kr/blog/%EA%B0%80%EC%98%A4%EC%8A%9D-%EC%87%BC%ED%95%91-%EB%A7%88%ED%8A%B8-%EC%95%BC%EC%8B%9C%EC%9E%A5-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">가오슝 쇼핑 가이드 (tripstore)</a></li></ul>
     </div>
   </footer>
 </div>
@@ -639,6 +1560,30 @@ h4.blk small { font-weight: 400; }
     e.preventDefault();
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+})();
+</script>
+
+<script>
+/* 지도: 날짜 칩으로 그날 경로만 보여준다 */
+(function () {
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.gm-c'));
+  var days  = Array.prototype.slice.call(document.querySelectorAll('.gm-day'));
+  if (!chips.length) { return; }
+  function show(k) {
+    chips.forEach(function (c) {
+      var on = c.getAttribute('data-d') === k;
+      c.classList.toggle('x', on);
+      c.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    /* SVG 요소에는 hidden 프로퍼티가 없으므로 속성을 직접 넣고 뺀다 */
+    days.forEach(function (g) {
+      if (g.getAttribute('data-d') === k) { g.removeAttribute('hidden'); }
+      else { g.setAttribute('hidden', ''); }
+    });
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () { show(c.getAttribute('data-d')); });
   });
 })();
 </script>
